@@ -1,5 +1,8 @@
 package ch.fhnw.elibrary.elib.data.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -8,7 +11,8 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(nullable = false)
+    private Long book_id;
 
     @Column(nullable = false)
     private String isbn;
@@ -22,30 +26,39 @@ public class Book {
     @Column
     private String description;
 
-    @Column(nullable = false)
-    private String author;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    private Author author;
 
-    @Column(nullable = false)
-    private String genre;
+    @ManyToOne
+    @JoinColumn(name = "genre_id", referencedColumnName = "id")
+    private Genre genre;
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private List<Borrowed> borrowedList = new ArrayList<>();
+
+
+
+
 
     // constructors
-    public Book(Long id, String isbn, String title, int year, String description, String author, String genre) {
-        this.id = id;
+    public Book(Long id, String isbn, String title, int year, String description, Author author, Genre genre) {
+        this.book_id = id;
         this.isbn = isbn;
         this.title = title;
         this.year = year;
         this.description = description;
-        this.author = author;
-        this.genre = genre;
+        this.author = author; // todo: getFirstname() + getLastname()
+        this.genre = genre; // todo: getName()
     }
 
     // getters and setters
-    public Long getId() {
-        return id;
+    public Long getBook_id() {
+        return book_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setBook_id(Long id) {
+        this.book_id = id;
     }
 
     public String getIsbn() {
@@ -80,26 +93,26 @@ public class Book {
         this.description = description;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
     // toString
     @Override
     public String toString() {
-        return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title + ", year=" + year + ", description=" + description + 
+        return "Book [id=" + book_id + ", isbn=" + isbn + ", title=" + title + ", year=" + year + ", description=" + description + 
         "author=" + author + ", genre=" + genre + "]";
     }
 
