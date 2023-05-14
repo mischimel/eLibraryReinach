@@ -46,9 +46,8 @@ public class Member {
 	@Hidden
 	private String remember;
 
-    @ManyToOne
-    @JoinColumn(name = "member_id", nullable = false)
-    private Member member;
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Borrowed> borrowing = new ArrayList<>();
 
     // constructor
     public Member(Long member_id, String username, String firstName, String lastName, String email, String password, String role) {
