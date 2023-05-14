@@ -38,12 +38,9 @@ public class Book {
     private List<Borrowed> borrowedList = new ArrayList<>();
 
 
-
-
-
     // constructors
-    public Book(Long id, String isbn, String title, int year, String description, Author author, Genre genre) {
-        this.book_id = id;
+    public Book(Long book_id, String isbn, String title, int year, String description, Author author, Genre genre) {
+        this.book_id = book_id;
         this.isbn = isbn;
         this.title = title;
         this.year = year;

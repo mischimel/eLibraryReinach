@@ -28,7 +28,8 @@ public class Borrowed {
     private Member member;
 
     // constructor
-    public Borrowed(Book book, Member member, LocalDate borrowedDate, LocalDate returnedDate) {
+    public Borrowed(Long borrowe_id, Book book, Member member, LocalDate borrowedDate, LocalDate returnedDate) {
+        this.borrowed_id = borrowe_id;
         this.book = book;
         this.member = member;
         this.startDate = borrowedDate;

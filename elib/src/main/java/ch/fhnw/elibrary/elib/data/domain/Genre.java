@@ -20,8 +20,8 @@ public class Genre {
     private List<Book> books = new ArrayList<>();
 
     // constructor
-    public Genre(Long id, String name) {
-        this.genre_id = id;
+    public Genre(Long genre_id, String name) {
+        this.genre_id = genre_id;
         this.name = name;
     }
 
