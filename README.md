@@ -24,7 +24,7 @@ Jervin Ureath <br>
 Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # 1. Analysis *Scenario ideation, use case analysis and user story writing*
-## Scenario
+## Scenario - update, must be in line with use cases and user storries !
 The commune of Reinach has decided to create an electronic library, as today's world is very digital. Therefore, it wants to set up a web application. The online library will offer eBooks. <br>
 To use the electronic library customers, have to create an user account. With the user account, the customers can log in to the electronic library and use the following services. <br>
 The web application allows users to edit their user profile, to delete their user profile, to browse through an infinite amount of books, to search for books, to borrow books, to return books, to easily view and manage their borrowed books with a list view. <br>
@@ -33,7 +33,7 @@ The web application gets managed and kept updated by administrators. Therefore, 
 The web application additionally allows administrators to add books, to edit existing books, to delete existing books, to easily view and manage all borrowed books with a list view. <br>
 In section "all borrowed books", administrators can view all books that are currently on loan and those which have already been returned. This section also displays the username of the user, who is currently borrowing or has borrowed the book, the due date for return and an option to return the book early is available. <br>
 
-## Use case analysis
+## Use case analysis - update, make it simpler , also change diagrams!
 Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-bdc1-30d08725a5d9/edit?viewport_loc=1733%2C31%2C2219%2C1097%2C0_0&invitationId=inv_ef872c42-5b9f-4504-93fc-5389022cccf9 <br>
 
 ### Use Case 100
@@ -60,7 +60,7 @@ These use cases are for administrators, which have the same basic functionalitie
 **Use case 304 (All borrowed books)**: An administrator can see a list of all books which are currently borrowed and the history of books, that have been borrowed and already returned. <br>
 
 
-## User Story
+## User Story - update, make it simpler !
 1.	As a user, I want to be able to register for an user account so that I can access the online library. <br>
 2.	As a user, I want to log-in so that I can authenticate myself. <br>
 3.	As a user, I want to be able to edit my profile. <br>
@@ -77,7 +77,7 @@ These use cases are for administrators, which have the same basic functionalitie
 12.	As an administrator, I want to delete existing books. <br>
 13.	As an administrator, I want to see which books are currently borrowed and the history of books that have been borrowed and already returned (all borrowed books). <br>
 
-## Mock up
+## Mock up - update (maybe leave this one as first draft, to have a better understanding for the project?)
 Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
 
 To visualise our ideas and views, we have created the following mock-up. <br>
@@ -102,17 +102,17 @@ The following picture gives some information about the colours used in the mock 
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
 
 # 2. Domain Design *Definition of domain model*
-## Services/Methods --> Rahel?
+## Services/Methods --> Rahel? - update or delete !
 Link: https://lucid.app/lucidchart/f763dd83-1fa8-4140-bbcd-0a12ec91b5a9/edit?page=0_0&invitationId=inv_e39b7e2c-83e9-4dcb-9dfb-ffc701bf88de#
 
-## Microservices
+## Microservices - update or delete !
 We tried to identify the microservices, domains, aggregates, and entities in the application using the approach of Domain Driven Design (DDD). <br>
 <img src="https://github.com/michimel/electronic-library/blob/bd2893c3f7c0fa2f17f8602c88eba3398d5ababe/images/Microservices/Microservices.png"> <br>
 
 ## Domain Model
 Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-18829cec80c9/edit?beaconFlowId=7134D7D032DE5064&invitationId=inv_0148f8f5-f3f9-433a-8296-e9667492d473&page=0_0# <br>
 
-<img src="https://github.com/michimel/electronic-library/blob/10cf4d94c07ce48a929b47f083a985fe864b70a0/images/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
+<img src="https://github.com/michimel/eLibraryReinach/blob/4cd66d21b785f63ee59b43350537a9e35351ba70/Documentation%20Sources/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
 
 
 # 3. Business Logic and API design *Definition of business logic and API*
