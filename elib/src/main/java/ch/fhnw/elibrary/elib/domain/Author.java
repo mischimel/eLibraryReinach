@@ -1,4 +1,4 @@
-package main.java.ch.fhnw.eLibrary.data.domain;
+package ch.fhnw.elibrary.elib.domain;
 
 public class Author {
     

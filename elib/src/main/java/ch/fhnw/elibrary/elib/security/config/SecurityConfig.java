@@ -1,4 +1,4 @@
-package main.java.ch.fhnw.eLibrary.security.config;
+package ch.fhnw.elibrary.elib.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,12 +7,15 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-
 import org.springframework.security.web.SecurityFilterChain;
 
+// TODO: uncomment when needed, commted out below imports, as they were throwing problems
+/*
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
+import com.wilddog.security.token.JWTEncoder;
+*/
 
-import ch.fhnw.crm.crmwebservice.business.service.UserDetailsServiceImpl;
+import ch.fhnw.elibrary.elib.business.service.UserDetailsServiceImpl;
 
 import org.springframework.beans.factory.annotation.Value;
 
@@ -20,11 +23,15 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.oauth2.*;
+// TODO: ?, did the import above, as the commted out below imports, as they were throwing problems
+/*
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
+*/
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -50,7 +57,6 @@ public class SecurityConfig {
                     .password("{noop}password")
                     .authorities("READ","ROLE_USER")
                     .build());*/
-        
         return new UserDetailsServiceImpl(); 
     }
 
@@ -65,12 +71,12 @@ public class SecurityConfig {
                                                     "/swagger-ui.html",
                                                     "/v3/api-docs/**",
                                                     "/swagger-ui/**").permitAll()
-                       // TODO
+                       // TODO: uncomment when next todo is done
                        /*
                         .requestMatchers("/api/auth/token").hasRole("USER")
                         .anyRequest().hasAuthority("SCOPE_READ") 
                         */
-                .requestMatchers("/**").permitAll()    // TODO: damit es funktioniert, das muss wieder raus       
+                .requestMatchers("/**").permitAll()    // TODO: only that testing works, must be deleted later!     
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
@@ -78,8 +84,10 @@ public class SecurityConfig {
                 .build(); 
     }
 
-	@Bean
-    JwtEncoder jwtEncoder() {
+    // TODO: check if these Beans are needed
+	/*
+    @Bean
+    JWTEncoder jwtEncoder() {
         return new NimbusJwtEncoder(new ImmutableSecret<>(jwtKey.getBytes()));
     }
 
@@ -89,6 +97,7 @@ public class SecurityConfig {
         SecretKeySpec originalKey = new SecretKeySpec(bytes, 0, bytes.length,"RSA");
         return NimbusJwtDecoder.withSecretKey(originalKey).macAlgorithm(MacAlgorithm.HS512).build();
     }
+    */
 
     @Bean
     public PasswordEncoder passwordEncoder() {

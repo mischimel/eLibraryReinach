@@ -1,6 +1,6 @@
-package main.java.ch.fhnw.eLibrary.security.controller;
+package ch.fhnw.elibrary.elib.security.controller;
 
-import ch.fhnw.crm.crmwebservice.security.service.TokenService;
+import ch.fhnw.elibrary.elib.security.service.TokenService;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +17,8 @@ public class AuthController {
         this.tokenService = tokenService;
     }
 
+    // TODO: Check if ServiceToken is needed
+    /*
     @PostMapping("/token")
     public String token(Authentication authentication) {
         System.out.println("Inside /token request...");
@@ -26,4 +28,5 @@ public class AuthController {
             throw new UsernameNotFoundException("invalid user request !");
         }
     }
+    */
 }
