@@ -1,3 +1,6 @@
 {
-    "java.dependency.syncWithFolderExplorer": false
+    "java.dependency.syncWithFolderExplorer": true,
+    "java.project.sourcePaths": [
+        "src/main/java/ch/fhnw/eLibrary"
+    ]
 }
