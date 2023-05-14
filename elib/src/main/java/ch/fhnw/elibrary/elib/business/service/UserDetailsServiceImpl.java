@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import ch.fhnw.elibrary.elib.domain.Member;
-import ch.fhnw.elibrary.elib.repository.MemberRepository;
+import ch.fhnw.elibrary.elib.data.domain.Member;
+import ch.fhnw.elibrary.elib.data.repository.MemberRepository;
 
 
 
