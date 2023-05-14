@@ -1,0 +1,744 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "version": "1.0.0",
+    "title": "electronic Library",
+    "description": "This is an API for an electronic Library.",
+    "contact": {
+      "name": "eLibrary Reinach",
+      "email": "michele.fille@students.fhnw.ch"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://eLibraryReinach.ch"
+    }
+  ],
+  "tags": [
+    {
+      "name": "User",
+      "description": "Management of Users"
+    },
+    {
+      "name": "Books",
+      "description": "Management of Books"
+    },
+    {
+      "name": "Loan",
+      "description": "Management of Loan Information"
+    }
+  ],
+  "paths": {
+    "/signup": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Customer can sign up for an user account (UC 101)",
+        "description": "Customer can sign up for an user account",
+        "operationId": "addUser",
+        "requestBody": {
+          "description": "new user is generated",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Registration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Error, Registration failed"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User logs in to his/her user account (UC 102)",
+        "description": "User logs in to his/her user account",
+        "operationId": "login",
+        "requestBody": {
+          "description": "user is loged in",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Login",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Error, Login failed"
+          }
+        }
+      }
+    },
+    "/editProfile": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User edits his/her user account (UC 103)",
+        "description": "User edits his/her user account",
+        "operationId": "editProfile",
+        "requestBody": {
+          "description": "user profile is updated",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful profile update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Error, profile update failed"
+          }
+        }
+      }
+    },
+    "/deleteProfile": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User deletes his/her user account (UC 104)",
+        "description": "User deletes his/her user account",
+        "operationId": "deleteProfile",
+        "responses": {
+          "200": {
+            "description": "Successful profile deletion",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Error, profile deletion failed"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User logs out (UC 105)",
+        "description": "User logs out",
+        "operationId": "logout",
+        "requestBody": {
+          "description": "user is loged out",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Logout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Error, Logout failed"
+          }
+        }
+      }
+    },
+    "/searchBooks": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Gets a list of books user searched for (UC 201)",
+        "description": "Gets a list of books user searched for",
+        "operationId": "searchBook",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Book"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/borrowBook": {
+      "post": {
+        "tags": [
+          "Books",
+          "Loan"
+        ],
+        "summary": "User can borrow a book (UC 202)",
+        "description": "User can borrow a book",
+        "operationId": "borrowBook",
+        "requestBody": {
+          "description": "User borrows book",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Book"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Loan_Info"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Book"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Loan_Info"
+                    }
+                  ]
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Book"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Loan_Info"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/returnBook": {
+      "post": {
+        "tags": [
+          "Books",
+          "Loan"
+        ],
+        "summary": "User can retrun a book early (UC 203)",
+        "description": "User can retrun a book early",
+        "operationId": "returnBook",
+        "requestBody": {
+          "description": "User returns book early",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Book"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Loan_Info"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Book"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Loan_Info"
+                    }
+                  ]
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Book"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Loan_Info"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/myBooks": {
+      "get": {
+        "tags": [
+          "Books",
+          "Loan"
+        ],
+        "summary": "Gets a list of books user borrowed (UC 204)",
+        "description": "Gets a list of books user searched for",
+        "operationId": "myborrowedBook",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Book"
+                      },
+                      {
+                        "$ref": "#/components/schemas/Loan_Info"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addBook": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Add a new book to the library (UC 301)",
+        "description": "Add a new book to the library - only for Admins",
+        "operationId": "addBook",
+        "requestBody": {
+          "description": "Admin can create a new book",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/editBook": {
+      "put": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Admin edits a book (UC 302)",
+        "description": "Admin edits a book - only for Admins",
+        "operationId": "editBook",
+        "requestBody": {
+          "description": "book is updated",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful book update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Error, book update failed"
+          }
+        }
+      }
+    },
+    "/deleteBook": {
+      "delete": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Admin deletes a book (UC 303)",
+        "description": "Admin deletes a book - only for Admins",
+        "operationId": "deleteBook",
+        "responses": {
+          "200": {
+            "description": "Successful book deletion",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Error, book deletion failed"
+          }
+        }
+      }
+    },
+    "/allBorrowedBooks": {
+      "get": {
+        "tags": [
+          "Books",
+          "Loan"
+        ],
+        "summary": "Admin fets a list of all books borrowed (UC 304)",
+        "description": "Admin fets a list of all books borrowed - only for admins",
+        "operationId": "allborrowedBook",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Book"
+                      },
+                      {
+                        "$ref": "#/components/schemas/Loan_Info"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Book": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "bookTitle": {
+            "type": "string",
+            "example": "Max und Moritz"
+          },
+          "bookAuthor": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Author"
+            }
+          },
+          "bookGerne": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Gerne"
+            }
+          }
+        }
+      },
+      "Author": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 20
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Wilhelm Busch"
+          },
+          "first_name": {
+            "type": "string",
+            "example": "Wilhelm"
+          },
+          "country": {
+            "type": "string",
+            "example": "Germany"
+          },
+          "bookList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Book"
+            }
+          }
+        }
+      },
+      "Gerne": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 30
+          },
+          "gerne_name": {
+            "type": "string",
+            "example": "Child"
+          },
+          "bookList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Book"
+            }
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 40
+          },
+          "first_name": {
+            "type": "string",
+            "example": "Max"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Mustermann"
+          },
+          "email": {
+            "type": "string",
+            "example": "max.mustermann@gmail.com"
+          },
+          "role": {
+            "type": "string",
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            }
+          },
+          "login": {
+            "type": "boolean",
+            "items": {
+              "$ref": "#/components/schemas/Login"
+            }
+          },
+          "borrowed": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Loan_Info"
+            }
+          }
+        }
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 50
+          },
+          "role_name": {
+            "type": "string",
+            "example": "User"
+          },
+          "users": {
+            "type": "string",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        }
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 60
+          },
+          "password": {
+            "type": "string",
+            "example": "password"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        }
+      },
+      "Loan_Info": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 70
+          },
+          "start_date": {
+            "type": "string",
+            "example": "01.04.2023"
+          },
+          "end_date": {
+            "type": "string",
+            "example": "31.04.2023"
+          },
+          "book": {
+            "type": "string",
+            "items": {
+              "$ref": "#/components/schemas/Book"
+            }
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        }
+      }
+    }
+  }
+}
