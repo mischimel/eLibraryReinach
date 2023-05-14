@@ -1,14 +1,13 @@
-package ch.fhnw.eLibrary;
+package ch.fhnw.elibrary.elib;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-public class ELibraryApplication {
+public class ElibApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ELibraryApplication.class, args);
+		SpringApplication.run(ElibApplication.class, args);
 	}
 
 }
