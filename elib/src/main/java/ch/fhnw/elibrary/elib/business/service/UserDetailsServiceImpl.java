@@ -33,7 +33,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return user;
         
     // TODO: uncomment and check with class Member (crm webservice project it is Agent)
-        /*
+    /*
         Member member = memberRepository.findByEmail(username);
         
         if (member == null) {
@@ -46,7 +46,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                                 .authorities("READ","ROLE_" + member.getRole())
                                 .build();
         return user; 
-        */
+    */
         
     }
 

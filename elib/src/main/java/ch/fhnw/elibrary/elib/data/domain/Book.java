@@ -27,11 +27,11 @@ public class Book {
     private String description;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    @JoinColumn(name = "author_id", referencedColumnName = "author_id")
     private Author author;
 
     @ManyToOne
-    @JoinColumn(name = "genre_id", referencedColumnName = "id")
+    @JoinColumn(name = "genre_id", referencedColumnName = "genre_id")
     private Genre genre;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)

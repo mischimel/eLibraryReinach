@@ -10,10 +10,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 // TODO: uncomment when needed, commted out below imports, as they were throwing problems
-/*
+
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
-import com.wilddog.security.token.JWTEncoder;
-*/
+//import com.wilddog.security.token.JwtEncoder;
+
 
 import ch.fhnw.elibrary.elib.business.service.UserDetailsServiceImpl;
 
@@ -23,15 +23,15 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.oauth2.*;
+//import org.springframework.security.oauth2.*;
 // TODO: ?, did the import above, as the commted out below imports, as they were throwing problems
-/*
+
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
-*/
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -85,9 +85,9 @@ public class SecurityConfig {
     }
 
     // TODO: check if these Beans are needed
-	/*
+	
     @Bean
-    JWTEncoder jwtEncoder() {
+    JwtEncoder jwtEncoder() {
         return new NimbusJwtEncoder(new ImmutableSecret<>(jwtKey.getBytes()));
     }
 
@@ -97,7 +97,7 @@ public class SecurityConfig {
         SecretKeySpec originalKey = new SecretKeySpec(bytes, 0, bytes.length,"RSA");
         return NimbusJwtDecoder.withSecretKey(originalKey).macAlgorithm(MacAlgorithm.HS512).build();
     }
-    */
+    
 
     @Bean
     public PasswordEncoder passwordEncoder() {
