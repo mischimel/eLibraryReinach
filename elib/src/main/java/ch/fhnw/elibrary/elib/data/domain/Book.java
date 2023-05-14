@@ -96,18 +96,11 @@ public class Book {
         this.genre = genre;
     }
 
-    // toString method
+    // toString
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", isbn='" + isbn + '\'' +
-                ", title='" + title + '\'' +
-                ", year=" + year +
-                ", description='" + description + '\'' +
-                ", author='" + author + '\'' +
-                ", genre='" + genre + '\'' +
-                '}';
+        return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title + ", year=" + year + ", description=" + description + 
+        "author=" + author + ", genre=" + genre + "]";
     }
 
         
