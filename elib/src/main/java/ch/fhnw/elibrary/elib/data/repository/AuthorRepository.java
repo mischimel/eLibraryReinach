@@ -12,7 +12,10 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
 
     /* custom query methods
     - methods with type Author will only return one author (first one found)
-    - methods with type List<Author> will return a list with all authors found */
+    - methods with type List<Author> will return a list with all authors found 
+    author @michimel and @RahelHaeusler*/
+
+    Author findByAuthor_id(Long author_id);
     List<Author> findByFirstName(String firstName);
     List<Author> findByLastName(String lastName);
     Author findByFirstNameAndLastName(String firstName, String lastName);
