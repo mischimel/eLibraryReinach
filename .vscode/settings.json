@@ -3,5 +3,6 @@
     "java.project.sourcePaths": [
         "src/main/java/ch/fhnw/eLibrary"
     ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "automatic"
 }
