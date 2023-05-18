@@ -2,8 +2,10 @@ package ch.fhnw.elibrary.elib.data.domain;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import jakarta.persistence.*;
+
+// author @michimel and @RahelHaeusler
+
 
 @Entity
 @Table(name = "authors")

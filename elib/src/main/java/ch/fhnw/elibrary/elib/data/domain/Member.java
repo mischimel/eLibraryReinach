@@ -2,14 +2,14 @@ package ch.fhnw.elibrary.elib.data.domain;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+
+// author @michimel and @RahelHaeusler
 
 @Entity
 @Table(name = "members")

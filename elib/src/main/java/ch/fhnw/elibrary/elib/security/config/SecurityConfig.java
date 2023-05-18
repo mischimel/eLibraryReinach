@@ -8,38 +8,31 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
-
 // TODO: uncomment when needed, commted out below imports, as they were throwing problems
-
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 //import com.wilddog.security.token.JwtEncoder;
 
-
 import ch.fhnw.elibrary.elib.business.service.UserDetailsServiceImpl;
-
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 //import org.springframework.security.oauth2.*;
 // TODO: ?, did the import above, as the commted out below imports, as they were throwing problems
-
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-
 import javax.crypto.spec.SecretKeySpec;
 import static org.springframework.security.config.Customizer.withDefaults;
 
+// author @michimel derived from CRM-webservice example
 
 @Configuration
 @EnableWebSecurity
