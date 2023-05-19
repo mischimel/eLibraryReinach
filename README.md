@@ -38,44 +38,40 @@ Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-b
 
 ### Use Case 100
 <img src="https://github.com/michimel/electronic-library/blob/0743362ae9dbb8a27e095ad5172f523bd70f3704/images/Use%20case/Use%20Case%20Diagramm%20UC%20100.png" width="800"> <br>
-**Use case 101 (Sign up)**: A user can sing up to the website and create an account. To create an account, the user must enter a username, email address, password, full name, and their address. The user must also agree to the terms and conditions. <br>
+**Use case 101 (Sign up)**: A user can sing up to the website and create an account. To create an account, the user must enter a username, email address, password, firstname and last name. (The user must also agree to the terms and conditions.) <br>
 **Use Case 102 (Login)**: Once a user has created an account, they can log in using their username/email address and password. <br>
 **Use case 103 (Update profile)**: The user can update their user profile once they are logged in. <br>
-**Use case 104 (Delete profile)**: The user can delete their user profile once they are logged in. <br>
-**Use case 105 (Log out)**: After logging in, the user can log out again. <br>
+**Use case 104 (Log out)**: After logging in, the user can log out again. <br>
 
 ### Use Case 200
 <img src="https://github.com/michimel/electronic-library/blob/f642a724d1250e2e2022fdc20df2296212f4ce51/images/Use%20case/Use%20Case%20Diagramm%20UC%20200.png" width="800"> <br>
 **Use case 201 (Search Book)**: A user can search for books and get the results in a list view. <br>
 **Use case 202 (Borrow Book)**: A user can borrow a book for a certain period of time. <br>
 **Use case 203 (Return Book early)**: A user can return a book early if they do not need it anymore. <br>
-**Use case 204 (My borrowed books)**: A user can see a list of the books he/she is currently borrowing and the history of books, he/she borrowed and already returned. <br>
+**Use case 204 (My borrowed books)**: A user can see a list of the books he/she is currently borrowing <br>
 
 ### Use Case 300
 These use cases are for administrators, which have the same basic functionalities as users but have additional functionalities. <br>
 <img src="https://github.com/michimel/electronic-library/blob/f642a724d1250e2e2022fdc20df2296212f4ce51/images/Use%20case/Use%20Case%20Diagramm%20UC%20300.png" width="800"> <br>
 **Use case 301 (Add new book)**: An administrator is able to add a new book to the library system by providing the book details such as title, author, genre, and publication year. <br>
 **Use case 302 (Edit book)**: An administrator is able to edit a book from the library system. <br>
-**Use case 303 (Delete book)**: An administrator is able to delete a book from the library system. <br>
-**Use case 304 (All borrowed books)**: An administrator can see a list of all books which are currently borrowed and the history of books, that have been borrowed and already returned. <br>
+**Use case 304 (All borrowed books)**: An administrator can see a list of all books which are currently borrowed. <br>
 
 
 ## User Story - update, make it simpler !
 1.	As a user, I want to be able to register for an user account so that I can access the online library. <br>
 2.	As a user, I want to log-in so that I can authenticate myself. <br>
 3.	As a user, I want to be able to edit my profile. <br>
-4.	As a user, I want to be able to delete my profile. <br>
-5.	As a user, I want to be able to logout. <br>
+4.	As a user, I want to be able to logout. <br>
 
-6.	As a user, I want to be able to search for book titles, authors, gernes. <br>
-7.	As a user, I want to be able to borrow a book for a certain period of time. <br>
-8.	As a user, I want to be able to return a book early if I do not need it anymore. <br>
-9.	As a user, I want to see which books I am currently borrowing and the history of books, I already borrowed and which are returned (my borrowed books). <br>
+5.	As a user, I want to be able to search for book titles, authors, gernes. <br>
+6.	As a user, I want to be able to borrow a book for a certain period of time. <br>
+7.	As a user, I want to be able to return a book early if I do not need it anymore. <br>
+8.	As a user, I want to see which books I am currently borrowing and the history of books, I already borrowed and which are returned (my borrowed books). <br>
 
-10.	As an administrator, I want to be able to add new books into the system. <br>
-11.	As an administrator, I want to edit existing books. <br>
-12.	As an administrator, I want to delete existing books. <br>
-13.	As an administrator, I want to see which books are currently borrowed and the history of books that have been borrowed and already returned (all borrowed books). <br>
+9.	As an administrator, I want to be able to add new books into the system. <br>
+10.	As an administrator, I want to edit existing books. <br>
+11.	As an administrator, I want to see which books are currently borrowed and the history of books that have been borrowed and already returned (all borrowed books). <br>
 
 ## Mock up - update (maybe leave this one as first draft, to have a better understanding for the project?)
 Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
