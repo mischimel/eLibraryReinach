@@ -13,7 +13,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long book_id;
+    private Long bookID;
 
     @Column(nullable = false)
     private String isbn;
@@ -22,41 +22,42 @@ public class Book {
     private String title;
 
     @Column
-    private int year;
+    private int publishYear;
 
     @Column
     private String description;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "author_id", referencedColumnName = "author_id")
+    @ManyToOne
+    @JoinColumn(name = "authorID", referencedColumnName = "authorID")
     private Author author;
 
     @ManyToOne
-    @JoinColumn(name = "genre_id", referencedColumnName = "genre_id")
+    @JoinColumn(name = "genreID", referencedColumnName = "genreID")
     private Genre genre;
 
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
-    private List<Borrowed> borrowedList = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "bookID"), inverseJoinColumns = @JoinColumn(name = "memberID"))
+    private List<Borrowed> borrowedList;
 
 
     // constructors
     public Book(Long book_id, String isbn, String title, int year, String description, Author author, Genre genre) {
-        this.book_id = book_id;
+        this.bookID = book_id;
         this.isbn = isbn;
         this.title = title;
-        this.year = year;
+        this.publishYear = year;
         this.description = description;
         this.author = author; // todo: getFirstname() + getLastname()
         this.genre = genre; // todo: getName()
     }
 
     // getters and setters
-    public Long getBook_id() {
-        return book_id;
+    public Long getBookID() {
+        return bookID;
     }
 
-    public void setBook_id(Long id) {
-        this.book_id = id;
+    public void setBookID(Long id) {
+        this.bookID = id;
     }
 
     public String getIsbn() {
@@ -75,12 +76,12 @@ public class Book {
         this.title = title;
     }
 
-    public int getYear() {
-        return year;
+    public int getPublishYear() {
+        return publishYear;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setPublishYear(int year) {
+        this.publishYear = year;
     }
 
     public String getDescription() {
@@ -110,7 +111,7 @@ public class Book {
     // toString
     @Override
     public String toString() {
-        return "Book [id=" + book_id + ", isbn=" + isbn + ", title=" + title + ", year=" + year + ", description=" + description + 
+        return "Book [id=" + bookID + ", isbn=" + isbn + ", title=" + title + ", year=" + publishYear + ", description=" + description + 
         "author=" + author + ", genre=" + genre + "]";
     }
 

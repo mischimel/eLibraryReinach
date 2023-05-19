@@ -18,7 +18,7 @@ public class Member {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Hidden
-	private Long member_id;
+	private Long memberID;
 	
     @NotEmpty(message = "Please provide a username.")
 	private String username;
@@ -49,12 +49,13 @@ public class Member {
 	@Hidden
 	private String remember;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    private List<Borrowed> borrowing = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "memberID"), inverseJoinColumns = @JoinColumn(name = "bookID"))
+    private List<Borrowed> borrowing;
 
     // constructor
     public Member(Long member_id, String username, String firstName, String lastName, String email, String password, String role) {
-        this.member_id = member_id;
+        this.memberID = member_id;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -64,12 +65,12 @@ public class Member {
     }
 
     // getters and setters
-    public Long getMember_id() {
-        return member_id;
+    public Long getMemberID() {
+        return memberID;
     }
 
-    public void setMember_id(Long id) {
-        this.member_id = id;
+    public void setMemberID(Long id) {
+        this.memberID = id;
     }
 
     public String getUsername() {
@@ -131,7 +132,7 @@ public class Member {
     // toString
     @Override
     public String toString() {
-        return String.format("Member[id=" + member_id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email 
+        return String.format("Member[id=" + memberID + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email 
         + ", password=" + password + ", role=" + role + "]");
     }
 

@@ -13,11 +13,11 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     - methods with type List<Book> will return a list with all books found
     author @michimel and @RahelHaeusler*/
 
-    Book findByBook_id(Long book_id);
+    Book findByBookID(Long bookID);
     List<Book> findAll();
     List<Book> findByTitle(String title);
     Book findByIsbn(String isbn);
-    List<Book> findByYear(int year);
+    List<Book> findByPublishYear(int publishYear);
     List<Book> findByAuthor(String author);
     List<Book> findByGenre(String genre);
 

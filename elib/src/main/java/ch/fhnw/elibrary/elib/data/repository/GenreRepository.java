@@ -13,7 +13,7 @@ public interface GenreRepository extends JpaRepository<Genre, Long> {
     - methods with type List<Book> will return a list with all books found
     author @michimel and @RahelHaeusler*/
 
-    Genre findByGenre_id(Long genre_id);
+    Genre findByGenreID(Long genreID);
     List<Genre> findByName(String name);
     
 }

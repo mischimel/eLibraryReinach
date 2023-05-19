@@ -12,54 +12,45 @@ public class Borrowed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long borrowed_id;
+    private Long borrowedID;
 
-    @Column(name = "start_date", nullable = false)
-    private LocalDate startDate;
-
-    @Column(name = "end_date")
-    private LocalDate endDate;
+    @Column(name = "status", nullable = false)
+    private Boolean status;
 
     @ManyToOne
-    @JoinColumn(name = "book_id", nullable = false)
+    @JoinColumn(name = "bookID", nullable = false)
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "member_id", nullable = false)
+    @JoinColumn(name = "memberID", nullable = false)
     private Member member;
 
     // constructor
-    public Borrowed(Long borrowe_id, Book book, Member member, LocalDate borrowedDate, LocalDate returnedDate) {
-        this.borrowed_id = borrowe_id;
+    public Borrowed() {  // TODO: for all entities: add empty constructor
+    }
+
+    public Borrowed(Long borrowe_id, Book book, Member member, Boolean status) {
+        this.borrowedID = borrowe_id;
         this.book = book;
         this.member = member;
-        this.startDate = borrowedDate;
-        this.endDate = returnedDate;
+        this.status = status;
     }
 
     // getters and setters
-    public Long getBorrowed_id() {
-        return borrowed_id;
+    public Long getBorrowedID() {
+        return borrowedID;
     }
 
-    public void setBorrowed_id(Long id) {
-        this.borrowed_id = id;
+    public void setBorrowedID(Long id) {
+        this.borrowedID = id;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setStartDate(LocalDate borrowedDate) {
-        this.startDate = borrowedDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-    
-    public void setEndDate(LocalDate returnedDate) {
-        this.endDate = returnedDate;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public Book getBook() {
@@ -81,7 +72,7 @@ public class Borrowed {
     // toString
     @Override
     public String toString() {
-        return String.format("Borrowed[id=" + borrowed_id + ", startDate=" + startDate + ", endDate=" + endDate + ", book=" + book + ", member=" + member + "]");
+        return String.format("Borrowed[id=" + borrowedID + ", status" + status + ", book=" + book + ", member=" + member + "]");
     }
 
 

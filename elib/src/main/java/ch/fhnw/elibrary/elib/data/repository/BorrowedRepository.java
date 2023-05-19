@@ -13,14 +13,10 @@ public interface BorrowedRepository extends JpaRepository<Borrowed, Long> {
     - methods with type List<Book> will return a list with all books found
     author @michimel and @RahelHaeusler*/
 
-    Borrowed findByBorrowed_id(Long borrowed_id);
+    Borrowed findByBorrowedID(Long borrowedID);
     List<Borrowed> findAll();
-    Borrowed findByTitle(String title);
-    Borrowed findByIsbn(String isbn);
-    List<Borrowed> findByAuthor(String author);
-    List<Borrowed> findByGenre(String genre);
+    List<Borrowed> findByStatus(Boolean status);
+    List<Borrowed> findByBook(String book);
     List<Borrowed> findByMember(String member);
-    List<Borrowed> findBystart_Date(String start_Date);
-    List<Borrowed> findByend_Date(String end_Date);
 
 }

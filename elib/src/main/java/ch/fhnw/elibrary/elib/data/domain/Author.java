@@ -14,7 +14,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long author_id;
+    private Long authorID;
 
     @Column(nullable = false)
     private String firstName;
@@ -30,19 +30,19 @@ public class Author {
 
     // constructor
     public Author(Long author_id, String firstName, String lastName, String country) {
-        this.author_id = author_id;
+        this.authorID = author_id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
     }
 
     // getters and setters
-    public Long getAuthor_id() {
-        return author_id;
+    public Long getAuthorID() {
+        return authorID;
     }
 
-    public void setAuthor_id(Long id) {
-        this.author_id = id;
+    public void setAuthorID(Long id) {
+        this.authorID = id;
     }
 
     public String getFirstName() {
@@ -72,6 +72,6 @@ public class Author {
     // toString
     @Override
     public String toString() {
-        return "Author [id=" + author_id + ", firstName=" + firstName + ", lastName=" + lastName + ", country=" + country + "]";
+        return "Author [id=" + authorID + ", firstName=" + firstName + ", lastName=" + lastName + ", country=" + country + "]";
     }
 }

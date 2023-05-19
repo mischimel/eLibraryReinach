@@ -13,7 +13,7 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
     - methods with type List<Author> will return a list with all authors found 
     author @michimel and @RahelHaeusler*/
 
-    Author findByAuthor_id(Long author_id);
+    Author findByAuthorID(Long authorID);
     List<Author> findByFirstName(String firstName);
     List<Author> findByLastName(String lastName);
     Author findByFirstNameAndLastName(String firstName, String lastName);

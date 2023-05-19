@@ -25,16 +25,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         
     // TODO: delete this block when block below works and is uncommented
     
-        UserDetails user = User.builder()
+       /* UserDetails user = User.builder()
                             .username(username)
                             .password("password")
                             .authorities("READ","ROLE_USER")
                             .build();   
         return user;
+        */
         
     // TODO: uncomment and check with class Member (crm webservice project it is Agent)
-    /*
-        Member member = memberRepository.findByEmail(username);
+    
+        Member member = memberRepository.findByUsername(username);
         
         if (member == null) {
             throw new UsernameNotFoundException(username);
@@ -46,7 +47,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                                 .authorities("READ","ROLE_" + member.getRole())
                                 .build();
         return user; 
-    */
+    
         
     }
 

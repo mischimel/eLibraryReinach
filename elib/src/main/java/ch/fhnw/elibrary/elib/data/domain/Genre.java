@@ -12,7 +12,7 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Long genre_id;
+    private Long genreID;
 
     @Column(nullable = false)
     private String name;
@@ -22,17 +22,17 @@ public class Genre {
 
     // constructor
     public Genre(Long genre_id, String name) {
-        this.genre_id = genre_id;
+        this.genreID = genre_id;
         this.name = name;
     }
 
     // getters and setters
-    public Long getGenre_id() {
-        return genre_id;
+    public Long getGenreID() {
+        return genreID;
     }
 
-    public void setGenre_id(Long id) {
-        this.genre_id = id;
+    public void setGenreID(Long id) {
+        this.genreID = id;
     }
 
 
@@ -47,7 +47,7 @@ public class Genre {
     // toString
     @Override
     public String toString() {
-        return String.format("Genre[id=" + genre_id + ", name=" + name + "]");
+        return String.format("Genre[id=" + genreID + ", name=" + name + "]");
     }
     
 }

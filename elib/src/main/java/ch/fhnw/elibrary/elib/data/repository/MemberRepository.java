@@ -13,8 +13,8 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     - methods with type List<Book> will return a list with all books found
     author @michimel and @RahelHaeusler*/
 
-    Member findByMember_id(Long member_id);
-    List<Member> findByUsername(String username);
+    Member findByMemberID(Long memberID);
+    Member findByUsername(String username);
     List<Member> findByFirstName(String firstName);
     List<Member> findByLastName(String lastName);
     Member findByFirstNameAndLastName(String firstName, String lastName);
