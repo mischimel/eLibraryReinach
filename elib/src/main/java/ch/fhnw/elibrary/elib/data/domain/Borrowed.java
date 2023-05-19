@@ -1,6 +1,5 @@
 package ch.fhnw.elibrary.elib.data.domain;
 
-import java.time.LocalDate;
 import jakarta.persistence.*;
 
 // author @michimel and @RahelHaeusler

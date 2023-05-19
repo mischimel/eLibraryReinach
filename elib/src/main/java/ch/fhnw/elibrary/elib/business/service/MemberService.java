@@ -1,6 +1,5 @@
 package ch.fhnw.elibrary.elib.business.service;
 
-
 import java.util.List;
 import org.springframework.stereotype.Service;
 import ch.fhnw.elibrary.elib.data.domain.Member;

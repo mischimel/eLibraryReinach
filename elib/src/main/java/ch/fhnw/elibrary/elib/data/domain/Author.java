@@ -1,11 +1,9 @@
 package ch.fhnw.elibrary.elib.data.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.*;
 
 // author @michimel and @RahelHaeusler
-
 
 @Entity
 @Table(name = "authors")
@@ -26,7 +24,7 @@ public class Author {
     private String country;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private List<Book> books = new ArrayList<>();
+    private List<Book> books;
 
     // constructor
     public Author() {  
