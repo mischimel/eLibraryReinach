@@ -101,14 +101,6 @@ The following picture gives some information about the colours used in the mock 
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
 
 # 2. Domain Design *Definition of domain model*
-## Services/Methods --> Rahel? - update or delete !
-Link: https://lucid.app/lucidchart/f763dd83-1fa8-4140-bbcd-0a12ec91b5a9/edit?page=0_0&invitationId=inv_e39b7e2c-83e9-4dcb-9dfb-ffc701bf88de#
-
-## Microservices - update or delete !
-author @michimel
-We tried to identify the microservices, domains, aggregates, and entities in the application using the approach of Domain Driven Design (DDD). <br>
-<img src="https://github.com/michimel/electronic-library/blob/bd2893c3f7c0fa2f17f8602c88eba3398d5ababe/images/Microservices/Microservices.png"> <br>
-
 ## Domain Model
 author @michimel
 Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-18829cec80c9/edit?beaconFlowId=7134D7D032DE5064&invitationId=inv_0148f8f5-f3f9-433a-8296-e9667492d473&page=0_0# <br>
@@ -119,79 +111,59 @@ Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-1
 # 3. Business Logic and API design *Definition of business logic and API*
 ## Business Logic
 
+## Methods overview
+author @michimel
+
+| Entity   | Method  | Path                                                           | Description                                                               |
+|----------|---------|----------------------------------------------------------------|---------------------------------------------------------------------------|
+| Author   | GET     | /api/author                                                    | Gett all Authors                                                          |
+| Author   | POST    | /api/author                                                    | Create new Author                                                         |
+| Author   | PUT     | /api/author/{authorID}                                         | Update Existing Author                                                    |
+| Author   | GET     | /api/author/findByFirstName/{firstName}                        | Retrieve Authors by Firstname                                             |
+| Author   | GET     | /api/author/findByLastName/{lastName}                          | Retrieve Authors by Lastname                                              |
+| Author   | GET     | /api/author/findByFristNameAndLastName/{firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |
+| Author   | GET     | /api/author/findByCountry/{country}                            | Retrieve Authors by Country                                               |
+| Book     | GET     | /api/book                                                      | Gett all Books                                                            |
+| Book     | POST    | /api/book                                                      | Create new Book                                                           |
+| Book     | PUT     | /api/book/{bookID}                                             | Update Existing Book                                                      |
+| Book     | GET     | /api/book/findByTitel/{title}                                  | Retrieve Books by Title                                                   |
+| Book     | GET     | /api/book/findByIsbn/{isbn}                                    | Retrieve the Book by ISBN                                                 |
+| Book     | GET     | /api/book/findByPublishYear/{publishYear}                      | Retrieve Books by PublishYear                                             |
+| Book     | GET     | /api/book/findByAuthor/{author}                                | Retrieve Books by Author                                                  |
+| Book     | GET     | /api/book/findByGenre/{genre}                                  | Retrieve Books by Genre                                                   |
+| Borrowed | GET     | /api/borrowed                                                  | Gett all Borrowed                                                         |
+| Borrowed | POST    | /api/borrowed                                                  | Create new Borrowed, meaning rent a book                                  |
+| Borrowed | PUT     | /api/borrowed/{borrowedID}                                     | Update Existing Borrowed, meaning when changed to flase, book is returned |
+| Borrowed | GET     | /api/borrowed/findByStatus/{status}                            | Retrieve Borrowed by Status                                               |
+| Borrowed | GET     | /api/borrowed/findByBook{book}                                 | Retrieve Borrowed by Book                                                 |
+| Borrowed | GET     | /api/borrowed/findByMember/{member}                            | Retrieve Borrowed by Member                                               |
+| Borrowed | GET     | /api/borrowed/findByMemberAndStatus/{member}/{status}          | Retrieve Borrowed by Member and Status                                    |
+| Borrowed | GET     | /api/borrowed/findByBookAndStatus/{book}/{status}              | Retrieve Borrowed by Book and Status                                      |
+| Genre    | GET     | /api/genre                                                     | Gett all Genres                                                           |
+| Genre    | POST    | /api/genre                                                     | Create new Genre                                                          |
+| Genre    | PUT     | /api/genre/{genre_id}                                          | Update Existing Genre                                                     |
+| Genre    | GET     | /api/genre/findByName/{name}                                   | Retrieve Genres by Name                                                   |
+| Member   | GET     | /api/member                                                    | Get all Members                                                           |
+| Member   | POST    | /api/member                                                    | Create new Member                                                         |
+| Member   | PUT     | /api/member/{memberID}                                         | Update Existing Member                                                    |
+| Member   | GET     | /api/member/findByUserName/{userName}                          | Retrieve the Member by Username                                           |
+| Member   | GET     | /api/member/findByFirstName/{firstName}                        | Retrieve Members by Firstname                                             |
+| Member   | GET     | /api/member/findByLastName/{lastName}                          | Retrieve Members by Lastname                                              |
+| Member   | GET     | /api/member/findByFirstNameAndLastName/{firstName}/{lastName}  | Retrieve the Member by Firstname and Lastname                             |
+| Member   | GET     | /api/member/findByEmail/{email}                                | Retrieve the Member by Email                                              |
+| Member   | GET     | /api/member/findByRole/{role}                                  | Retrieve Members by Role                                                  |
+
 ## API design
 author @michimel
 To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Potsman in Workspace Birtney. <br>
-We created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
-If you want to see or edit the code, you can import the [json file](https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/eLibraryAPIs.json) or [yaml file](https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/eLibraryAPIs.yaml) into Swagger Editor. <br>
+With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
+If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/1d4326de1f204742459b37b9596f426135cc71d9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
 
 <img src="https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/API%20Swagger%20Editor_%20Header,%20Tag(User).png"> <br>
-
-<img src="https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/API%20Swagger%20Editor_Tag(Books,Loan).png"> <br>
-
-<img src="https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/API%20Swagger%20Editor_Schemas.png"> <br>
-
-## notepad file with a simple table containing the methods we want to implement
-author @michimel
-### Author
-| Method  | Path                 | Description |
-|---------|---------------------|-------------|
-| GET     | /api/author         | Gett all Authors |
-| POST    | /api/author           | Create new Author |
-| PUT     | /api/author/{authorID} | Update Existing Author |
-| GET     | /api/author/findByFirstName/{firstName} | Retrieve Authors by Firstname |
-| GET     | /api/author/findByLastName/{lastName} | Retrieve Authors by Lastname |
-| GET     | /api/author/findByFristNameAndLastName/{firstName, lastName} | Retrieve the Author by Firstname and Lastname |
-| GET     | /api/author/findByCountry/{country} | Retrieve Authors by Country |
-
-### Book
-| Method  | Path                 | Description |
-|---------|---------------------|-------------|
-| GET     | /api/book           | Gett all Books |
-| POST    | /api/book           | Create new Book |
-| PUT     | /api/book/{bookID} | Update Existing Book |
-| GET     | /api/book/findByTitel/{title} | Retrieve Books by Title |
-| GET     | /api/book/findByIsbn/{isbn} | Retrieve the Book by ISBN |
-| GET     | /api/book/findByPublishYear/{publishYear} | Retrieve Books by PublishYear |
-| GET     | /api/book/findByAuthor/{author} | Retrieve Books by Author |
-| GET     | /api/book/findByGenre/{genre} | Retrieve Books by Genre |
-
-### Borrowed 
-| Method  | Path                 | Description |
-|---------|---------------------|-------------|
-| GET     | /api/borrowed           | Gett all Borrowed |
-| POST    | /api/borrowed           | Create new Borrowed, meaning rent a book |
-| PUT     | /api/borrowed/{borrowedID} | Update Existing Borrowed, meaning when changed to flase, book is returned |
-| GET     | /api/borrowed/findByStatus/{status}           | Retrieve Borrowed by Status  |
-| GET     | /api/borrowed/findByBook{book}           | Retrieve Borrowed by Book  |
-| GET     | /api/borrowed/findByMember/{member}           | Retrieve Borrowed by Member  |
-| GET     | /api/borrowed/findByMemberAndStatus/{member}/{status}           | Retrieve Borrowed by Member and Status  |
-| GET     | /api/borrowed/findByBookAndStatus/{book}/{status}           | Retrieve Borrowed by Book and Status  |
- 
+....
 
 
-### Genre
-| Method  | Path                 | Description |
-|---------|---------------------|-------------|
-| GET     | /api/genre           | Gett all Genres |
-| POST    | /api/genre           | Create new Genre |
-| PUT     | /api/genre/{genre_id} | Update Existing Genre |
-| GET     | /api/genre/findByName/{name} | Retrieve Genres by Name |
-
-### Member
-| Method  | Path                 | Description |
-|---------|---------------------|-------------|
-| GET     | /api/member           | Get all Members |
-| POST    | /api/member           | Create new Member |
-| PUT     | /api/member/{memberID} | Update Existing Member |
-| GET     | /api/member/findByUserName/{userName} | Retrieve the Member by Username |
-| GET     | /api/member/findByFirstName/{firstName} | Retrieve Members by Firstname |
-| GET     | /api/member/findByLastName/{lastName} | Retrieve Members by Lastname |
-| GET     | /api/member/findByFirstNameAndLastName/{firstName}/{lastName} | Retrieve the Member by Firstname and Lastname |
-| GET | /api/member/findByEmail/{email} | Retrieve the Member by Email |
-| GET | /api/member/findByRole/{role} | Retrieve Members by Role |
-
-# 4. Data and API implementation *mplementation of data access and business logic layers and API*
+# 4. Data and API implementation *implementation of data access and business logic layers and API*
 
 # 5. Security *Implementation of API-level security*
 
