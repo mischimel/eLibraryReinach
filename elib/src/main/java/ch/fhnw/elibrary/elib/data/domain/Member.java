@@ -21,7 +21,7 @@ public class Member {
 	private Long memberID;
 	
     @NotEmpty(message = "Please provide a username.")
-	private String username;
+	private String userName;
 
     @NotEmpty(message = "Please provide yur firstname.")
 	private String firstName;
@@ -54,9 +54,9 @@ public class Member {
     private List<Borrowed> borrowing;
 
     // constructor
-    public Member(Long memberID, String username, String firstName, String lastName, String email, String password, String role) {
+    public Member(Long memberID, String userName, String firstName, String lastName, String email, String password, String role) {
         this.memberID = memberID;
-        this.username = username;
+        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -73,12 +73,12 @@ public class Member {
         this.memberID = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getFirstName() {
@@ -132,7 +132,7 @@ public class Member {
     // toString
     @Override
     public String toString() {
-        return String.format("Member[id=" + memberID + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email 
+        return String.format("Member[id=" + memberID + ", username=" + userName + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email 
         + ", password=" + password + ", role=" + role + "]");
     }
 

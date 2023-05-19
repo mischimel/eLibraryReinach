@@ -17,7 +17,7 @@ public class UserDetailsImpl implements UserDetails {
 
 
     public UserDetailsImpl(Member member) {
-        username=member.getUsername();
+        username=member.getUserName();
         password=member.getPassword();
         authorities.add(new SimpleGrantedAuthority("ROLE_" + member.getRole()));
     }
