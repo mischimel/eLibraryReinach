@@ -37,14 +37,14 @@ In section "all borrowed books", administrators can view all books that are curr
 Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-bdc1-30d08725a5d9/edit?viewport_loc=1733%2C31%2C2219%2C1097%2C0_0&invitationId=inv_ef872c42-5b9f-4504-93fc-5389022cccf9 <br>
 
 ### Use Case 100
-<img src="https://github.com/michimel/electronic-library/blob/0743362ae9dbb8a27e095ad5172f523bd70f3704/images/Use%20case/Use%20Case%20Diagramm%20UC%20100.png" width="800"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/b39ce4e417edfd9b027e7370c2284b400fbd7202/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20100.png" width="800"> <br>
 **Use case 101 (Sign up)**: A user can sing up to the website and create an account. To create an account, the user must enter a username, email address, password, firstname and last name. (The user must also agree to the terms and conditions.) <br>
 **Use Case 102 (Login)**: Once a user has created an account, they can log in using their username/email address and password. <br>
 **Use case 103 (Update profile)**: The user can update their user profile once they are logged in. <br>
 **Use case 104 (Log out)**: After logging in, the user can log out again. <br>
 
 ### Use Case 200
-<img src="https://github.com/michimel/electronic-library/blob/f642a724d1250e2e2022fdc20df2296212f4ce51/images/Use%20case/Use%20Case%20Diagramm%20UC%20200.png" width="800"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/b39ce4e417edfd9b027e7370c2284b400fbd7202/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20200.png" width="800"> <br>
 **Use case 201 (Search Book)**: A user can search for books and get the results in a list view. <br>
 **Use case 202 (Borrow Book)**: A user can borrow a book for a certain period of time. <br>
 **Use case 203 (Return Book early)**: A user can return a book early if they do not need it anymore. <br>
@@ -52,7 +52,7 @@ Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-b
 
 ### Use Case 300
 These use cases are for administrators, which have the same basic functionalities as users but have additional functionalities. <br>
-<img src="https://github.com/michimel/electronic-library/blob/f642a724d1250e2e2022fdc20df2296212f4ce51/images/Use%20case/Use%20Case%20Diagramm%20UC%20300.png" width="800"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/b39ce4e417edfd9b027e7370c2284b400fbd7202/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20300.png" width="800"> <br>
 **Use case 301 (Add new book)**: An administrator is able to add a new book to the library system by providing the book details such as title, author, genre, and publication year. <br>
 **Use case 302 (Edit book)**: An administrator is able to edit a book from the library system. <br>
 **Use case 304 (All borrowed books)**: An administrator can see a list of all books which are currently borrowed. <br>
