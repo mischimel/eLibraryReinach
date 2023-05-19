@@ -25,6 +25,7 @@ Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # 1. Analysis *Scenario ideation, use case analysis and user story writing*
 ## Scenario - update, must be in line with use cases and user storries ! *italic* -> check if possible otherwise delete !
+author @michimel and @marallini
 The commune of Reinach has decided to create an electronic library, as today's world is very digital. Therefore, it wants to set up a web application. The online library will offer eBooks. <br>
 To use the electronic library customers, have to create an user account. With the user account, the customers can log in to the electronic library and use the following services. <br>
 The web application allows users to edit their user profile, to browse through books, to search for books, to borrow books, to return books, to easily view and manage their borrowed books with a list view. <br>
@@ -34,6 +35,7 @@ The web application additionally allows administrators to add books, to edit exi
 In section "all borrowed books", administrators can view all books that are currently on loan. *This section also displays the username of the user, who is currently borrowing the book, the due date for return and an option to return the book early is available.* <br>
 
 ## Use case analysis
+author @michimel
 Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-bdc1-30d08725a5d9/edit?viewport_loc=1733%2C31%2C2219%2C1097%2C0_0&invitationId=inv_ef872c42-5b9f-4504-93fc-5389022cccf9 <br>
 
 ### Use Case 100
@@ -59,6 +61,7 @@ These use cases are for administrators, which have the same basic functionalitie
 
 
 ## User Story
+author @michimel and @marallini
 1.	As a user, I want to be able to register for an user account so that I can access the online library. <br>
 2.	As a user, I want to log-in so that I can authenticate myself. <br>
 3.	As a user, I want to be able to edit my profile. <br>
@@ -102,10 +105,12 @@ The following picture gives some information about the colours used in the mock 
 Link: https://lucid.app/lucidchart/f763dd83-1fa8-4140-bbcd-0a12ec91b5a9/edit?page=0_0&invitationId=inv_e39b7e2c-83e9-4dcb-9dfb-ffc701bf88de#
 
 ## Microservices - update or delete !
+author @michimel
 We tried to identify the microservices, domains, aggregates, and entities in the application using the approach of Domain Driven Design (DDD). <br>
 <img src="https://github.com/michimel/electronic-library/blob/bd2893c3f7c0fa2f17f8602c88eba3398d5ababe/images/Microservices/Microservices.png"> <br>
 
 ## Domain Model
+author @michimel
 Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-18829cec80c9/edit?beaconFlowId=7134D7D032DE5064&invitationId=inv_0148f8f5-f3f9-433a-8296-e9667492d473&page=0_0# <br>
 
 <img src="https://github.com/michimel/eLibraryReinach/blob/5bf4c8db53039e8c062b02d27d9f14302b91eefe/Documentation%20Sources/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
@@ -115,6 +120,7 @@ Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-1
 ## Business Logic
 
 ## API design
+author @michimel
 To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Potsman in Workspace Birtney. <br>
 We created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
 If you want to see or edit the code, you can import the [json file](https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/eLibraryAPIs.json) or [yaml file](https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/eLibraryAPIs.yaml) into Swagger Editor. <br>
@@ -124,6 +130,60 @@ If you want to see or edit the code, you can import the [json file](https://gith
 <img src="https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/API%20Swagger%20Editor_Tag(Books,Loan).png"> <br>
 
 <img src="https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/API%20Swagger%20Editor_Schemas.png"> <br>
+
+## notepad file with a simple table containing the methods we want to implement
+author @michimel
+### Author
+| Method  | Path                 | Description |
+|---------|---------------------|-------------|
+| GET     | /api/author         | Gett all Authors |
+| POST    | /api/author           | Create new Author |
+| PUT     | /api/author/{author_id} | Update Existing Author |
+| GET     | /api/author/findByFirstName/{firstName} | Retrieve Authors by Firstname |
+| GET     | /api/author/findByLastName/{lastName} | Retrieve Authors by Lastname |
+| GET     | /api/author/findByFristNameAndLastName/{firstName, lastName} | Retrieve Authors by Firstname and Lastname |
+| GET     | /api/author/findByCountry/{country} | Retrieve Authors by Country |
+
+### Book
+| Method  | Path                 | Description |
+|---------|---------------------|-------------|
+| GET     | /api/book           | Gett all Books |
+| POST    | /api/book           | Create new Book |
+| PUT     | /api/book/{book_id} | Update Existing Book |
+| GET     | /api/book/findByTitel/{title} | Retrieve Books by Title |
+| GET     | /api/book/findByYear/{year} | Retrieve Books by Year |
+| GET     | /api/book/findByAuthor/{author} | Retrieve Books by Author |
+| GET     | /api/book/findByGenre/{genre} | Retrieve Books by Genre |
+
+### Borrowed -- not finished !!!!
+| Method  | Path                 | Description |
+|---------|---------------------|-------------|
+| GET     | /api/borrowed           | Gett all Borrowed |
+| POST    | /api/borrowed           | Create new Borrowed, meaning rent a book |
+| PUT     | /api/borrowed/{book_id} | Update Existing Book |
+| GET     | /api/borrowed/findByTitel/{title} | Retrieve Books by Title |
+| GET     | /api/borrowed/findByYear/{year} | Retrieve Books by Year |
+| GET     | /api/borrowed/findByAuthor/{author} | Retrieve Books by Author |
+| GET     | /api/borrowed/findByGenre/{genre} | Retrieve Books by Genre |
+
+### Genre
+| Method  | Path                 | Description |
+|---------|---------------------|-------------|
+| GET     | /api/genre           | Gett all Genres |
+| POST    | /api/genre           | Create new Genre |
+| PUT     | /api/genre/{genre_id} | Update Existing Genre |
+| GET     | /api/genre/findByName/{name} | Retrieve Genres by Name |
+
+
+
+
+
+| POST         | /myNewUser   | firstname, lastname, email, password |
+
+
+
+
+
 
 
 # 4. Data and API implementation *mplementation of data access and business logic layers and API*
