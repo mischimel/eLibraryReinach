@@ -116,14 +116,14 @@ author @michimel
 
 | Entity   | Method  | Path                                                           | Description                                                               |
 |----------|---------|----------------------------------------------------------------|---------------------------------------------------------------------------|
-| Author   | GET     | /api/author                                                    | Gett all Authors                                                          |
+| Author   | GET     | /api/author                                                    | Get all Authors                                                          |
 | Author   | POST    | /api/author                                                    | Create new Author                                                         |
 | Author   | PUT     | /api/author/{authorID}                                         | Update Existing Author                                                    |
 | Author   | GET     | /api/author/findByFirstName/{firstName}                        | Retrieve Authors by Firstname                                             |
 | Author   | GET     | /api/author/findByLastName/{lastName}                          | Retrieve Authors by Lastname                                              |
 | Author   | GET     | /api/author/findByFristNameAndLastName/{firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |
 | Author   | GET     | /api/author/findByCountry/{country}                            | Retrieve Authors by Country                                               |
-| Book     | GET     | /api/book                                                      | Gett all Books                                                            |
+| Book     | GET     | /api/book                                                      | Get all Books                                                            |
 | Book     | POST    | /api/book                                                      | Create new Book                                                           |
 | Book     | PUT     | /api/book/{bookID}                                             | Update Existing Book                                                      |
 | Book     | GET     | /api/book/findByTitel/{title}                                  | Retrieve Books by Title                                                   |
@@ -131,7 +131,7 @@ author @michimel
 | Book     | GET     | /api/book/findByPublishYear/{publishYear}                      | Retrieve Books by PublishYear                                             |
 | Book     | GET     | /api/book/findByAuthor/{author}                                | Retrieve Books by Author                                                  |
 | Book     | GET     | /api/book/findByGenre/{genre}                                  | Retrieve Books by Genre                                                   |
-| Borrowed | GET     | /api/borrowed                                                  | Gett all Borrowed                                                         |
+| Borrowed | GET     | /api/borrowed                                                  | Get all Borrowed                                                         |
 | Borrowed | POST    | /api/borrowed                                                  | Create new Borrowed, meaning rent a book                                  |
 | Borrowed | PUT     | /api/borrowed/{borrowedID}                                     | Update Existing Borrowed, meaning when changed to flase, book is returned |
 | Borrowed | GET     | /api/borrowed/findByStatus/{status}                            | Retrieve Borrowed by Status                                               |
@@ -139,7 +139,7 @@ author @michimel
 | Borrowed | GET     | /api/borrowed/findByMember/{member}                            | Retrieve Borrowed by Member                                               |
 | Borrowed | GET     | /api/borrowed/findByMemberAndStatus/{member}/{status}          | Retrieve Borrowed by Member and Status                                    |
 | Borrowed | GET     | /api/borrowed/findByBookAndStatus/{book}/{status}              | Retrieve Borrowed by Book and Status                                      |
-| Genre    | GET     | /api/genre                                                     | Gett all Genres                                                           |
+| Genre    | GET     | /api/genre                                                     | Get all Genres                                                           |
 | Genre    | POST    | /api/genre                                                     | Create new Genre                                                          |
 | Genre    | PUT     | /api/genre/{genre_id}                                          | Update Existing Genre                                                     |
 | Genre    | GET     | /api/genre/findByName/{name}                                   | Retrieve Genres by Name                                                   |
@@ -157,11 +157,14 @@ author @michimel
 author @michimel
 To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Potsman in Workspace Birtney. <br>
 With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
-If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/1d4326de1f204742459b37b9596f426135cc71d9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
+If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
 
-<img src="https://github.com/michimel/electronic-library/blob/f9ad420b08456aa54977b1b3c0ec476764e7d551/images/API%20(Swagger%20Editor)/API%20Swagger%20Editor_%20Header,%20Tag(User).png"> <br>
-....
-
+<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/1%20Info%2C%20Author.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/2%20Book.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/3%20Borrowe%2C%20Genre.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/4%20Member.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/5%20Schemas%20(Author%2C%20Book%2C%20Borrowed).png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/6%20Schemas%20(Gerne%2C%20Member).png"> <br>
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
 
