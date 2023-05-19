@@ -1,28 +1,25 @@
 package ch.fhnw.elibrary.elib.business.service;
 
-// Class copied from crm webservice project and adapted to elib project
-
 import java.util.Collection;
 import java.util.List;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import ch.fhnw.elibrary.elib.data.domain.Member;
+
+   /* Class copied from crm webservice project and adapted to elib project
+    author of adaption @michimel*/
 
 public class UserDetailsImpl implements UserDetails {
     private String username;
     private String password;
     private List<GrantedAuthority> authorities;
 
-    
-    
+
     public UserDetailsImpl(Member member) {
-    // TODO: uncomment and check with class Member (crm webservice project it is Agent)
-        //username=member.getName();
-        //password=member.getPassword();
-        //authorities.add(new SimpleGrantedAuthority("ROLE_" + member.getRole()));
+        username=member.getUsername();
+        password=member.getPassword();
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + member.getRole()));
     }
 
     @Override
