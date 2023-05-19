@@ -28,7 +28,7 @@ public class BookService {
         Book book = getBookById(bookID);
         book.setTitle(bookDetails.getTitle());
         book.setIsbn(bookDetails.getIsbn());
-        book.setYear(bookDetails.getYear());
+        book.setPublishYear(bookDetails.getPublishYear());
         book.setDescription(bookDetails.getDescription());
         book.setAuthor(bookDetails.getAuthor());
         book.setGenre(bookDetails.getGenre());
