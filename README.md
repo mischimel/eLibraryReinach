@@ -138,7 +138,7 @@ author @michimel
 |---------|---------------------|-------------|
 | GET     | /api/author         | Gett all Authors |
 | POST    | /api/author           | Create new Author |
-| PUT     | /api/author/{author_id} | Update Existing Author |
+| PUT     | /api/author/{authorID} | Update Existing Author |
 | GET     | /api/author/findByFirstName/{firstName} | Retrieve Authors by Firstname |
 | GET     | /api/author/findByLastName/{lastName} | Retrieve Authors by Lastname |
 | GET     | /api/author/findByFristNameAndLastName/{firstName, lastName} | Retrieve Authors by Firstname and Lastname |
@@ -149,7 +149,7 @@ author @michimel
 |---------|---------------------|-------------|
 | GET     | /api/book           | Gett all Books |
 | POST    | /api/book           | Create new Book |
-| PUT     | /api/book/{book_id} | Update Existing Book |
+| PUT     | /api/book/{bookID} | Update Existing Book |
 | GET     | /api/book/findByTitel/{title} | Retrieve Books by Title |
 | GET     | /api/book/findByYear/{year} | Retrieve Books by Year |
 | GET     | /api/book/findByAuthor/{author} | Retrieve Books by Author |
@@ -160,11 +160,14 @@ author @michimel
 |---------|---------------------|-------------|
 | GET     | /api/borrowed           | Gett all Borrowed |
 | POST    | /api/borrowed           | Create new Borrowed, meaning rent a book |
-| PUT     | /api/borrowed/{book_id} | Update Existing Book |
-| GET     | /api/borrowed/findByTitel/{title} | Retrieve Books by Title |
-| GET     | /api/borrowed/findByYear/{year} | Retrieve Books by Year |
-| GET     | /api/borrowed/findByAuthor/{author} | Retrieve Books by Author |
-| GET     | /api/borrowed/findByGenre/{genre} | Retrieve Books by Genre |
+| PUT     | /api/borrowed/{borrowedID} | Update Existing Borrowed |
+| GET     | /api/borrowed/findByStatus/{status}           | Retrieve Borrowed by Status  |
+| GET     | /api/borrowed/findByBook{book}           | Retrieve Borrowed by Book  |
+| GET     | /api/borrowed/findByMember/{member}           | Retrieve Borrowed by Member  |
+| GET     | /api/borrowed/findByMemberAndStatus/{member,status}           | Retrieve Borrowed by Member and Status  |
+| GET     | /api/borrowed/findByBookAndStatus/{book,status}           | Retrieve Borrowed by Book and Status  |
+ 
+
 
 ### Genre
 | Method  | Path                 | Description |
@@ -174,11 +177,19 @@ author @michimel
 | PUT     | /api/genre/{genre_id} | Update Existing Genre |
 | GET     | /api/genre/findByName/{name} | Retrieve Genres by Name |
 
+### Member
+| Method  | Path                 | Description |
+|---------|---------------------|-------------|
+| GET     | /api/member           | Gett all Members |
+| POST    | /api/member           | Create new Member |
+| PUT     | /api/member/{memberID} | Update Existing Member |
+| GET     | /api/member/findByUserName/{userName} | Retrieve Members by Username |
+| GET     | /api/member/findByFirstName/{firstName} | Retrieve Members by Firstname |
+| GET     | /api/member/findByLastName/{lastName} | Retrieve Members by Lastname |
+| GET     | /api/member/findByFirstNameAndLastName/{firstName,lastName} | Retrieve Members by Lastname |
+| GET | /api/member/findByEmail/{email} | Retrieve Members by Email |
+| GET | /api/member/findByRole/{role} | Retrieve Members by Role |
 
-
-
-
-| POST         | /myNewUser   | firstname, lastname, email, password |
 
 
 
