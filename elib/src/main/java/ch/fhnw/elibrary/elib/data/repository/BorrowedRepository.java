@@ -18,5 +18,7 @@ public interface BorrowedRepository extends JpaRepository<Borrowed, Long> {
     List<Borrowed> findByStatus(Boolean status);
     List<Borrowed> findByBook(String book);
     List<Borrowed> findByMember(String member);
+    List<Borrowed> findByMemberAndStatus(String member, Boolean status);
+    List<Borrowed> findByBookAndStatus(String book, Boolean status);
 
 }
