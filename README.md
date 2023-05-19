@@ -25,7 +25,7 @@ Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # 1. Analysis *Scenario ideation, use case analysis and user story writing*
 ## Scenario - update, must be in line with use cases and user storries ! *italic* -> check if possible otherwise delete !
-author @michimel and @marallini
+author @michimel and @marallini <br>
 The commune of Reinach has decided to create an electronic library, as today's world is very digital. Therefore, it wants to set up a web application. The online library will offer eBooks. <br>
 To use the electronic library customers, have to create an user account. With the user account, the customers can log in to the electronic library and use the following services. <br>
 The web application allows users to edit their user profile, to browse through books, to search for books, to borrow books, to return books, to easily view and manage their borrowed books with a list view. <br>
@@ -35,7 +35,7 @@ The web application additionally allows administrators to add books, to edit exi
 In section "all borrowed books", administrators can view all books that are currently on loan. *This section also displays the username of the user, who is currently borrowing the book, the due date for return and an option to return the book early is available.* <br>
 
 ## Use case analysis
-author @michimel
+author @michimel <br>
 Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-bdc1-30d08725a5d9/edit?viewport_loc=1733%2C31%2C2219%2C1097%2C0_0&invitationId=inv_ef872c42-5b9f-4504-93fc-5389022cccf9 <br>
 
 ### Use Case 100
@@ -61,7 +61,7 @@ These use cases are for administrators, which have the same basic functionalitie
 
 
 ## User Story
-author @michimel and @marallini
+author @michimel and @marallini <br>
 1.	As a user, I want to be able to register for an user account so that I can access the online library. <br>
 2.	As a user, I want to log-in so that I can authenticate myself. <br>
 3.	As a user, I want to be able to edit my profile. <br>
@@ -102,7 +102,7 @@ The following picture gives some information about the colours used in the mock 
 
 # 2. Domain Design *Definition of domain model*
 ## Domain Model
-author @michimel
+author @michimel <br>
 Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-18829cec80c9/edit?beaconFlowId=7134D7D032DE5064&invitationId=inv_0148f8f5-f3f9-433a-8296-e9667492d473&page=0_0# <br>
 
 <img src="https://github.com/michimel/eLibraryReinach/blob/5bf4c8db53039e8c062b02d27d9f14302b91eefe/Documentation%20Sources/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
@@ -112,7 +112,7 @@ Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-1
 ## Business Logic
 
 ## Methods overview
-author @michimel
+author @michimel <br>
 
 | Entity   | Method  | Path                                                           | Description                                                               |
 |----------|---------|----------------------------------------------------------------|---------------------------------------------------------------------------|
@@ -154,7 +154,7 @@ author @michimel
 | Member   | GET     | /api/member/findByRole/{role}                                  | Retrieve Members by Role                                                  |
 
 ## API design
-author @michimel
+author @michimel <br>
 To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Potsman in Workspace Birtney. <br>
 With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
 If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
