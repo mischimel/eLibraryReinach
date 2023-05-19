@@ -54,8 +54,8 @@ public class Member {
     private List<Borrowed> borrowing;
 
     // constructor
-    public Member(Long member_id, String username, String firstName, String lastName, String email, String password, String role) {
-        this.memberID = member_id;
+    public Member(Long memberID, String username, String firstName, String lastName, String email, String password, String role) {
+        this.memberID = memberID;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;

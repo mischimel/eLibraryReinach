@@ -21,8 +21,8 @@ public class Genre {
     private List<Book> books = new ArrayList<>();
 
     // constructor
-    public Genre(Long genre_id, String name) {
-        this.genreID = genre_id;
+    public Genre(Long genreID, String name) {
+        this.genreID = genreID;
         this.name = name;
     }
 

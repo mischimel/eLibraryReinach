@@ -29,8 +29,8 @@ public class Borrowed {
     public Borrowed() {  // TODO: for all entities: add empty constructor
     }
 
-    public Borrowed(Long borrowe_id, Book book, Member member, Boolean status) {
-        this.borrowedID = borrowe_id;
+    public Borrowed(Long borroweID, Book book, Member member, Boolean status) {
+        this.borrowedID = borroweID;
         this.book = book;
         this.member = member;
         this.status = status;

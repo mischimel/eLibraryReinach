@@ -29,8 +29,8 @@ public class Author {
     private List<Book> books = new ArrayList<>();
 
     // constructor
-    public Author(Long author_id, String firstName, String lastName, String country) {
-        this.authorID = author_id;
+    public Author(Long authorID, String firstName, String lastName, String country) {
+        this.authorID = authorID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
