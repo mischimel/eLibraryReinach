@@ -152,7 +152,7 @@ author @michimel
 | PUT     | /api/book/{bookID} | Update Existing Book |
 | GET     | /api/book/findByTitel/{title} | Retrieve Books by Title |
 | GET     | /api/book/findByIsbn/{isbn} | Retrieve the Book by ISBN |
-| GET     | /api/book/findByYear/{year} | Retrieve Books by Year |
+| GET     | /api/book/findByPublishYear/{publishYear} | Retrieve Books by PublishYear |
 | GET     | /api/book/findByAuthor/{author} | Retrieve Books by Author |
 | GET     | /api/book/findByGenre/{genre} | Retrieve Books by Genre |
 
@@ -165,8 +165,8 @@ author @michimel
 | GET     | /api/borrowed/findByStatus/{status}           | Retrieve Borrowed by Status  |
 | GET     | /api/borrowed/findByBook{book}           | Retrieve Borrowed by Book  |
 | GET     | /api/borrowed/findByMember/{member}           | Retrieve Borrowed by Member  |
-| GET     | /api/borrowed/findByMemberAndStatus/{member,status}           | Retrieve Borrowed by Member and Status  |
-| GET     | /api/borrowed/findByBookAndStatus/{book,status}           | Retrieve Borrowed by Book and Status  |
+| GET     | /api/borrowed/findByMemberAndStatus/{member}/{status}           | Retrieve Borrowed by Member and Status  |
+| GET     | /api/borrowed/findByBookAndStatus/{book}/{status}           | Retrieve Borrowed by Book and Status  |
  
 
 
@@ -181,13 +181,13 @@ author @michimel
 ### Member
 | Method  | Path                 | Description |
 |---------|---------------------|-------------|
-| GET     | /api/member           | Gett all Members |
+| GET     | /api/member           | Get all Members |
 | POST    | /api/member           | Create new Member |
 | PUT     | /api/member/{memberID} | Update Existing Member |
 | GET     | /api/member/findByUserName/{userName} | Retrieve the Member by Username |
 | GET     | /api/member/findByFirstName/{firstName} | Retrieve Members by Firstname |
 | GET     | /api/member/findByLastName/{lastName} | Retrieve Members by Lastname |
-| GET     | /api/member/findByFirstNameAndLastName/{firstName,lastName} | Retrieve the Member by Firstname and Lastname |
+| GET     | /api/member/findByFirstNameAndLastName/{firstName}/{lastName} | Retrieve the Member by Firstname and Lastname |
 | GET | /api/member/findByEmail/{email} | Retrieve the Member by Email |
 | GET | /api/member/findByRole/{role} | Retrieve Members by Role |
 
