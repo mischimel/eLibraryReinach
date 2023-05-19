@@ -141,7 +141,7 @@ author @michimel
 | PUT     | /api/author/{authorID} | Update Existing Author |
 | GET     | /api/author/findByFirstName/{firstName} | Retrieve Authors by Firstname |
 | GET     | /api/author/findByLastName/{lastName} | Retrieve Authors by Lastname |
-| GET     | /api/author/findByFristNameAndLastName/{firstName, lastName} | Retrieve Authors by Firstname and Lastname |
+| GET     | /api/author/findByFristNameAndLastName/{firstName, lastName} | Retrieve the Author by Firstname and Lastname |
 | GET     | /api/author/findByCountry/{country} | Retrieve Authors by Country |
 
 ### Book
@@ -151,16 +151,17 @@ author @michimel
 | POST    | /api/book           | Create new Book |
 | PUT     | /api/book/{bookID} | Update Existing Book |
 | GET     | /api/book/findByTitel/{title} | Retrieve Books by Title |
+| GET     | /api/book/findByIsbn/{isbn} | Retrieve the Book by ISBN |
 | GET     | /api/book/findByYear/{year} | Retrieve Books by Year |
 | GET     | /api/book/findByAuthor/{author} | Retrieve Books by Author |
 | GET     | /api/book/findByGenre/{genre} | Retrieve Books by Genre |
 
-### Borrowed -- not finished !!!!
+### Borrowed 
 | Method  | Path                 | Description |
 |---------|---------------------|-------------|
 | GET     | /api/borrowed           | Gett all Borrowed |
 | POST    | /api/borrowed           | Create new Borrowed, meaning rent a book |
-| PUT     | /api/borrowed/{borrowedID} | Update Existing Borrowed |
+| PUT     | /api/borrowed/{borrowedID} | Update Existing Borrowed, meaning when changed to flase, book is returned |
 | GET     | /api/borrowed/findByStatus/{status}           | Retrieve Borrowed by Status  |
 | GET     | /api/borrowed/findByBook{book}           | Retrieve Borrowed by Book  |
 | GET     | /api/borrowed/findByMember/{member}           | Retrieve Borrowed by Member  |
@@ -183,19 +184,12 @@ author @michimel
 | GET     | /api/member           | Gett all Members |
 | POST    | /api/member           | Create new Member |
 | PUT     | /api/member/{memberID} | Update Existing Member |
-| GET     | /api/member/findByUserName/{userName} | Retrieve Members by Username |
+| GET     | /api/member/findByUserName/{userName} | Retrieve the Member by Username |
 | GET     | /api/member/findByFirstName/{firstName} | Retrieve Members by Firstname |
 | GET     | /api/member/findByLastName/{lastName} | Retrieve Members by Lastname |
-| GET     | /api/member/findByFirstNameAndLastName/{firstName,lastName} | Retrieve Members by Lastname |
-| GET | /api/member/findByEmail/{email} | Retrieve Members by Email |
+| GET     | /api/member/findByFirstNameAndLastName/{firstName,lastName} | Retrieve the Member by Firstname and Lastname |
+| GET | /api/member/findByEmail/{email} | Retrieve the Member by Email |
 | GET | /api/member/findByRole/{role} | Retrieve Members by Role |
-
-
-
-
-
-
-
 
 # 4. Data and API implementation *mplementation of data access and business logic layers and API*
 
