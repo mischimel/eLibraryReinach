@@ -2,7 +2,7 @@
 README updaten (Bilder (neu machen), user storreis, use case, etc.)
 project vereinfachen
 - keine Funktion zum Account löschen
-- Buch hat nur 1 Author, und nur eine Genre
+- Buch hat nur 1 Author, und nur eine Genre -> muss das noch im README irgendwo erwähnt werden?
 Infos:
 Klasse Agent (data, repository, controller, service) ist im crm webservice der User, es heisst nicht so da User ein reseved word ist ! Bei uns heisst es Member.
 Wir können aber im crm-webservice, die Agent Klassen ansehen und es nachbauen!
@@ -24,16 +24,16 @@ Jervin Ureath <br>
 Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # 1. Analysis *Scenario ideation, use case analysis and user story writing*
-## Scenario - update, must be in line with use cases and user storries !
+## Scenario - update, must be in line with use cases and user storries ! *italic* -> check if possible otherwise delete !
 The commune of Reinach has decided to create an electronic library, as today's world is very digital. Therefore, it wants to set up a web application. The online library will offer eBooks. <br>
 To use the electronic library customers, have to create an user account. With the user account, the customers can log in to the electronic library and use the following services. <br>
-The web application allows users to edit their user profile, to delete their user profile, to browse through an infinite amount of books, to search for books, to borrow books, to return books, to easily view and manage their borrowed books with a list view. <br>
-In section "my borrowed books", users can view all books that are currently on loan and those which have already been returned. This section also displays the due date for return and an option to return the book early is available. As this is an online library, books do not need to be actively returned, access to the book is automatically taken away on the return date. <br>
+The web application allows users to edit their user profile, to browse through books, to search for books, to borrow books, to return books, to easily view and manage their borrowed books with a list view. <br>
+In section "my borrowed books", users can view all books that are currently on loan. This section also displays the due date for return *and an option to return the book early is available. As this is an online library, books do not need to be actively returned, access to the book is automatically taken away on the return date.* <br>
 The web application gets managed and kept updated by administrators. Therefore, the administrators have additional functions to the user functions.
-The web application additionally allows administrators to add books, to edit existing books, to delete existing books, to easily view and manage all borrowed books with a list view. <br>
-In section "all borrowed books", administrators can view all books that are currently on loan and those which have already been returned. This section also displays the username of the user, who is currently borrowing or has borrowed the book, the due date for return and an option to return the book early is available. <br>
+The web application additionally allows administrators to add books, to edit existing books, to easily view and manage all borrowed books with a list view. <br>
+In section "all borrowed books", administrators can view all books that are currently on loan. *This section also displays the username of the user, who is currently borrowing the book, the due date for return and an option to return the book early is available.* <br>
 
-## Use case analysis - update, make it simpler , also change diagrams!
+## Use case analysis
 Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-bdc1-30d08725a5d9/edit?viewport_loc=1733%2C31%2C2219%2C1097%2C0_0&invitationId=inv_ef872c42-5b9f-4504-93fc-5389022cccf9 <br>
 
 ### Use Case 100
@@ -58,7 +58,7 @@ These use cases are for administrators, which have the same basic functionalitie
 **Use case 304 (All borrowed books)**: An administrator can see a list of all books which are currently borrowed. <br>
 
 
-## User Story - update, make it simpler !
+## User Story
 1.	As a user, I want to be able to register for an user account so that I can access the online library. <br>
 2.	As a user, I want to log-in so that I can authenticate myself. <br>
 3.	As a user, I want to be able to edit my profile. <br>
