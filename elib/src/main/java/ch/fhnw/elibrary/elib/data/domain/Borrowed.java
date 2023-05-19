@@ -26,7 +26,7 @@ public class Borrowed {
     private Member member;
 
     // constructor
-    public Borrowed() {  // TODO: for all entities: add empty constructor
+    public Borrowed() {  
     }
 
     public Borrowed(Long borroweID, Book book, Member member, Boolean status) {

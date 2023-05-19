@@ -41,6 +41,9 @@ public class Book {
 
 
     // constructors
+    public Book() {
+    }
+    
     public Book(Long bookID, String isbn, String title, int year, String description, Author author, Genre genre) {
         this.bookID = bookID;
         this.isbn = isbn;
