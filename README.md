@@ -1,15 +1,3 @@
-# TODOS:
-README updaten (Bilder (neu machen), user storreis, use case, etc.)
-project vereinfachen
-- keine Funktion zum Account löschen
-- Buch hat nur 1 Author, und nur eine Genre -> muss das noch im README irgendwo erwähnt werden?
-Infos:
-Klasse Agent (data, repository, controller, service) ist im crm webservice der User, es heisst nicht so da User ein reseved word ist ! Bei uns heisst es Member.
-Wir können aber im crm-webservice, die Agent Klassen ansehen und es nachbauen!
-- Login und Register sind im Member, Role ist eine string in Member
-- Loan_Info – Borrowed, weil many to many is pain in the ass
-
-
 # eLibraryReinach Documentation
 ## Assignment for Internet Technology 2023
 
@@ -105,7 +93,7 @@ The following picture gives some information about the colours used in the mock 
 author @michimel <br>
 Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-18829cec80c9/edit?beaconFlowId=7134D7D032DE5064&invitationId=inv_0148f8f5-f3f9-433a-8296-e9667492d473&page=0_0# <br>
 
-<img src="https://github.com/michimel/eLibraryReinach/blob/5bf4c8db53039e8c062b02d27d9f14302b91eefe/Documentation%20Sources/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
 
 
 # 3. Business Logic and API design *Definition of business logic and API*
@@ -158,14 +146,14 @@ If the access is not only for admins, all have the access rights.
 author @michimel <br>
 To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Potsman in Workspace Birtney. <br>
 With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
-If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
+If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
 
-<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/1%20Info%2C%20Author.png"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/2%20Book.png"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/3%20Borrowe%2C%20Genre.png"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/4%20Member.png"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/5%20Schemas%20(Author%2C%20Book%2C%20Borrowed).png"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/bc20835205a27bcf6bca94299f45b145640e1de2/Documentation%20Sources/API%20(Swagger%20Editor)/6%20Schemas%20(Gerne%2C%20Member).png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/1%20Info%2C%20Author.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/2%20Book.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/3%20Borrowe%2C%20Genre.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/4%20Member.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/5%20Schemas%20(Author%2C%20Book%2C%20Borrowed).png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/6%20Schemas%20(Gerne%2C%20Member).png"> <br>
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
 
