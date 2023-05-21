@@ -61,7 +61,11 @@ public class SecurityConfig {
             // Paths accessible to all (including not logged in users)
             .requestMatchers("/", "/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
             .requestMatchers("/api/auth/register").permitAll()
-            .requestMatchers("/api/auth/token").authenticated() // Restricted to authenticated users
+          // TODO: uncomment when done line 67 to 79 and delete following lines 65 and 66
+          .requestMatchers("/**").permitAll()    // to check APIs and paths    
+        )
+            /*
+           .requestMatchers("/api/auth/token").authenticated() // Restricted to authenticated users
 
             // Paths accessible to users with the "Admin" role
             .requestMatchers("/api/author/newAuthor", "/api/author/updateAuthor/{authorID}",
@@ -72,6 +76,7 @@ public class SecurityConfig {
             // Paths accessible to authenticated users (including regular users and admins)
             .anyRequest().authenticated()
         )
+        */
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
         .httpBasic(withDefaults())
