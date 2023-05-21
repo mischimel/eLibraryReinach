@@ -53,29 +53,31 @@ public class SecurityConfig {
         return new UserDetailsServiceImpl(); 
     }
 
-
-	@Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests( auth -> auth
-                        .requestMatchers("/api/agent/register",
-                                                    "/",
-                                                    "/swagger-ui.html",
-                                                    "/v3/api-docs/**",
-                                                    "/swagger-ui/**").permitAll()
-                       // TODO: uncomment when next todo is done
-                       /*
-                        .requestMatchers("/api/auth/token").hasRole("USER")
-                        .anyRequest().hasAuthority("SCOPE_READ") 
-                        */
-                .requestMatchers("/**").permitAll()    // TODO: only that testing works, must be deleted later!     
-                )
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-                .httpBasic(withDefaults())
-                .build(); 
-    }
+    return http
+        .csrf(AbstractHttpConfigurer::disable)
+        .authorizeHttpRequests(auth -> auth
+            // Paths accessible to all (including not logged in users)
+            .requestMatchers("/", "/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
+            .requestMatchers("/api/auth/register").permitAll()
+            .requestMatchers("/api/auth/token").authenticated() // Restricted to authenticated users
+
+            // Paths accessible to users with the "Admin" role
+            .requestMatchers("/api/author/newAuthor", "/api/author/updateAuthor/{authorID}",
+                          "/api/book/newBook", "/api/book/updateBook/{bookID}",
+                          "/api/genre/newGenre", "/api/genre/updateGenre/{genre_id}")
+                .hasRole("ADMIN") // Restricted to users with the "Admin" role
+
+            // Paths accessible to authenticated users (including regular users and admins)
+            .anyRequest().authenticated()
+        )
+        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+        .httpBasic(withDefaults())
+        .build();
+}
+
 
     // TODO: check if these Beans are needed
 	
