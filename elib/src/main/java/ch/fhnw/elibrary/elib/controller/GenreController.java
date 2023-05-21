@@ -28,12 +28,12 @@ public class GenreController {
         return genreService.getAllGenres();
     }
 
-    @PostMapping
+    @PostMapping("/newGenre")
     public Genre createGenre(@RequestBody Genre genre) {
         return genreService.createGenre(genre);
     }
 
-    @PutMapping("/{genreId}")
+    @PutMapping("/updateGenre/{genreId}")
     public Genre updateGenre(@PathVariable Long genreId, @RequestBody Genre genre) {
         return genreService.updateGenre(genreId, genre);
     }

@@ -28,12 +28,12 @@ public class MemberController {
         return memberService.getAllMembers();
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public Member createMember(@RequestBody Member member) {
         return memberService.createMember(member);
     }
 
-    @PutMapping("/{memberId}")
+    @PutMapping("/editProfile{memberId}")
     public Member updateMember(@PathVariable Long memberId, @RequestBody Member member) {
         return memberService.updateMember(memberId, member);
     }

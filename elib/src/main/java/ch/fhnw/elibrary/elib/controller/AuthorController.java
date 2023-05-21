@@ -28,12 +28,12 @@ public class AuthorController {
         return authorService.getAllAuthors();
     }
 
-    @PostMapping
+    @PostMapping("/newAuthor")
     public Author createAuthor(@RequestBody Author author) {
         return authorService.createAuthor(author);
     }
 
-    @PutMapping("/{authorID}")
+    @PutMapping("/updateAuthor/{authorID}")
     public Author updateAuthor(@PathVariable Long authorID, @RequestBody Author author) {
         return authorService.updateAuthor(authorID, author);
     }

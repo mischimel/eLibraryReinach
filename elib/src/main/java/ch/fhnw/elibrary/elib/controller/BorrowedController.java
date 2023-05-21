@@ -28,12 +28,13 @@ public class BorrowedController {
         return borrowedService.getAllBorrowed();
     }
 
-    @PostMapping
+    @PostMapping("/rentBook")
     public Borrowed createBorrowed(@RequestBody Borrowed borrowed) {
         return borrowedService.createBorrowed(borrowed);
     }
 
-    @PutMapping("/{borrowedID}")
+    // TODO: check as it should update the status of the borrowed book
+    @PutMapping("/returnBook/{borrowedID}")
     public Borrowed updateBorrowed(@PathVariable Long borrowedID, @RequestBody Borrowed borrowed) {
         return borrowedService.updateBorrowed(borrowedID, borrowed);
     }

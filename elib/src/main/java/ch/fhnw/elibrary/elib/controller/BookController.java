@@ -28,12 +28,12 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    @PostMapping
+    @PostMapping("/newBook")
     public Book createBook(@RequestBody Book book) {
         return bookService.createBook(book);
     }
 
-    @PutMapping("/{bookID}")
+    @PutMapping("/updateBook/{bookID}")
     public Book updateBook(@PathVariable Long bookID, @RequestBody Book book) {
         return bookService.updateBook(bookID, book);
     }
