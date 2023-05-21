@@ -37,16 +37,6 @@ public class Member {
 	
     @JsonIgnore
 	private String role = "USER"; // default role is USER, but can be set to ADMIN
-    
-    // INFO: when creating a new member, you can change the role to ADMIN with following code:
-    /*
-     Member member = new Member();
-     member.setRole("ADMIN"); // set the role to ADMIN for this member
-     */
-	
-    @Transient // will not be stored in DB
-	@Hidden
-	private String remember;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "memberID"), inverseJoinColumns = @JoinColumn(name = "bookID"))

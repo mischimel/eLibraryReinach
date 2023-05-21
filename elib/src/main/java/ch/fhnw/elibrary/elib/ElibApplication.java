@@ -43,7 +43,7 @@ private BorrowedRepository borrowedRepository;
 @EventListener(ApplicationReadyEvent.class)
 public void seedDatabase() {
 
-// Pipi Langstrumpf Book, that is borrowed by member(user, not Admin): 
+// Pipi Langstrumpf Book, that is borrowed by member(user, not Admin) Michele Fille: 
     // Create Author
     Author author = new Author();
     author.setFirstName("Astrid");
