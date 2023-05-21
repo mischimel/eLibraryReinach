@@ -113,45 +113,46 @@ Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-1
 
 ## Methods overview
 author @michimel <br>
+If the access is not only for admins, all have the access rights.
 
-| Entity   | Method  | Path                                                           | Description                                                               |
-|----------|---------|----------------------------------------------------------------|---------------------------------------------------------------------------|
-| Author   | GET     | /api/author                                                    | Get all Authors                                                          |
-| Author   | POST    | /api/author                                                    | Create new Author                                                         |
-| Author   | PUT     | /api/author/{authorID}                                         | Update Existing Author                                                    |
-| Author   | GET     | /api/author/findByFirstName/{firstName}                        | Retrieve Authors by Firstname                                             |
-| Author   | GET     | /api/author/findByLastName/{lastName}                          | Retrieve Authors by Lastname                                              |
-| Author   | GET     | /api/author/findByFristNameAndLastName/{firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |
-| Author   | GET     | /api/author/findByCountry/{country}                            | Retrieve Authors by Country                                               |
-| Book     | GET     | /api/book                                                      | Get all Books                                                            |
-| Book     | POST    | /api/book                                                      | Create new Book                                                           |
-| Book     | PUT     | /api/book/{bookID}                                             | Update Existing Book                                                      |
-| Book     | GET     | /api/book/findByTitel/{title}                                  | Retrieve Books by Title                                                   |
-| Book     | GET     | /api/book/findByIsbn/{isbn}                                    | Retrieve the Book by ISBN                                                 |
-| Book     | GET     | /api/book/findByPublishYear/{publishYear}                      | Retrieve Books by PublishYear                                             |
-| Book     | GET     | /api/book/findByAuthor/{author}                                | Retrieve Books by Author                                                  |
-| Book     | GET     | /api/book/findByGenre/{genre}                                  | Retrieve Books by Genre                                                   |
-| Borrowed | GET     | /api/borrowed                                                  | Get all Borrowed                                                         |
-| Borrowed | POST    | /api/borrowed                                                  | Create new Borrowed, meaning rent a book                                  |
-| Borrowed | PUT     | /api/borrowed/{borrowedID}                                     | Update Existing Borrowed, meaning when changed to flase, book is returned |
-| Borrowed | GET     | /api/borrowed/findByStatus/{status}                            | Retrieve Borrowed by Status                                               |
-| Borrowed | GET     | /api/borrowed/findByBook{book}                                 | Retrieve Borrowed by Book                                                 |
-| Borrowed | GET     | /api/borrowed/findByMember/{member}                            | Retrieve Borrowed by Member                                               |
-| Borrowed | GET     | /api/borrowed/findByMemberAndStatus/{member}/{status}          | Retrieve Borrowed by Member and Status                                    |
-| Borrowed | GET     | /api/borrowed/findByBookAndStatus/{book}/{status}              | Retrieve Borrowed by Book and Status                                      |
-| Genre    | GET     | /api/genre                                                     | Get all Genres                                                           |
-| Genre    | POST    | /api/genre                                                     | Create new Genre                                                          |
-| Genre    | PUT     | /api/genre/{genre_id}                                          | Update Existing Genre                                                     |
-| Genre    | GET     | /api/genre/findByName/{name}                                   | Retrieve Genres by Name                                                   |
-| Member   | GET     | /api/member                                                    | Get all Members                                                           |
-| Member   | POST    | /api/member                                                    | Create new Member                                                         |
-| Member   | PUT     | /api/member/{memberID}                                         | Update Existing Member                                                    |
-| Member   | GET     | /api/member/findByUserName/{userName}                          | Retrieve the Member by Username                                           |
-| Member   | GET     | /api/member/findByFirstName/{firstName}                        | Retrieve Members by Firstname                                             |
-| Member   | GET     | /api/member/findByLastName/{lastName}                          | Retrieve Members by Lastname                                              |
-| Member   | GET     | /api/member/findByFirstNameAndLastName/{firstName}/{lastName}  | Retrieve the Member by Firstname and Lastname                             |
-| Member   | GET     | /api/member/findByEmail/{email}                                | Retrieve the Member by Email                                              |
-| Member   | GET     | /api/member/findByRole/{role}                                  | Retrieve Members by Role                                                  |
+| Entity   | Method  | Path                                                           | Description                                                               | Access only for Admins |
+|----------|---------|----------------------------------------------------------------|---------------------------------------------------------------------------|------------------------|
+| Author   | GET     | /api/author                                                    | Get all Authors                                                           |                        |
+| Author   | POST    | /api/author/newAuthor                                          | Create new Author                                                         | x                      |
+| Author   | PUT     | /api/author/updateAuthor/{authorID}                            | Update Existing Author                                                    | x                      |
+| Author   | GET     | /api/author/findByFirstName/{firstName}                        | Retrieve Authors by Firstname                                             |                        |
+| Author   | GET     | /api/author/findByLastName/{lastName}                          | Retrieve Authors by Lastname                                              |                        |
+| Author   | GET     | /api/author/findByFristNameAndLastName/{firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |                        |
+| Author   | GET     | /api/author/findByCountry/{country}                            | Retrieve Authors by Country                                               |                        |
+| Book     | GET     | /api/book                                                      | Get all Books                                                             |                        |
+| Book     | POST    | /api/book/newBook                                              | Create new Book                                                           | x                      |
+| Book     | PUT     | /api/book/updateBook/{bookID}                                  | Update Existing Book                                                      | x                      |
+| Book     | GET     | /api/book/findByTitel/{title}                                  | Retrieve Books by Title                                                   |                        |
+| Book     | GET     | /api/book/findByIsbn/{isbn}                                    | Retrieve the Book by ISBN                                                 |                        |
+| Book     | GET     | /api/book/findByPublishYear/{publishYear}                      | Retrieve Books by PublishYear                                             |                        |
+| Book     | GET     | /api/book/findByAuthor/{author}                                | Retrieve Books by Author                                                  |                        |
+| Book     | GET     | /api/book/findByGenre/{genre}                                  | Retrieve Books by Genre                                                   |                        |
+| Borrowed | GET     | /api/borrowed                                                  | Get all Borrowed                                                          |                        |
+| Borrowed | POST    | /api/borrowed/rentBook                                         | Create new Borrowed, meaning rent a book                                  |                        |
+| Borrowed | PUT     | /api/borrowed/returnBook/{borrowedID}                          | Update Existing Borrowed, meaning when changed to flase, book is returned |                        |
+| Borrowed | GET     | /api/borrowed/findByStatus/{status}                            | Retrieve Borrowed by Status                                               |                        |
+| Borrowed | GET     | /api/borrowed/findByBook{book}                                 | Retrieve Borrowed by Book                                                 |                        |
+| Borrowed | GET     | /api/borrowed/findByMember/{member}                            | Retrieve Borrowed by Member                                               |                        |
+| Borrowed | GET     | /api/borrowed/findByMemberAndStatus/{member}/{status}          | Retrieve Borrowed by Member and Status                                    |                        |
+| Borrowed | GET     | /api/borrowed/findByBookAndStatus/{book}/{status}              | Retrieve Borrowed by Book and Status                                      |                        |
+| Genre    | GET     | /api/genre                                                     | Get all Genres                                                            |                        |
+| Genre    | POST    | /api/genre/newGenre                                            | Create new Genre                                                          | x                      |
+| Genre    | PUT     | /api/genre/updateGenre/{genre_id}                              | Update Existing Genre                                                     | x                      |
+| Genre    | GET     | /api/genre/findByName/{name}                                   | Retrieve Genres by Name                                                   |                        |
+| Member   | GET     | /api/member                                                    | Get all Members                                                           |                        |
+| Member   | POST    | /api/member/register                                           | Create new Member, meaning when member registers                          |                        |
+| Member   | PUT     | /api/member/editProfile/{memberID}                             | Update Existing Member, meaning when member edits his/her profile         |                        |
+| Member   | GET     | /api/member/findByUserName/{userName}                          | Retrieve the Member by Username                                           |                        |
+| Member   | GET     | /api/member/findByFirstName/{firstName}                        | Retrieve Members by Firstname                                             |                        |
+| Member   | GET     | /api/member/findByLastName/{lastName}                          | Retrieve Members by Lastname                                              |                        |
+| Member   | GET     | /api/member/findByFirstNameAndLastName/{firstName}/{lastName}  | Retrieve the Member by Firstname and Lastname                             |                        |
+| Member   | GET     | /api/member/findByEmail/{email}                                | Retrieve the Member by Email                                              |                        |
+| Member   | GET     | /api/member/findByRole/{role}                                  | Retrieve Members by Role                                                  |                        |
 
 ## API design
 author @michimel <br>
