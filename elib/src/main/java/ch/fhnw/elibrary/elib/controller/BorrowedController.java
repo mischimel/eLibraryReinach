@@ -33,7 +33,7 @@ public class BorrowedController {
         return borrowedService.createBorrowed(borrowed);
     }
 
-    // TODO: check as it should update the status of the borrowed book
+    // TODO: check this: the method should change the status to false (return book) for the borrowed book with mentioned borrowedID
     @PutMapping("/returnBook/{borrowedID}")
     public Borrowed updateBorrowed(@PathVariable Long borrowedID, @RequestBody Borrowed borrowed) {
         return borrowedService.updateBorrowed(borrowedID, borrowed);

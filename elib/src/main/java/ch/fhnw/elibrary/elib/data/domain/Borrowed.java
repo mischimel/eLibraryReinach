@@ -14,7 +14,7 @@ public class Borrowed {
     private Long borrowedID;
 
     @Column(name = "status", nullable = false)
-    private Boolean status;
+    private Boolean status = true; // default status is true (book is borrowed) when new object is created
 
     @ManyToOne
     @JoinColumn(name = "bookID", nullable = false)
