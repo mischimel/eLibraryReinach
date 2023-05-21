@@ -72,9 +72,8 @@ public void seedDatabase() {
     member.setFirstName("Michele");
     member.setLastName("Fille");
     member.setEmail("michele.fille@students.fhnw.ch");
-    member.setPassword("password"); // TODO: check this
+    member.setPassword("password"); 
     member.setRole("user");
-   // member.setRemember("yes"); // TODO: check Swagger Schema for this
     memberRepository.save(member);
 
     // Create Borrowed

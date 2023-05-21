@@ -123,14 +123,6 @@ public class Member {
         this.role = role;  
     }
 
-    public String getRemember() {  
-        return remember;  
-    }
-
-    public void setRemember(String remember) {  
-        this.remember = remember;  
-    }
-
     // toString
     @Override
     public String toString() {

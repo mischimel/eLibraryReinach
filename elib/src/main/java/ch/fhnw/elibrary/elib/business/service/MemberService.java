@@ -32,7 +32,6 @@ public class MemberService {
         member.setEmail(memberDetails.getEmail());
         member.setPassword(memberDetails.getPassword());
         member.setRole(memberDetails.getRole());
-        member.setRemember(memberDetails.getRemember());
         return memberRepository.save(member);
     }
 
