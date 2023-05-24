@@ -1,7 +1,7 @@
 {
     "java.dependency.syncWithFolderExplorer": true,
     "java.project.sourcePaths": [
-        "src/main/java/ch/fhnw/eLibrary"
+        "src/main/java/ch/fhnw/elibrary/elib"
     ],
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.compile.nullAnalysis.mode": "automatic"
