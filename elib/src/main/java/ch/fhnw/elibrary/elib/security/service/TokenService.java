@@ -15,7 +15,8 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Collectors;
 
-// author @michimel derived from CRM-webservice example
+// TokenService class derived from CRM-webservice example
+// author @michimel
 
 @Service
 public class TokenService {

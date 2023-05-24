@@ -11,7 +11,7 @@ import ch.fhnw.elibrary.elib.business.service.MemberService;
 import ch.fhnw.elibrary.elib.data.domain.Member;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-// author @michimel
+// MemberController class author @michimel
 
 @RestController
 @RequestMapping("/api/member")

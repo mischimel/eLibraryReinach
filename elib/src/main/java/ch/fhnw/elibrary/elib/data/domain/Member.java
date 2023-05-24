@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 
-// author @michimel and @RahelHaeusler
+// Member class author @michimel and @RahelHaeusler
 
 @Entity
 @Table(name = "members")

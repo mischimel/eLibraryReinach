@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.*;
 
-// author @michimel and @RahelHaeusler
+// Genre class author @michimel and @RahelHaeusler
 
 @Entity
 @Table(name = "genres")

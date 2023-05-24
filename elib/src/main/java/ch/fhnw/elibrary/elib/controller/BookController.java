@@ -11,7 +11,7 @@ import ch.fhnw.elibrary.elib.business.service.BookService;
 import ch.fhnw.elibrary.elib.data.domain.Book;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-// author @michimel
+// BookController class author @michimel
 
 @RestController
 @RequestMapping("/api/book")

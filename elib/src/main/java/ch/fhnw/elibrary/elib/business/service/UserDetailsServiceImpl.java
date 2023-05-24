@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import ch.fhnw.elibrary.elib.data.domain.Member;
 import ch.fhnw.elibrary.elib.data.repository.MemberRepository;
 
-   /* Class copied from crm webservice project and adapted to elib project
+   /* UserDetailsServiceImpl class copied from crm webservice project and adapted to elib project
     author of adaption @michimel*/
 
 @Component

@@ -11,7 +11,7 @@ import ch.fhnw.elibrary.elib.business.service.BorrowedService;
 import ch.fhnw.elibrary.elib.data.domain.Borrowed;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-// author @michimel
+// BorrowedController class author @michimel
 
 @RestController
 @RequestMapping("/api/borrowed")

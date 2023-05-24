@@ -11,7 +11,7 @@ import ch.fhnw.elibrary.elib.business.service.AuthorService;
 import ch.fhnw.elibrary.elib.data.domain.Author;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-// author @michimel
+// AuthorController class author @michimel
 
 @RestController
 @RequestMapping("/api/author")

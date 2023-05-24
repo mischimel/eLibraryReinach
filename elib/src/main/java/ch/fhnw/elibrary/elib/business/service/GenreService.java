@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.elibrary.elib.data.domain.Genre;
 import ch.fhnw.elibrary.elib.data.repository.GenreRepository;
 
-// author @michimel
+// GenreService class author @michimel
 
 @Service
 public class GenreService {

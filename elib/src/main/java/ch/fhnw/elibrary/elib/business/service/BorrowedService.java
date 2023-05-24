@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.elibrary.elib.data.domain.Borrowed;
 import ch.fhnw.elibrary.elib.data.repository.BorrowedRepository;
 
-// author @michimel
+// BorrowedService class author @michimel
 
 @Service
 public class BorrowedService {

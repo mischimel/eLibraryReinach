@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.elibrary.elib.data.domain.Book;
 import ch.fhnw.elibrary.elib.data.repository.BookRepository;
 
-// author @michimel
+// BookService class author @michimel
 
 @Service
 public class BookService {

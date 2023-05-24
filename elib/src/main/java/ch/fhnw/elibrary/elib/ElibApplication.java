@@ -16,6 +16,7 @@ import ch.fhnw.elibrary.elib.data.repository.GenreRepository;
 import ch.fhnw.elibrary.elib.data.repository.MemberRepository;
 import ch.fhnw.elibrary.elib.data.repository.BorrowedRepository;
 
+// ElibApplication class - this is the Spring boot Application
 // author @michimel
 
 @SpringBootApplication

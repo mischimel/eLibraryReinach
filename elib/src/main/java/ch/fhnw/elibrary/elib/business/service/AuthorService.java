@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.elibrary.elib.data.domain.Author;
 import ch.fhnw.elibrary.elib.data.repository.AuthorRepository;
 
-// author @michimel
+// AuthorService class author @michimel
 
 @Service
 public class AuthorService {

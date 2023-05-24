@@ -32,7 +32,8 @@ import org.springframework.security.config.annotation.authentication.configurati
 import javax.crypto.spec.SecretKeySpec;
 import static org.springframework.security.config.Customizer.withDefaults;
 
-// author @michimel derived from CRM-webservice example
+// SecurityConfig class derived from CRM-webservice example
+// author @michimel
 
 @Configuration
 @EnableWebSecurity

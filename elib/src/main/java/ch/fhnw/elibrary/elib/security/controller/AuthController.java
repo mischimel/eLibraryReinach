@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 //import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-// author @michimel derived from CRM-webservice example
+// AuthController class derived from CRM-webservice example
+// author @michimel
 
 @RestController
 @RequestMapping("/api/auth")

@@ -2,7 +2,7 @@ package ch.fhnw.elibrary.elib.data.domain;
 
 import jakarta.persistence.*;
 
-// author @michimel and @RahelHaeusler
+// Borrowed class author @michimel and @RahelHaeusler
 
 @Entity
 @Table(name = "borrowed")

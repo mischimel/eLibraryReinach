@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.elibrary.elib.data.domain.Member;
 import ch.fhnw.elibrary.elib.data.repository.MemberRepository;
 
-// author @michimel
+// MemberService class author @michimel
 
 @Service
 public class MemberService {

@@ -11,7 +11,7 @@ import ch.fhnw.elibrary.elib.business.service.GenreService;
 import ch.fhnw.elibrary.elib.data.domain.Genre;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-// author @michimel
+// GenreController class author @michimel
 
 @RestController
 @RequestMapping("/api/genre")

@@ -7,7 +7,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ch.fhnw.elibrary.elib.data.domain.Member;
 
-   /* Class copied from crm webservice project and adapted to elib project
+   /* UserDetailsImpl class copied from crm webservice project and adapted to elib project
     author of adaption @michimel*/
 
 public class UserDetailsImpl implements UserDetails {
