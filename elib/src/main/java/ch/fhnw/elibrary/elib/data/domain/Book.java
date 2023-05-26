@@ -114,7 +114,8 @@ public class Book {
     @Override
     public String toString() {
         return "Book [id=" + bookID + ", isbn=" + isbn + ", title=" + title + ", year=" + publishYear + ", description=" + description + 
-        "author=" + author + ", genre=" + genre + "]";
+        "author firstname=" + author.getFirstName() + "author lastname=" + author.getLastName() + "author country=" + author.getCountry()+ 
+        ", genre name=" + genre.getName() + "]";
     }
 
         
