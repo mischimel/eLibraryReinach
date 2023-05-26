@@ -33,7 +33,7 @@ public class MemberController {
         return memberService.createMember(member);
     }
 
-    @PutMapping("/editProfile{memberId}")
+    @PutMapping("/editProfile/{memberId}")
     public Member updateMember(@PathVariable Long memberId, @RequestBody Member member) {
         return memberService.updateMember(memberId, member);
     }
