@@ -14,6 +14,7 @@ import ch.fhnw.elibrary.elib.data.repository.AuthorRepository;
 import ch.fhnw.elibrary.elib.data.repository.BookRepository;
 import ch.fhnw.elibrary.elib.data.repository.GenreRepository;
 import ch.fhnw.elibrary.elib.data.repository.MemberRepository;
+import jakarta.annotation.PostConstruct;
 import ch.fhnw.elibrary.elib.data.repository.BorrowedRepository;
 
 // ElibApplication class - this is the Spring boot Application
@@ -41,8 +42,11 @@ private MemberRepository memberRepository;
 @Autowired
 private BorrowedRepository borrowedRepository;
 
-@EventListener(ApplicationReadyEvent.class)
-public void seedDatabase() {
+// @EventListener(ApplicationReadyEvent.class)
+// public void seedDatabase() {
+
+@PostConstruct
+private void initPlaceholderData() throws Exception {
 
 // Pipi Langstrumpf Book, that is borrowed by member(user, not Admin) Michele Fille: 
     // Create Author

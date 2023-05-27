@@ -1,20 +1,20 @@
 package ch.fhnw.elibrary.elib.controller;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.server.ResponseStatusException;
 import ch.fhnw.elibrary.elib.business.service.AuthorService;
 import ch.fhnw.elibrary.elib.data.domain.Author;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 // AuthorController class author @michimel
 
 @RestController
-@RequestMapping("/api/author")
+@RequestMapping(path = "/api/author")
 public class AuthorController {
 
     private final AuthorService authorService;
@@ -28,10 +28,24 @@ public class AuthorController {
         return authorService.getAllAuthors();
     }
 
-    @PostMapping("/newAuthor")
-    public Author createAuthor(@RequestBody Author author) {
-        return authorService.createAuthor(author);
+    // @PostMapping("/newAuthor")
+    // public Author createAuthor(@RequestBody Author author) {
+    //     return authorService.createAuthor(author);
+    // }
+
+
+    @PostMapping(path = "/newAuthor", consumes = "application/json", produces = "application/json")
+    public ResponseEntity createAuthor(@RequestBody Author author) {
+        try {
+            author = authorService.createAuthor(author);
+
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+
+        }
+        return ResponseEntity.ok(author);
     }
+    
 
     @PutMapping("/updateAuthor/{authorID}")
     public Author updateAuthor(@PathVariable Long authorID, @RequestBody Author author) {

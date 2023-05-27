@@ -20,9 +20,20 @@ public class AuthorService {
         return authorRepository.findAll();
     }
 
-    public Author createAuthor(Author author) {
-        return authorRepository.save(author);
+    // public Author createAuthor(Author author) {
+    //     return authorRepository.save(author);
+    // }
+
+    public Author createAuthor(Author author) throws Exception {
+        if (author.getFirstName() != null && author.getLastName() != null) {
+            if (authorRepository.findByFirstNameAndLastName(author.getFirstName(), author.getLastName()) == null)
+                return authorRepository.save(author);
+            throw new Exception("Author " + author.getFirstName() + " " + author.getLastName() + " already exists");
+            
+        }
+        throw new Exception("Invalid author name");
     }
+    
 
     public Author updateAuthor(Long authorID, Author authorDetails) {
         Author author = getAuthorById(authorID);
@@ -35,7 +46,7 @@ public class AuthorService {
     /* the following methods are not used in the application, 
     as budibase provides the functionality to search via the filter function,
     but for completeness we provide the methods below */
-    
+
     public List<Author> getAuthorsByFirstName(String firstName) {
         return authorRepository.findByFirstName(firstName);
     }
