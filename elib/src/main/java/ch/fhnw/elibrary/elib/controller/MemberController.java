@@ -28,6 +28,7 @@ public class MemberController {
         return memberService.getAllMembers();
     }
 
+    //TODO: we do not need to implement this, as the security part is taken out of the assignment
     @PostMapping("/register")
     public Member createMember(@RequestBody Member member) {
         return memberService.createMember(member);
@@ -38,6 +39,10 @@ public class MemberController {
         return memberService.updateMember(memberId, member);
     }
 
+    /* the following mappings are not used in the application, 
+    as budibase provides the functionality to search via the filter function,
+    but for completeness we provide the mappings below */
+    
     @GetMapping("/findByUserName/{userName}")
     public Member getMemberByUserName(@PathVariable String userName) {
         return memberService.getMemberByUserName(userName);

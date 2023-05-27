@@ -39,6 +39,10 @@ public class BorrowedController {
         return borrowedService.updateBorrowed(borrowedID, borrowed);
     }
 
+    /* the following mappings are not used in the application, 
+    as budibase provides the functionality to search via the filter function,
+    but for completeness we provide the mappings below */
+    
     @GetMapping("/findByStatus/{status}")
     public List<Borrowed> getBorrowedByStatus(@PathVariable Boolean status) {
         return borrowedService.getBorrowedByStatus(status);

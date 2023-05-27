@@ -30,6 +30,10 @@ public class GenreService {
         return genreRepository.save(genre);
     }
 
+    /* the following methods are not used in the application, 
+    as budibase provides the functionality to search via the filter function,
+    but for completeness we provide the methods below */
+    
     public List<Genre> getGenresByName(String name) {
         return genreRepository.findByName(name);
     }

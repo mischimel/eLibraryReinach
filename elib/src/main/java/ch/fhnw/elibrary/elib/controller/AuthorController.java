@@ -38,6 +38,10 @@ public class AuthorController {
         return authorService.updateAuthor(authorID, author);
     }
 
+    /* the following mappings are not used in the application, 
+    as budibase provides the functionality to search via the filter function,
+    but for completeness we provide the mappings below */
+    
     @GetMapping("/findByFirstName/{firstName}")
     public List<Author> getAuthorsByFirstName(@PathVariable String firstName) {
         return authorService.getAuthorsByFirstName(firstName);

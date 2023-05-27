@@ -48,6 +48,10 @@ public class BorrowedService {
         return borrowedRepository.save(borrowed);
     }
 
+    /* the following methods are not used in the application, 
+    as budibase provides the functionality to search via the filter function,
+    but for completeness we provide the methods below */
+    
     public List<Borrowed> getBorrowedByStatus(Boolean status) {
         return borrowedRepository.findByStatus(status);
     }

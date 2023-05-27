@@ -38,6 +38,10 @@ public class BookController {
         return bookService.updateBook(bookID, book);
     }
 
+    /* the following mappings are not used in the application, 
+    as budibase provides the functionality to search via the filter function,
+    but for completeness we provide the mappings below */
+    
     @GetMapping("/findByTitle/{title}")
     public List<Book> getBooksByTitle(@PathVariable String title) {
         return bookService.getBooksByTitle(title);
