@@ -14,6 +14,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
+    @JsonIgnore //TODO: check if this is needed
     private Long authorID;
 
     @Column(nullable = false)
