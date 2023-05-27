@@ -14,11 +14,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @RequestMapping("/api/auth")
 public class AuthController {
     
-    private final TokenService tokenService;
+    // private final TokenService tokenService;
 
-    public AuthController(TokenService tokenService) {
-        this.tokenService = tokenService;
-    }
+    // public AuthController(TokenService tokenService) {
+    //     this.tokenService = tokenService;
+    // }
 
     // TODO: Check if ServiceToken is needed
     /*

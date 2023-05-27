@@ -60,8 +60,8 @@ public class SecurityConfig {
         .csrf(AbstractHttpConfigurer::disable)
         .authorizeHttpRequests(auth -> auth
             // Paths accessible to all (including not logged in users)
-            .requestMatchers("/", "/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
-            .requestMatchers("/api/auth/register").permitAll()
+            // .requestMatchers("/", "/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
+            // .requestMatchers("/api/auth/register").permitAll()
           // TODO: uncomment when done line 67 to 79 and delete following lines 65 and 66
           .requestMatchers("/**").permitAll()    // to check APIs and paths    
         )
