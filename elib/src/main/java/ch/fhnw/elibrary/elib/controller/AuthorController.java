@@ -39,7 +39,8 @@ public class AuthorController {
         try {
             author = authorService.createAuthor(author);
 
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 
         }
