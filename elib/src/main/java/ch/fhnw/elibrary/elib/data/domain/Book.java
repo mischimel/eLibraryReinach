@@ -1,9 +1,7 @@
 package ch.fhnw.elibrary.elib.data.domain;
 
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 
 // Book class author @michimel and @RahelHaeusler
@@ -15,6 +13,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
+    @JsonIgnore //TODO: check if this is needed
     private Long bookID;
 
     @Column(nullable = false)
@@ -29,6 +28,8 @@ public class Book {
     @Column
     private String description;
 
+    /*@JsonIgnore annotation is specific to the Jackson library and is used for 
+    excluding fields from JSON serialization/deserialization, as mentioned earlier. */
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "authorID", referencedColumnName = "authorID")
@@ -40,7 +41,6 @@ public class Book {
     private Genre genre;
 
     // @Transient, which means they are not persisted in the database but used for computation purposes
-
     @Transient
     @Column(nullable = false)
     private String authorName;

@@ -2,6 +2,7 @@ package ch.fhnw.elibrary.elib.data.domain;
 
 import java.util.List;
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // Author class author @michimel and @RahelHaeusler
 
@@ -12,6 +13,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
+    @JsonIgnore //TODO: check if this is needed
     private Long authorID;
 
     @Column(nullable = false)

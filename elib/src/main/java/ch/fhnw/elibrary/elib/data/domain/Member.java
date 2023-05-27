@@ -14,6 +14,9 @@ import jakarta.validation.constraints.NotEmpty;
 @Table(name = "members")
 public class Member {
     
+    /*When you annotate a field or method with @Hidden, it indicates that it should not be included 
+    in the generated API documentation. This can be useful when you have internal implementation 
+    details or sensitive information that should not be exposed in the documentation. */
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Hidden

@@ -1,7 +1,6 @@
 package ch.fhnw.elibrary.elib.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 
 // Borrowed class author @michimel and @RahelHaeusler
@@ -13,6 +12,7 @@ public class Borrowed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
+    @JsonIgnore //TODO: check if this is needed
     private Long borrowedID;
 
     @Column(name = "status", nullable = false)

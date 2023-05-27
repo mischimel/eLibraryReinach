@@ -2,6 +2,7 @@ package ch.fhnw.elibrary.elib.data.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 // Genre class author @michimel and @RahelHaeusler
@@ -12,6 +13,7 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
+    @JsonIgnore //TODO: check if this is needed
     private Long genreID;
 
     @Column(nullable = false)
