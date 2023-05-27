@@ -1,6 +1,9 @@
 package ch.fhnw.elibrary.elib.data.domain;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 // Book class author @michimel and @RahelHaeusler
@@ -26,13 +29,25 @@ public class Book {
     @Column
     private String description;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "authorID", referencedColumnName = "authorID")
     private Author author;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "genreID", referencedColumnName = "genreID")
     private Genre genre;
+
+    // @Transient, which means they are not persisted in the database but used for computation purposes
+
+    @Transient
+    @Column(nullable = false)
+    private String authorName;
+
+    @Transient
+    @Column(nullable = false)
+    private String genreName;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "bookID"), inverseJoinColumns = @JoinColumn(name = "memberID"))
@@ -43,14 +58,16 @@ public class Book {
     public Book() {
     }
     
-    public Book(Long bookID, String isbn, String title, int year, String description, Author author, Genre genre) {
+    public Book(Long bookID, String isbn, String title, int publishYear, String description, Author author, Genre genre) {
         this.bookID = bookID;
         this.isbn = isbn;
         this.title = title;
-        this.publishYear = year;
+        this.publishYear = publishYear;
         this.description = description;
-        this.author = author; // todo: getFirstname() + getLastname()
-        this.genre = genre; // todo: getName()
+        //this.author = author; // todo: getFirstname() + getLastname()
+        //this.genre = genre; // todo: getName()
+        this.authorName = author.getFirstName() + " " + author.getLastName();
+        this.genreName = genre.getName();
     }
 
     // getters and setters
@@ -110,17 +127,35 @@ public class Book {
         this.genre = genre;
     }
 
+    // Getter and Setter for authorName
+    public String getAuthorName() {
+        if (author != null) {
+            return author.getFirstName() + " " + author.getLastName();
+        }
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    // Getter and Setter for genreName
+    public String getGenreName() {
+        if (genre != null) {
+            return genre.getName();
+        }
+        return genreName;
+    }
+
+    public void setGenreName(String genreName) {
+        this.genreName = genreName;
+    }
+
     // toString
     @Override
     public String toString() {
-        return "Book [id=" + bookID + ", isbn=" + isbn + ", title=" + title + ", year=" + publishYear + ", description=" + description + 
-        "author firstname=" + author.getFirstName() + "author lastname=" + author.getLastName() + "author country=" + author.getCountry()+ 
-        ", genre name=" + genre.getName() + "]";
-    }
-
-        
-
-
-        
+        return "Book [bookID=" + bookID + ", isbn=" + isbn + ", title=" + title + ", publishYear=" + publishYear
+        + ", description=" + description + ", authorName=" + authorName + ", genreName=" + genreName + "]";
+}       
     
 }
