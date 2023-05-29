@@ -52,7 +52,7 @@ public class GenreController {
     but for completeness we provide the mappings below */
     
     @GetMapping("/findByName/{name}")
-    public List<Genre> getGenresByName(@PathVariable String name) {
+    public Genre getGenresByName(@PathVariable String name) {
         return genreService.getGenresByName(name);
     }
 }

@@ -23,7 +23,7 @@ public class GenreService {
     // checks if the genre with the given name already exists, if not, the genre is saved
     public Genre createGenre(Genre genre) throws Exception {
         if (genre.getName() != null) {
-            if (genreRepository.findByName(genre.getName()).isEmpty())
+            if (genreRepository.findByName(genre.getName()) == null)
                 return genreRepository.save(genre);
             else
                 throw new Exception("Genre " + genre.getName() + " already exists");
@@ -42,7 +42,7 @@ public class GenreService {
     as budibase provides the functionality to search via the filter function,
     but for completeness we provide the methods below */
     
-    public List<Genre> getGenresByName(String name) {
+    public Genre getGenresByName(String name) {
         return genreRepository.findByName(name);
     }
 

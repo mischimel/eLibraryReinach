@@ -16,6 +16,7 @@ public interface GenreRepository extends JpaRepository<Genre, Long> {
     author @michimel and @RahelHaeusler*/
 
     Genre findByGenreID(Long genreID);
-    List<Genre> findByName(String name);
+    Genre findByName(String name);
+  
     
 }

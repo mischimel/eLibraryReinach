@@ -20,10 +20,12 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final AuthorRepository authorRepository;
+    private final GenreRepository genreRepository;
 
-    public BookService(BookRepository bookRepository, AuthorRepository authorRepository) {
+    public BookService(BookRepository bookRepository, AuthorRepository authorRepository, GenreRepository genreRepository) {
         this.bookRepository = bookRepository;
         this.authorRepository = authorRepository;
+        this.genreRepository = genreRepository;
     }
 
     public List<Book> getAllBooks() {
@@ -31,38 +33,42 @@ public class BookService {
         return books;
     }
     
-    // checks if the book with the given isbn already exists, if not, the book is saved
+     // checks if the book with the given isbn already exists, if not, the book is saved 
+     // and checks if the author already exists, if not, the author is saved and the author is assigned to the book
+     // and checks if the genre already exists, if not, the genre is saved and the genre is assigned to the book
 
-    // public Book createBook(Book book) throws Exception {
-    //     if (book.getIsbn() != null) {
-    //         if (bookRepository.findByIsbn(book.getIsbn()) == null)
-    //             return bookRepository.save(book);
-    //         else
-    //             throw new Exception("Book with ISBN " + book.getIsbn() + " already exists");
-            
-    //     }
-    //     throw new Exception("Invalid ISBN");
-    // }
-
-    // checks if the book with the given isbn already exists, if not, the book is saved and checks if the author already exists, if not, the author is saved and the author is assigned to the book
     public Book createBook(Book book) throws Exception {
         if (book.getIsbn() != null) {
             if (bookRepository.findByIsbn(book.getIsbn()) == null) {
-                if (book.getAuthorName() != null) {
-                    if (authorRepository.findByFirstNameAndLastName(book.getAuthorName().split(" ")[0], book.getAuthorName().split(" ")[1]) == null) {
+                if (book.getAuthorFirstName() != null && book.getAuthorLastName() != null && book.getAuthorCountry() != null) {
+                    if (authorRepository.findByFirstNameAndLastName(book.getAuthorFirstName(), book.getAuthorLastName()) == null) {
                         Author author = new Author();
-                        author.setFirstName(book.getAuthorName().split(" ")[0]);
-                        author.setLastName(book.getAuthorName().split(" ")[1]);
+                        author.setFirstName(book.getAuthorFirstName());
+                        author.setLastName(book.getAuthorLastName());
                         author.setCountry(book.getAuthorCountry());
                         authorRepository.save(author);
                         book.setAuthor(author);
                     }
                     else {
-                        Author author = authorRepository.findByFirstNameAndLastName(book.getAuthorName().split(" ")[0], book.getAuthorName().split(" ")[1]);
+                        Author author = authorRepository.findByFirstNameAndLastName(book.getAuthorFirstName(), book.getAuthorLastName());
                         book.setAuthor(author);
                     }
+                    
                 }
-                return bookRepository.save(book);
+                       
+                if (book.getGenreName() != null) {
+                    if (genreRepository.findByName(book.getGenreName()) == null) {
+                        Genre genre = new Genre();
+                        genre.setName(book.getGenreName());
+                        genreRepository.save(genre);
+                        book.setGenre(genre);
+                    }
+                    else {
+                        Genre genre = genreRepository.findByName(book.getGenreName());
+                        book.setGenre(genre);
+                    }
+                }
+            return bookRepository.save(book);
             }
             else
                 throw new Exception("Book with ISBN " + book.getIsbn() + " already exists");
@@ -70,7 +76,31 @@ public class BookService {
         }
         throw new Exception("Invalid ISBN");
     }
-    
+ 
+    // // checks if the book with the given isbn already exists, if not, the book is saved and checks if the genre already exists, if not, the genre is saved and the genre is assigned to the book
+    // public Book createBook(Book book) throws Exception {
+    //     if (book.getIsbn() != null) {
+    //         if (bookRepository.findByIsbn(book.getIsbn()) == null) {
+    //             if (book.getGenreName() != null) {
+    //                 if (bookRepository.findByGenreName(book.getGenreName()) == null) {
+    //                     Genre genre = new Genre();
+    //                     genre.setGenreName(book.getGenreName());
+    //                     genreRepository.save(genre);
+    //                     book.setGenre(genre);
+    //                 }
+    //                 else {
+    //                     Genre genre = genreRepository.findByGenreName(book.getGenreName());
+    //                     book.setGenre(genre);
+    //                 }
+    //             }
+    //             return bookRepository.save(book);
+    //         }
+    //         else
+    //             throw new Exception("Book with ISBN " + book.getIsbn() + " already exists");
+            
+    //     }
+    //     throw new Exception("Invalid ISBN");
+    // }
 
     
 

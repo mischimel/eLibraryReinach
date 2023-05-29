@@ -28,6 +28,23 @@ public class Book {
     @Column
     private String description;
 
+    // @Transient, which means they are not persisted in the database but used for computation purposes
+    @Transient
+    @Column(nullable = false)
+    private String authorFristName;
+
+    @Transient
+    @Column(nullable = false)
+    private String authorLastName;
+
+    @Transient
+    @Column(nullable = false)
+    private String authorCountry;
+
+    @Transient
+    @Column(nullable = false)
+    private String genreName;
+
     /*@JsonIgnore annotation is specific to the Jackson library and is used for 
     excluding fields from JSON serialization/deserialization, as mentioned earlier. */
     @JsonIgnore
@@ -39,20 +56,6 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "genreID", referencedColumnName = "genreID")
     private Genre genre;
-
-    // @Transient, which means they are not persisted in the database but used for computation purposes
-    @Transient
-    @Column(nullable = false)
-    private String authorName;
-
-    @Transient
-    @Column(nullable = false)
-    private String authorCountry;
-
-    @Transient
-    @Column(nullable = false)
-    private String genreName;
-    
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "bookID"), inverseJoinColumns = @JoinColumn(name = "memberID"))
@@ -69,9 +72,9 @@ public class Book {
         this.title = title;
         this.publishYear = publishYear;
         this.description = description;
-        //this.author = author; // todo: getFirstname() + getLastname()
-        //this.genre = genre; // todo: getName()
-        this.authorName = author.getFirstName() + " " + author.getLastName();
+        this.authorFristName = author.getFirstName();
+        this.authorLastName = author.getLastName();
+        this.authorCountry = author.getCountry();
         this.genreName = genre.getName();
     }
 
@@ -116,36 +119,29 @@ public class Book {
         this.description = description;
     }
 
-    @JsonIgnore
-    public Author getAuthor() {
-        return author;
-    }
 
-    @JsonIgnore
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
-    @JsonIgnore
-    public Genre getGenre() {
-        return genre;
-    }
-
-    @JsonIgnore
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
-
-    // Getter and Setter for authorName
-    public String getAuthorName() {
+    // Getter and Setter for authorFristName
+    public String getAuthorFirstName() {
         if (author != null) {
-            return author.getFirstName() + " " + author.getLastName();
+            return author.getFirstName();
         }
-        return authorName;
+        return authorFristName;
     }
 
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
+    public void setAuthorFirstName(String authorFirstName) {
+        this.authorFristName = authorFirstName;
+    }
+
+    // Getter and Setter for authorLastName
+    public String getAuthorLastName() {
+        if (author != null) {
+            return author.getLastName();
+        }
+        return authorLastName;
+    }
+
+    public void setAuthorLastName(String authorLastName) {
+        this.authorLastName = authorLastName;
     }
 
     // Getter and Setter for authorCountry
@@ -172,11 +168,43 @@ public class Book {
         this.genreName = genreName;
     }
 
+    // Getter and Setter for borrowedList
+    @JsonIgnore
+    public List<Borrowed> getBorrowedList() {
+        return borrowedList;
+    }
+
+    @JsonIgnore
+    public void setBorrowedList(List<Borrowed> borrowedList) {
+        this.borrowedList = borrowedList;
+    }
+
+    @JsonIgnore
+    public Author getAuthor() {
+        return author;
+    }
+
+    @JsonIgnore
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    @JsonIgnore
+    public Genre getGenre() {
+        return genre;
+    }
+
+    @JsonIgnore
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
     // toString
     @Override
     public String toString() {
         return "Book [bookID=" + bookID + ", isbn=" + isbn + ", title=" + title + ", publishYear=" + publishYear
-        + ", description=" + description + ", authorName=" + authorName + ", genreName=" + genreName + "]";
+        + ", description=" + description + ", authorFristName=" + authorFristName + ", authorLastName=" + authorLastName +
+        ", genreName=" + genreName + "]";
 }       
     
 }
