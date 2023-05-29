@@ -3,9 +3,11 @@ package ch.fhnw.elibrary.elib.data.domain;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 // Book class author @michimel and @RahelHaeusler
 
+@JsonPropertyOrder({ "isbn", "title", "publishYear", "description", "authorFirstName", "authorLastName", "authorCountry", "genreName" })
 @Entity
 @Table(name = "books")
 public class Book {
