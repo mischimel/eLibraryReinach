@@ -26,9 +26,10 @@ public class AuthorService {
 
     public Author createAuthor(Author author) throws Exception {
         if (author.getFirstName() != null ) {
-            if (authorRepository.findByFirstName(author.getFirstName()) == null)
+            if (authorRepository.findByFirstName(author.getFirstName()).isEmpty())
                 return authorRepository.save(author);
-            throw new Exception("Author " + author.getFirstName() +  " already exists");
+            else
+                throw new Exception("Author " + author.getFirstName() +  " already exists");
             
         }
         throw new Exception("Invalid author name");

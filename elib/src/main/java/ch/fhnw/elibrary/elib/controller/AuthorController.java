@@ -9,7 +9,7 @@ import ch.fhnw.elibrary.elib.business.service.AuthorService;
 import ch.fhnw.elibrary.elib.data.domain.Author;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+//import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 // AuthorController class author @michimel
 
@@ -17,6 +17,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 @RequestMapping(path = "/api/author")
 public class AuthorController {
 
+    @Autowired
     private final AuthorService authorService;
 
     public AuthorController(AuthorService authorService) {
