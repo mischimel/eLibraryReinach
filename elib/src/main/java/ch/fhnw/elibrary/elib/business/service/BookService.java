@@ -77,32 +77,7 @@ public class BookService {
         throw new Exception("Invalid ISBN");
     }
  
-    // // checks if the book with the given isbn already exists, if not, the book is saved and checks if the genre already exists, if not, the genre is saved and the genre is assigned to the book
-    // public Book createBook(Book book) throws Exception {
-    //     if (book.getIsbn() != null) {
-    //         if (bookRepository.findByIsbn(book.getIsbn()) == null) {
-    //             if (book.getGenreName() != null) {
-    //                 if (bookRepository.findByGenreName(book.getGenreName()) == null) {
-    //                     Genre genre = new Genre();
-    //                     genre.setGenreName(book.getGenreName());
-    //                     genreRepository.save(genre);
-    //                     book.setGenre(genre);
-    //                 }
-    //                 else {
-    //                     Genre genre = genreRepository.findByGenreName(book.getGenreName());
-    //                     book.setGenre(genre);
-    //                 }
-    //             }
-    //             return bookRepository.save(book);
-    //         }
-    //         else
-    //             throw new Exception("Book with ISBN " + book.getIsbn() + " already exists");
-            
-    //     }
-    //     throw new Exception("Invalid ISBN");
-    // }
 
-    
 
     public Book updateBook(Long bookID, Book bookDetails) {
         Book book = getBookById(bookID);
@@ -119,7 +94,7 @@ public class BookService {
     as budibase provides the functionality to search via the filter function,
     but for completeness we provide the methods below */
     
-    public List<Book> getBooksByTitle(String title) {
+    public Book getBooksByTitle(String title) {
         return bookRepository.findByTitle(title);
     }
 

@@ -29,13 +29,20 @@ public class BorrowedController {
         return borrowedService.getAllBorrowed();
     }
 
+    // TODO** for post mapping - conflict is thrown in budibase
     @PostMapping(path = "/rentBook", consumes = "application/json", produces = "application/json")
-    public Borrowed createBorrowed(@RequestBody Borrowed borrowed) {
-        return borrowedService.createBorrowed(borrowed);
+    public ResponseEntity createBorrowed(@RequestBody Borrowed borrowed) {
+        try {
+            borrowed = borrowedService.createBorrowed(borrowed);
+
+        } 
+        catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+
+        }
+        return ResponseEntity.ok(borrowed);
     }
-
-
-    
+  
 
     // TODO: check this: the method should change the status to false (return book) for the borrowed book with mentioned borrowedID
     @PutMapping("/returnBook/{borrowedID}")

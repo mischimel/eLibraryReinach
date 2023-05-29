@@ -67,7 +67,7 @@ public class Borrowed {
     }
 
     public Boolean getStatus() {
-        return status;
+        return status = true; // default status is true (book is borrowed) when new object is created
     }
 
     public void setStatus(Boolean status) {

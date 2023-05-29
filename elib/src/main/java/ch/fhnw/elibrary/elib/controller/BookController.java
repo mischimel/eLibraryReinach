@@ -53,7 +53,7 @@ public class BookController {
     but for completeness we provide the mappings below */
     
     @GetMapping("/findByTitle/{title}")
-    public List<Book> getBooksByTitle(@PathVariable String title) {
+    public Book getBooksByTitle(@PathVariable String title) {
         return bookService.getBooksByTitle(title);
     }
 
