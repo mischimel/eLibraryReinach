@@ -20,16 +20,13 @@ public class AuthorService {
         return authorRepository.findAll();
     }
 
-    // public Author createAuthor(Author author) {
-    //     return authorRepository.save(author);
-    // }
-
+    // checks if the author with the given firstname and lastname already exists, if not, the author is saved
     public Author createAuthor(Author author) throws Exception {
-        if (author.getFirstName() != null ) {
-            if (authorRepository.findByFirstName(author.getFirstName()).isEmpty())
+        if (author.getFirstName() != null && author.getLastName() != null) {
+            if (authorRepository.findByFirstNameAndLastName(author.getFirstName(), author.getLastName()) == null)
                 return authorRepository.save(author);
             else
-                throw new Exception("Author " + author.getFirstName() +  " already exists");
+                throw new Exception("Author " + author.getFirstName() +  author.getLastName() + " already exists");
             
         }
         throw new Exception("Invalid author name");
