@@ -18,6 +18,21 @@ public class Borrowed {
     @Column(name = "status", nullable = false)
     private Boolean status = true; // default status is true (book is borrowed) when new object is created
 
+    // @Transient, which means they are not persisted in the database but used for computation purposes
+
+    @Transient
+    @Column(nullable = false)
+    private String bookTitle;
+
+    @Transient
+    @Column(nullable = false)
+    private String memberUserName;
+
+
+    @Transient
+    @Column(nullable = false)
+    private String memberEmail;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "bookID", nullable = false)
@@ -29,33 +44,6 @@ public class Borrowed {
     private Member member;
 
 
-    // @Transient, which means they are not persisted in the database but used for computation purposes
-
-    @Transient
-    @Column(nullable = false)
-    private String bookTitle;
-
-    @Transient
-    @Column(nullable = false)
-    private String authorName;
-
-    @Transient
-    @Column(nullable = false)
-    private String genreName;
-
-    @Transient
-    @Column(nullable = false)
-    private String memberUserName;
-
-    @Transient
-    @Column(nullable = false)
-    private String memberName;
-
-    @Transient
-    @Column(nullable = false)
-    private String memberEmail;
-
-
     // constructor
     public Borrowed() {  
     }
@@ -64,10 +52,7 @@ public class Borrowed {
         this.borrowedID = borroweID;
         this.status = status;
         this.bookTitle = book.getTitle();
-        this.authorName = book.getAuthor().getFirstName() + " " + book.getAuthor().getLastName();
-        this.genreName = book.getGenre().getName();
         this.memberUserName = member.getUserName();
-        this.memberName = member.getFirstName() + " " + member.getLastName();
         this.memberEmail = member.getEmail();
     }
 
@@ -89,21 +74,6 @@ public class Borrowed {
         this.status = status;
     }
 
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public Member getMember() {
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
 
     // Getter and Setter for bookTitle
     public String getBookTitle() {
@@ -115,30 +85,6 @@ public class Borrowed {
 
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
-    }
-
-    // Getter and Setter for authorName
-    public String getAuthorName() {
-        if (book != null) {
-            return book.getAuthor().getFirstName() + " " + book.getAuthor().getLastName();
-        }
-        return authorName;
-    }
-
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
-    }
-
-    // Getter and Setter for genreName
-    public String getGenreName() {
-        if (book != null) {
-            return book.getGenre().getName();
-        }
-        return genreName;
-    }
-
-    public void setGenreName(String genreName) {
-        this.genreName = genreName;
     }
 
     // Getter and Setter for memberUserName
@@ -153,18 +99,6 @@ public class Borrowed {
         this.memberUserName = memberUserName;
     }
 
-    // Getter and Setter for memberName
-    public String getMemberName() {
-        if (member != null) {
-            return member.getFirstName() + " " + member.getLastName();
-        }
-        return memberName;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
     // Getter and Setter for memberEmail
     public String getMemberEmail() {
         if (member != null) {
@@ -177,12 +111,31 @@ public class Borrowed {
         this.memberEmail = memberEmail;
     }
 
+    @JsonIgnore
+    public Book getBook() {
+        return book;
+    }
+
+    @JsonIgnore
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    @JsonIgnore
+    public Member getMember() {
+        return member;
+    }
+
+    @JsonIgnore
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
     // toString
     @Override
     public String toString() {
         return String.format("Borrowed[id=" + borrowedID + ", status" + status + ", bookTitle=" + bookTitle + 
-        ", authorName=" + authorName + ", genreName=" + genreName + ", memberUserName=" + memberUserName + 
-        ", memberName=" + memberName + ", memberEmail=" + memberEmail + "]");
+        ", memberUserName=" + memberUserName +  ", memberEmail=" + memberEmail + "]");
         
     }
 

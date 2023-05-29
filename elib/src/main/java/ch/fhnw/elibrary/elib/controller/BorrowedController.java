@@ -29,10 +29,13 @@ public class BorrowedController {
         return borrowedService.getAllBorrowed();
     }
 
-    @PostMapping("/rentBook")
+    @PostMapping(path = "/rentBook", consumes = "application/json", produces = "application/json")
     public Borrowed createBorrowed(@RequestBody Borrowed borrowed) {
         return borrowedService.createBorrowed(borrowed);
     }
+
+
+    
 
     // TODO: check this: the method should change the status to false (return book) for the borrowed book with mentioned borrowedID
     @PutMapping("/returnBook/{borrowedID}")

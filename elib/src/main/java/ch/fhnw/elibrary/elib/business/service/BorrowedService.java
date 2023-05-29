@@ -18,27 +18,16 @@ public class BorrowedService {
 
     public List<Borrowed> getAllBorrowed() {
         List<Borrowed> borroweds = borrowedRepository.findAll();
-
-        for (Borrowed borrowed : borroweds) {
-
-            borrowed.setBookTitle(borrowed.getBook().getTitle());
-            borrowed.setAuthorName(borrowed.getBook().getAuthor().getFirstName() + " " + borrowed.getBook().getAuthor().getLastName());
-            borrowed.setGenreName(borrowed.getBook().getGenre().getName());
-            borrowed.setMemberUserName(borrowed.getMember().getUserName());
-            borrowed.setMemberName(borrowed.getMember().getFirstName() + " " + borrowed.getMember().getLastName());
-            borrowed.setMemberEmail(borrowed.getMember().getEmail());
-
-            // Set the book and member to null to exclude them from JSON serialization
-            borrowed.setBook(null);
-            borrowed.setMember(null);
-
-        }
         return borroweds;
     }
+
+
 
     public Borrowed createBorrowed(Borrowed borrowed) {
         return borrowedRepository.save(borrowed);
     }
+
+    
 
     public Borrowed updateBorrowed(Long borrowedID, Borrowed borrowedDetails) {
         Borrowed borrowed = getBorrowedById(borrowedID);
