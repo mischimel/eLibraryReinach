@@ -20,9 +20,24 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Member createMember(Member member) {
-        return memberRepository.save(member);
+    // we do not need to implement the security part, as it is taken out of the assignment
+    // therefore the method is just to add a new member
+    // checks if member with the given username and email already exists, if not, the member is saved
+    public Member createMember(Member member) throws Exception {
+        if (member.getUserName() != null && member.getEmail() != null) {
+            if (memberRepository.findByUserName(member.getUserName()) == null && memberRepository.findByEmail(member.getEmail()) == null)
+                return memberRepository.save(member);
+            else
+                throw new Exception("Member " + member.getUserName() +  member.getEmail() + " already exists");
+            
+        }
+        throw new Exception("Invalid member name");
     }
+
+
+    // public Member createMember(Member member) {
+    //     return memberRepository.save(member);
+    // }
 
     public Member updateMember(Long memberId, Member memberDetails) {
         Member member = getMemberById(memberId);

@@ -28,11 +28,21 @@ public class MemberController {
         return memberService.getAllMembers();
     }
 
-    //TODO: we do not need to implement this, as the security part is taken out of the assignment
-    @PostMapping("/register")
-    public Member createMember(@RequestBody Member member) {
-        return memberService.createMember(member);
+    // we do not need to implement the security part, as it is taken out of the assignment
+    // therefore the mapping is just to add a new member
+    @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
+    public ResponseEntity createMember(@RequestBody Member member) {
+        try {
+            member = memberService.createMember(member);
+
+        } 
+        catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+
+        }
+        return ResponseEntity.ok(member);
     }
+
 
     @PutMapping("/editProfile/{memberId}")
     public Member updateMember(@PathVariable Long memberId, @RequestBody Member member) {

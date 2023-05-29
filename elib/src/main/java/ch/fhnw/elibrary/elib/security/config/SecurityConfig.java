@@ -1,3 +1,4 @@
+
 package ch.fhnw.elibrary.elib.security.config;
 
 import org.springframework.context.annotation.Bean;
