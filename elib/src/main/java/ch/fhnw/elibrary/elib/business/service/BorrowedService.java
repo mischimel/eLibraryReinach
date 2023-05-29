@@ -31,7 +31,7 @@ public class BorrowedService {
 
     // TODO** for post mapping - conflict is thrown in budibase 
     // see below for the working version, but without the check if the book is already borrowed
-    
+
     // public Borrowed createBorrowed(Borrowed borrowed) throws Exception {
     //     if (borrowed.getBook() != null && borrowed.getMember() != null) {
     //         if (bookRepository.findByTitle(borrowed.getBookTitle()) != null && memberRepository.findByUserName(borrowed.getMemberUserName()) != null) {
@@ -75,9 +75,13 @@ public class BorrowedService {
         }
     
         // Check whether a borrowed object with the same data already exists in the database
-        // here gets the exception thrown, without this checking it works, but the same member can borrow the same book multiple times
-        
-            
+        List<Borrowed> borrowedList = borrowedRepository.findAll();
+        for (Borrowed b : borrowedList) {
+            if (b.getBookTitle().equals(bookTitle) && b.getMemberUserName().equals(memberUserName)) {
+                throw new Exception("Book is already borrowed.");
+            }
+        }
+                    
         borrowed.setBook(book);
         borrowed.setMember(member);
         borrowed.setStatus(true);
