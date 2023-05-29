@@ -10,11 +10,6 @@ import ch.fhnw.elibrary.elib.data.domain.Member;
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {  
 
-    /*custom query methods
-    - methods with type Book will only return one book (first one found)
-    - methods with type List<Book> will return a list with all books found
-    author @michimel and @RahelHaeusler*/
-
     Member findByMemberID(Long memberID);
     Member findByUserName(String userName);
     List<Member> findByFirstName(String firstName);

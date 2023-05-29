@@ -29,7 +29,6 @@ public class BorrowedController {
         return borrowedService.getAllBorrowed();
     }
 
-    // TODO** for post mapping - conflict is thrown in budibase
     @PostMapping(path = "/rentBook", consumes = "application/json", produces = "application/json")
     public ResponseEntity createBorrowed(@RequestBody Borrowed borrowed) {
         try {

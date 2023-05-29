@@ -1,7 +1,7 @@
 package ch.fhnw.elibrary.elib.security.service;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
+// import org.springframework.security.core.Authentication;
+// import org.springframework.security.core.GrantedAuthority;
 // TODO: commentet out, as import where throwing errors
 /*
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
@@ -11,9 +11,9 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 */
 import org.springframework.stereotype.Service;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.stream.Collectors;
+// import java.time.Instant;
+// import java.time.temporal.ChronoUnit;
+// import java.util.stream.Collectors;
 
 // TokenService class derived from CRM-webservice example
 // author @michimel

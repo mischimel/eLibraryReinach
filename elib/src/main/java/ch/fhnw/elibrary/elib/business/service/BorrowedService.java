@@ -28,31 +28,6 @@ public class BorrowedService {
         List<Borrowed> borroweds = borrowedRepository.findAll();
         return borroweds;
     }
-
-    // TODO** for post mapping - conflict is thrown in budibase 
-    // see below for the working version, but without the check if the book is already borrowed
-
-    // public Borrowed createBorrowed(Borrowed borrowed) throws Exception {
-    //     if (borrowed.getBook() != null && borrowed.getMember() != null) {
-    //         if (bookRepository.findByTitle(borrowed.getBookTitle()) != null && memberRepository.findByUserName(borrowed.getMemberUserName()) != null) {
-    //             Book book = bookRepository.findByTitle(borrowed.getBookTitle());
-    //             Member member = memberRepository.findByUserName(borrowed.getMember().getUserName());
-                
-    //             if (borrowedRepository.findByBookAndMember(book.getTitle(), member.getUserName()) == null) {
-    //                 borrowed.setBookTitle(book.getTitle());
-    //                 borrowed.setMemberUserName(member.getUserName());
-    //                 borrowed.setStatus(true);
-    //                 return borrowedRepository.save(borrowed);
-    //             }
-    //             else
-    //                 throw new Exception("Book is already borrowed");
-    //         }
-    //         else
-    //             throw new Exception("Book or Member does not exist");
-    //     }
-    //     else
-    //         throw new Exception("Book or Member is null");
-    // }
   
     public Borrowed createBorrowed(Borrowed borrowed) throws Exception {
         if (borrowed.getStatus() == null || borrowed.getStatus() != true) {
