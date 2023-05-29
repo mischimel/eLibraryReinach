@@ -2,11 +2,16 @@ package ch.fhnw.elibrary.elib.business.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
 
 import ch.fhnw.elibrary.elib.data.domain.Author;
 import ch.fhnw.elibrary.elib.data.domain.Book;
 import ch.fhnw.elibrary.elib.data.domain.Genre;
+import ch.fhnw.elibrary.elib.data.repository.AuthorRepository;
 import ch.fhnw.elibrary.elib.data.repository.BookRepository;
+import ch.fhnw.elibrary.elib.data.repository.GenreRepository;
+
 
 // BookService class author @michimel
 
@@ -14,9 +19,11 @@ import ch.fhnw.elibrary.elib.data.repository.BookRepository;
 public class BookService {
 
     private final BookRepository bookRepository;
+    private final AuthorRepository authorRepository;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, AuthorRepository authorRepository) {
         this.bookRepository = bookRepository;
+        this.authorRepository = authorRepository;
     }
 
     public List<Book> getAllBooks() {
@@ -25,16 +32,45 @@ public class BookService {
     }
     
     // checks if the book with the given isbn already exists, if not, the book is saved
+
+    // public Book createBook(Book book) throws Exception {
+    //     if (book.getIsbn() != null) {
+    //         if (bookRepository.findByIsbn(book.getIsbn()) == null)
+    //             return bookRepository.save(book);
+    //         else
+    //             throw new Exception("Book with ISBN " + book.getIsbn() + " already exists");
+            
+    //     }
+    //     throw new Exception("Invalid ISBN");
+    // }
+
+    // checks if the book with the given isbn already exists, if not, the book is saved and checks if the author already exists, if not, the author is saved and the author is assigned to the book
     public Book createBook(Book book) throws Exception {
         if (book.getIsbn() != null) {
-            if (bookRepository.findByIsbn(book.getIsbn()) == null)
+            if (bookRepository.findByIsbn(book.getIsbn()) == null) {
+                if (book.getAuthorName() != null) {
+                    if (authorRepository.findByFirstNameAndLastName(book.getAuthorName().split(" ")[0], book.getAuthorName().split(" ")[1]) == null) {
+                        Author author = new Author();
+                        author.setFirstName(book.getAuthorName().split(" ")[0]);
+                        author.setLastName(book.getAuthorName().split(" ")[1]);
+                        author.setCountry(book.getAuthorCountry());
+                        authorRepository.save(author);
+                        book.setAuthor(author);
+                    }
+                    else {
+                        Author author = authorRepository.findByFirstNameAndLastName(book.getAuthorName().split(" ")[0], book.getAuthorName().split(" ")[1]);
+                        book.setAuthor(author);
+                    }
+                }
                 return bookRepository.save(book);
+            }
             else
                 throw new Exception("Book with ISBN " + book.getIsbn() + " already exists");
             
         }
         throw new Exception("Invalid ISBN");
     }
+    
 
     
 
