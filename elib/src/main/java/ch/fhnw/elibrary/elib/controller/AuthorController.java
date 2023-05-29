@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.server.ResponseStatusException;
-import ch.fhnw.elibrary.elib.business.service.AuthorService;
-import ch.fhnw.elibrary.elib.data.domain.Author;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-//import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import ch.fhnw.elibrary.elib.business.service.AuthorService;
+import ch.fhnw.elibrary.elib.data.domain.Author;
+
 
 // AuthorController class author @michimel
 
@@ -28,12 +28,6 @@ public class AuthorController {
     public List<Author> getAllAuthors() {
         return authorService.getAllAuthors();
     }
-
-    // @PostMapping("/newAuthor")
-    // public Author createAuthor(@RequestBody Author author) {
-    //     return authorService.createAuthor(author);
-    // }
-
 
     @PostMapping(path = "/newAuthor", consumes = "application/json", produces = "application/json")
     public ResponseEntity createAuthor(@RequestBody Author author) {
