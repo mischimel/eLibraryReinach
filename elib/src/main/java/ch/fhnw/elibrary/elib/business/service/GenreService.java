@@ -20,8 +20,16 @@ public class GenreService {
         return genreRepository.findAll();
     }
 
-    public Genre createGenre(Genre genre) {
-        return genreRepository.save(genre);
+    // checks if the genre with the given name already exists, if not, the genre is saved
+    public Genre createGenre(Genre genre) throws Exception {
+        if (genre.getName() != null) {
+            if (genreRepository.findByName(genre.getName()).isEmpty())
+                return genreRepository.save(genre);
+            else
+                throw new Exception("Genre " + genre.getName() + " already exists");
+            
+        }
+        throw new Exception("Invalid genre name");
     }
 
     public Genre updateGenre(Long genreId, Genre genreDetails) {

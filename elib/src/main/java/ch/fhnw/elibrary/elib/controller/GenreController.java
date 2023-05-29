@@ -28,10 +28,19 @@ public class GenreController {
         return genreService.getAllGenres();
     }
 
-    @PostMapping("/newGenre")
-    public Genre createGenre(@RequestBody Genre genre) {
-        return genreService.createGenre(genre);
+    @PostMapping(path = "/newGenre", consumes = "application/json", produces = "application/json")
+    public ResponseEntity createGenre(@RequestBody Genre genre) {
+        try {
+            genre = genreService.createGenre(genre);
+
+        } 
+        catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+
+        }
+        return ResponseEntity.ok(genre);
     }
+
 
     @PutMapping("/updateGenre/{genreId}")
     public Genre updateGenre(@PathVariable Long genreId, @RequestBody Genre genre) {
