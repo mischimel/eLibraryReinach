@@ -17,6 +17,7 @@ import ch.fhnw.elibrary.elib.data.domain.Book;
 @RequestMapping("/api/book")
 public class BookController {
 
+    @Autowired
     private final BookService bookService;
 
     public BookController(BookService bookService) {

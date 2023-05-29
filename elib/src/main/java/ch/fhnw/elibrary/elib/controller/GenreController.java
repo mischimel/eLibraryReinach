@@ -16,6 +16,7 @@ import ch.fhnw.elibrary.elib.data.domain.Genre;
 @RequestMapping("/api/genre")
 public class GenreController {
 
+    @Autowired
     private final GenreService genreService;
 
     public GenreController(GenreService genreService) {

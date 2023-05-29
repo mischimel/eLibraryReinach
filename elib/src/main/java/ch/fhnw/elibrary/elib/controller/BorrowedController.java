@@ -17,6 +17,7 @@ import ch.fhnw.elibrary.elib.data.domain.Borrowed;
 @RequestMapping("/api/borrowed")
 public class BorrowedController {
 
+    @Autowired
     private final BorrowedService borrowedService;
 
     public BorrowedController(BorrowedService borrowedService) {

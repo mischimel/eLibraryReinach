@@ -16,6 +16,7 @@ import ch.fhnw.elibrary.elib.data.domain.Member;
 @RequestMapping("/api/member")
 public class MemberController {
 
+    @Autowired
     private final MemberService memberService;
 
     public MemberController(MemberService memberService) {
