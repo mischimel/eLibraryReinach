@@ -111,18 +111,22 @@ public class Book {
         this.description = description;
     }
 
+    @JsonIgnore
     public Author getAuthor() {
         return author;
     }
 
+    @JsonIgnore
     public void setAuthor(Author author) {
         this.author = author;
     }
 
+    @JsonIgnore
     public Genre getGenre() {
         return genre;
     }
 
+    @JsonIgnore
     public void setGenre(Genre genre) {
         this.genre = genre;
     }

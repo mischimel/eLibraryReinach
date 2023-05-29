@@ -29,10 +29,19 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    @PostMapping("/newBook")
-    public Book createBook(@RequestBody Book book) {
-        return bookService.createBook(book);
+    @PostMapping(path = "/newBook", consumes = "application/json", produces = "application/json")
+    public ResponseEntity createBook(@RequestBody Book book) {
+        try {
+            book = bookService.createBook(book);
+
+        } 
+        catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+
+        }
+        return ResponseEntity.ok(book);
     }
+
 
     @PutMapping("/updateBook/{bookID}")
     public Book updateBook(@PathVariable Long bookID, @RequestBody Book book) {

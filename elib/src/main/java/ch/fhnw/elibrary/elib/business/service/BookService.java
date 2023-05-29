@@ -20,26 +20,23 @@ public class BookService {
     }
 
     public List<Book> getAllBooks() {
-        List<Book> books = bookRepository.findAll();
-    
-        for (Book book : books) {
-
-            book.setAuthorName(book.getAuthor().getFirstName() + " " + book.getAuthor().getLastName());
-            book.setGenreName(book.getGenre().getName());
-            
-            // Set the author and genre to null to exclude them from JSON serialization
-            book.setAuthor(null);
-            book.setGenre(null);
-
-        }
-    
+        List<Book> books = bookRepository.findAll();   
         return books;
     }
     
-
-    public Book createBook(Book book) {
-        return bookRepository.save(book);
+    // checks if the book with the given isbn already exists, if not, the book is saved
+    public Book createBook(Book book) throws Exception {
+        if (book.getIsbn() != null) {
+            if (bookRepository.findByIsbn(book.getIsbn()) == null)
+                return bookRepository.save(book);
+            else
+                throw new Exception("Book with ISBN " + book.getIsbn() + " already exists");
+            
+        }
+        throw new Exception("Invalid ISBN");
     }
+
+    
 
     public Book updateBook(Long bookID, Book bookDetails) {
         Book book = getBookById(bookID);
