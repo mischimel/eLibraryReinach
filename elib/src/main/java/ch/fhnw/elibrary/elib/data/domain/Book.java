@@ -47,7 +47,12 @@ public class Book {
 
     @Transient
     @Column(nullable = false)
+    private String authorCountry;
+
+    @Transient
+    @Column(nullable = false)
     private String genreName;
+    
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "bookID"), inverseJoinColumns = @JoinColumn(name = "memberID"))
@@ -141,6 +146,18 @@ public class Book {
 
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
+    }
+
+    // Getter and Setter for authorCountry
+    public String getAuthorCountry() {
+        if (author != null) {
+            return author.getCountry();
+        }
+        return authorCountry;
+    }
+
+    public void setAuthorCountry(String authorCountry) {
+        this.authorCountry = authorCountry;
     }
 
     // Getter and Setter for genreName
