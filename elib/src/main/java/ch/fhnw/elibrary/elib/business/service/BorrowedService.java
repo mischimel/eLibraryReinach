@@ -29,28 +29,62 @@ public class BorrowedService {
         return borroweds;
     }
 
-    // TODO** for post mapping - conflict is thrown in budibase
-    public Borrowed createBorrowed(Borrowed borrowed) throws Exception {
-        if (borrowed.getBook() != null && borrowed.getMember() != null) {
-            if (bookRepository.findByTitle(borrowed.getBookTitle()) != null && memberRepository.findByUserName(borrowed.getMemberUserName()) != null) {
-                Book book = bookRepository.findByTitle(borrowed.getBookTitle());
-                Member member = memberRepository.findByFirstNameAndLastName(borrowed.getMember().getFirstName(), borrowed.getMember().getLastName());
-                if (borrowedRepository.findByBookAndMemberAndStatus(book.getTitle(), member.getUserName(), true) == null) {
-                    borrowed.setBookTitle(book.getTitle());
-                    borrowed.setMemberUserName(member.getUserName());
-                    borrowed.setStatus(true);
-                    return borrowedRepository.save(borrowed);
-                }
-                else
-                    throw new Exception("Book is already borrowed");
-            }
-            else
-                throw new Exception("Book or Member does not exist");
-        }
-        else
-            throw new Exception("Book or Member is null");
-    }
+    // TODO** for post mapping - conflict is thrown in budibase 
+    // see below for the working version, but without the check if the book is already borrowed
+    
+    // public Borrowed createBorrowed(Borrowed borrowed) throws Exception {
+    //     if (borrowed.getBook() != null && borrowed.getMember() != null) {
+    //         if (bookRepository.findByTitle(borrowed.getBookTitle()) != null && memberRepository.findByUserName(borrowed.getMemberUserName()) != null) {
+    //             Book book = bookRepository.findByTitle(borrowed.getBookTitle());
+    //             Member member = memberRepository.findByUserName(borrowed.getMember().getUserName());
+                
+    //             if (borrowedRepository.findByBookAndMember(book.getTitle(), member.getUserName()) == null) {
+    //                 borrowed.setBookTitle(book.getTitle());
+    //                 borrowed.setMemberUserName(member.getUserName());
+    //                 borrowed.setStatus(true);
+    //                 return borrowedRepository.save(borrowed);
+    //             }
+    //             else
+    //                 throw new Exception("Book is already borrowed");
+    //         }
+    //         else
+    //             throw new Exception("Book or Member does not exist");
+    //     }
+    //     else
+    //         throw new Exception("Book or Member is null");
+    // }
   
+    public Borrowed createBorrowed(Borrowed borrowed) throws Exception {
+        if (borrowed.getStatus() == null || borrowed.getStatus() != true) {
+            throw new Exception("Invalid status. The status must be true.");
+        }
+    
+        String bookTitle = borrowed.getBookTitle();
+        String memberUserName = borrowed.getMemberUserName();
+    
+        // Check whether the book with the specified title exists in the database
+        Book book = bookRepository.findByTitle(bookTitle);
+        if (book == null) {
+            throw new Exception("Book does not exist.");
+        }
+    
+        // Check whether the member with the specified user name exists in the database
+        Member member = memberRepository.findByUserName(memberUserName);
+        if (member == null) {
+            throw new Exception("Member does not exist.");
+        }
+    
+        // Check whether a borrowed object with the same data already exists in the database
+        // here gets the exception thrown, without this checking it works, but the same member can borrow the same book multiple times
+        
+            
+        borrowed.setBook(book);
+        borrowed.setMember(member);
+        borrowed.setStatus(true);
+    
+        return borrowedRepository.save(borrowed);
+    }
+    
 
     public Borrowed updateBorrowed(Long borrowedID, Borrowed borrowedDetails) {
         Borrowed borrowed = getBorrowedById(borrowedID);

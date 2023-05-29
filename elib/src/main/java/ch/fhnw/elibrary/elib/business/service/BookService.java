@@ -2,9 +2,6 @@ package ch.fhnw.elibrary.elib.business.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-import java.util.Optional;
-
 import ch.fhnw.elibrary.elib.data.domain.Author;
 import ch.fhnw.elibrary.elib.data.domain.Book;
 import ch.fhnw.elibrary.elib.data.domain.Genre;
