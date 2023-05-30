@@ -43,9 +43,15 @@ public class BookController {
     }
 
 
-    @PutMapping("/updateBook/{bookID}")
-    public Book updateBook(@PathVariable Long bookID, @RequestBody Book book) {
-        return bookService.updateBook(bookID, book);
+    // to update an existing book, after finding the book by ID, the book is updated with the new values
+    @PutMapping(path = "/updateBook/{bookID}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity updateBook(@PathVariable Long bookID, @RequestBody Book bookDeatils) {
+        try {
+            Book book = bookService.updateBook(bookID, bookDeatils);
+            return ResponseEntity.ok(book);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
 
     /* the following mappings are not used in the application, 

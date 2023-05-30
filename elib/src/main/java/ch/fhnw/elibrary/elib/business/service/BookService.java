@@ -74,18 +74,23 @@ public class BookService {
         throw new Exception("Invalid ISBN");
     }
  
-
-
+    // to update an existing book, after finding the book by ID, the book is updated with the new values
     public Book updateBook(Long bookID, Book bookDetails) {
-        Book book = getBookById(bookID);
+        Book book = bookRepository.findByBookID(bookID);
+            if (book == null) {
+                throw new RuntimeException("Book not found for this ID :: " + bookID);
+            }
         book.setTitle(bookDetails.getTitle());
         book.setIsbn(bookDetails.getIsbn());
         book.setPublishYear(bookDetails.getPublishYear());
         book.setDescription(bookDetails.getDescription());
-        book.setAuthor(bookDetails.getAuthor());
-        book.setGenre(bookDetails.getGenre());
+        book.setAuthorFirstName(bookDetails.getAuthorFirstName());
+        book.setAuthorLastName(bookDetails.getAuthorLastName());
+        book.setAuthorCountry(bookDetails.getAuthorCountry());
+        book.setGenreName(bookDetails.getGenreName());
         return bookRepository.save(book);
     }
+
 
     /* the following methods are not used in the application, 
     as budibase provides the functionality to search via the filter function,
