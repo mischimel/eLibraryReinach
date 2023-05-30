@@ -78,8 +78,8 @@ public class MemberService {
         return memberRepository.findByRole(role);
     }
 
-    private Member getMemberById(Long memberId) {
-        return memberRepository.findByMemberID(memberId);
+    private Member getMemberByID(Long memberID) {
+        return memberRepository.findByMemberID(memberID);
     }
 }
 

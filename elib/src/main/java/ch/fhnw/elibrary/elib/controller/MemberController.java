@@ -44,7 +44,7 @@ public class MemberController {
     }
 
     // to update an existing member, after finding the member by ID, the member is updated with the new values
-    @PutMapping(path = "/editProfile/{memberId}", consumes = "application/json", produces = "application/json")
+    @PutMapping(path = "/editProfile/{memberID}", consumes = "application/json", produces = "application/json")
     public ResponseEntity updateMember(@PathVariable Long memberID, @RequestBody Member memberDetails) {
         try {
             Member member = memberService.updateMember(memberID, memberDetails);
