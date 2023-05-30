@@ -43,11 +43,17 @@ public class BorrowedController {
     }
   
 
-    // TODO: check this: the method should change the status to false (return book) for the borrowed book with mentioned borrowedID
-    @PutMapping("/returnBook/{borrowedID}")
-    public Borrowed updateBorrowed(@PathVariable Long borrowedID, @RequestBody Borrowed borrowed) {
-        return borrowedService.updateBorrowed(borrowedID, borrowed);
+    // to update an existing borrowed, after finding the borrowed by ID, the borrowed is updated with the new values
+    @PutMapping(path = "/returnBook/{borrowedID}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity updateBorrowed(@PathVariable Long borrowedID, @RequestBody Borrowed borrowedDetails) {
+        try {
+            Borrowed borrowed = borrowedService.updateBorrowed(borrowedID, borrowedDetails);
+            return ResponseEntity.ok(borrowed);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
+   
 
     /* the following mappings are not used in the application, 
     as budibase provides the functionality to search via the filter function,

@@ -41,11 +41,17 @@ public class GenreController {
         return ResponseEntity.ok(genre);
     }
 
-
-    @PutMapping("/updateGenre/{genreId}")
-    public Genre updateGenre(@PathVariable Long genreId, @RequestBody Genre genre) {
-        return genreService.updateGenre(genreId, genre);
+    // to update an existing genre, after finding the genre by ID, the genre is updated with the new values
+    @PutMapping(path = "/updateGenre/{genreId}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity updateGenre(@PathVariable Long genreID, @RequestBody Genre genreDetails) {
+        try {
+            Genre genre = genreService.updateGenre(genreID, genreDetails);
+            return ResponseEntity.ok(genre);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
+  
 
     /* the following mappings are not used in the application, 
     as budibase provides the functionality to search via the filter function,

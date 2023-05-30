@@ -43,11 +43,17 @@ public class MemberController {
         return ResponseEntity.ok(member);
     }
 
-
-    @PutMapping("/editProfile/{memberId}")
-    public Member updateMember(@PathVariable Long memberId, @RequestBody Member member) {
-        return memberService.updateMember(memberId, member);
+    // to update an existing member, after finding the member by ID, the member is updated with the new values
+    @PutMapping(path = "/editProfile/{memberId}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity updateMember(@PathVariable Long memberID, @RequestBody Member memberDetails) {
+        try {
+            Member member = memberService.updateMember(memberID, memberDetails);
+            return ResponseEntity.ok(member);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
+    
 
     /* the following mappings are not used in the application, 
     as budibase provides the functionality to search via the filter function,

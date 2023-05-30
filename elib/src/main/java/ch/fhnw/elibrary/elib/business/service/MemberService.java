@@ -34,21 +34,21 @@ public class MemberService {
         throw new Exception("Invalid member name");
     }
 
-
-    // public Member createMember(Member member) {
-    //     return memberRepository.save(member);
-    // }
-
-    public Member updateMember(Long memberId, Member memberDetails) {
-        Member member = getMemberById(memberId);
+    // to update an existing member, after finding the member by ID, the member is updated with the new values
+    public Member updateMember(Long memberID, Member memberDetails) {
+        Member member = memberRepository.findByMemberID(memberID);
+        if (member == null) {
+            throw new RuntimeException("Member not found for this ID :: " + memberID);
+        }
         member.setUserName(memberDetails.getUserName());
         member.setFirstName(memberDetails.getFirstName());
         member.setLastName(memberDetails.getLastName());
         member.setEmail(memberDetails.getEmail());
-        member.setPassword(memberDetails.getPassword());
-        member.setRole(memberDetails.getRole());
         return memberRepository.save(member);
     }
+
+
+
 
     /* the following methods are not used in the application, 
     as budibase provides the functionality to search via the filter function,

@@ -64,14 +64,20 @@ public class BorrowedService {
         return borrowedRepository.save(borrowed);
     }
     
-
+    // to update an existing borrowed, after finding the borrowed by ID, the borrowed is updated with the new values
     public Borrowed updateBorrowed(Long borrowedID, Borrowed borrowedDetails) {
-        Borrowed borrowed = getBorrowedById(borrowedID);
+        Borrowed borrowed = borrowedRepository.findByBorrowedID(borrowedID);
+        if (borrowed == null) {
+            throw new RuntimeException("Borrowed not found for this ID :: " + borrowedID);
+        }
         borrowed.setStatus(borrowedDetails.getStatus());
-        borrowed.setBook(borrowedDetails.getBook());
-        borrowed.setMember(borrowedDetails.getMember());
+        borrowed.setBookTitle(borrowedDetails.getBookTitle());
+        borrowed.setMemberUserName(borrowedDetails.getMemberUserName());
+        borrowed.setMemberEmail(borrowedDetails.getMemberEmail());
         return borrowedRepository.save(borrowed);
     }
+
+
 
     /* the following methods are not used in the application, 
     as budibase provides the functionality to search via the filter function,

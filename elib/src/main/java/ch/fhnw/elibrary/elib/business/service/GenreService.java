@@ -32,11 +32,16 @@ public class GenreService {
         throw new Exception("Invalid genre name");
     }
 
-    public Genre updateGenre(Long genreId, Genre genreDetails) {
-        Genre genre = getGenreById(genreId);
+    // to update an existing genre, after finding the genre by ID, the genre is updated with the new values
+    public Genre updateGenre(Long genreID, Genre genreDetails) {
+        Genre genre = genreRepository.findByGenreID(genreID);
+        if (genre == null) {
+            throw new RuntimeException("Genre not found for this ID :: " + genreID);
+        }
         genre.setName(genreDetails.getName());
         return genreRepository.save(genre);
     }
+
 
     /* the following methods are not used in the application, 
     as budibase provides the functionality to search via the filter function,
