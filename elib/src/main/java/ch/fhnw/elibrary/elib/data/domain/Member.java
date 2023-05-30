@@ -19,7 +19,7 @@ public class Member {
     details or sensitive information that should not be exposed in the documentation. */
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Hidden
+	// @Hidden // comment out this line to see the memberID in the response
 	private Long memberID;
 	
     @NotEmpty(message = "Please provide a username.")
@@ -36,6 +36,7 @@ public class Member {
 	private String email;
 	
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // only create object property from JSON
+    @Hidden
 	private String password;
 	
     @JsonIgnore

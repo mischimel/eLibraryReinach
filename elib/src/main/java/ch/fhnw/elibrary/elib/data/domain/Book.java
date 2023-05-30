@@ -7,7 +7,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 // Book class author @michimel and @RahelHaeusler
 
-@JsonPropertyOrder({ "isbn", "title", "publishYear", "description", "authorFirstName", "authorLastName", "authorCountry", "genreName" })
+// JsonPropertyOrder annotation used to have the properties in the order we want them to be displayed in the response
+@JsonPropertyOrder({ "bookID", "isbn", "title", "publishYear", "description", "authorFirstName", "authorLastName", "authorCountry", "genreName" })
 @Entity
 @Table(name = "books")
 public class Book {
@@ -15,7 +16,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    @JsonIgnore //TODO: check if this is needed
+    //@JsonIgnore // comment out this line to see the bookID in the response
     private Long bookID;
 
     @Column(nullable = false)

@@ -13,7 +13,7 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    @JsonIgnore //TODO: check if this is needed
+    //@JsonIgnore // comment out this line to see the genreID in the response
     private Long genreID;
 
     @Column(nullable = false)

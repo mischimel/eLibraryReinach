@@ -12,7 +12,7 @@ public class Borrowed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    @JsonIgnore //TODO: check if this is needed
+    //@JsonIgnore // comment out this line to see the borrowedID in the response
     private Long borrowedID;
 
     @Column(name = "status", nullable = false)
