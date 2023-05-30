@@ -43,10 +43,17 @@ public class AuthorController {
     }
     
 
-    @PutMapping("/updateAuthor/{authorID}")
-    public Author updateAuthor(@PathVariable Long authorID, @RequestBody Author author) {
-        return authorService.updateAuthor(authorID, author);
+    // to update an existing author, after finding the author by ID, the author is updated with the new values
+    @PutMapping(path = "/updateAuthor/{authorID}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity updateAuthor(@PathVariable Long authorID, @RequestBody Author authorDetails) {
+        try {
+            Author author = authorService.updateAuthor(authorID, authorDetails);
+            return ResponseEntity.ok(author);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
+
 
     /* the following mappings are not used in the application, 
     as budibase provides the functionality to search via the filter function,

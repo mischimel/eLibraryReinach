@@ -32,9 +32,12 @@ public class AuthorService {
         throw new Exception("Invalid author name");
     }
     
-
+    // to update an existing author, after finding the author by ID, the author is updated with the new values
     public Author updateAuthor(Long authorID, Author authorDetails) {
-        Author author = getAuthorById(authorID);
+        Author author = authorRepository.findByAuthorID(authorID);
+        if (author == null) {
+            throw new RuntimeException("Author not found for this ID :: " + authorID);
+        }
         author.setFirstName(authorDetails.getFirstName());
         author.setLastName(authorDetails.getLastName());
         author.setCountry(authorDetails.getCountry());
