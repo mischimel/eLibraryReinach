@@ -52,7 +52,7 @@
       		<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       		<version>2.0.2</version>
    		</dependency>
-		<!-- <dependency> // added by michele
+		<!-- <dependency> 
 		  <groupId>com.nimbusds</groupId>
 		  <artifactId>nimbus-jose-jwt</artifactId>
 		  <version>9.13</version>

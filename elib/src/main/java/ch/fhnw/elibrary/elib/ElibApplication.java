@@ -124,6 +124,13 @@ public class ElibApplication {
         member2.setRole("admin");
         memberRepository.save(member2);
 
+        // Create Borrowed - to test the getAllBorrowed method from BorrowedService
+        Borrowed borrowed5 = new Borrowed();
+        borrowed5.setStatus(false);
+        borrowed5.setBook(book1);
+        borrowed5.setMember(member1);
+        borrowedRepository.save(borrowed5);
+
     }
 
 }

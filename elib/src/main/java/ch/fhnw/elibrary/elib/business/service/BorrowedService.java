@@ -25,7 +25,7 @@ public class BorrowedService {
     }
 
     public List<Borrowed> getAllBorrowed() {
-        List<Borrowed> borroweds = borrowedRepository.findAll();
+        List<Borrowed> borroweds = borrowedRepository.findByStatus(true);
         return borroweds;
     }
   
