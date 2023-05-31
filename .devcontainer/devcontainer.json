@@ -13,6 +13,7 @@
 		}
 	},
 
+	// TODO: what is this for?
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	 "forwardPorts": [8080],
 
@@ -33,6 +34,7 @@
 				}
 	 }
 
+	// TODO: what is this for?
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
