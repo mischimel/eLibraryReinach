@@ -22,7 +22,7 @@
 //     // this.tokenService = tokenService;
 //     // }
 
-//     // TODO: Check if ServiceToken is needed
+//     // Check if ServiceToken is needed
 //     /*
 //      * @PostMapping("/token")
 //      * public String token(Authentication authentication) {

@@ -121,7 +121,9 @@ public class BookService {
         return bookRepository.findByGenre(genre);
     }
 
+    /* never used locally
     private Book getBookById(Long bookID) {
         return bookRepository.findByBookID(bookID);
     }
+    */
 }

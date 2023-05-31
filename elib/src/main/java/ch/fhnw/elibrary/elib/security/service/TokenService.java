@@ -4,7 +4,7 @@
 
 // // import org.springframework.security.core.Authentication;
 // // import org.springframework.security.core.GrantedAuthority;
-// // TODO: commentet out, as import where throwing errors
+// // commentet out, as import where throwing errors
 // /*
 // import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 // import org.springframework.security.oauth2.jwt.JwsHeader;
@@ -23,7 +23,7 @@
 // @Service
 // public class TokenService {
 
-//     // TODO: check if TokenService is needed
+//     // check if TokenService is needed
 //     /*
 //      * private final JwtEncoder encoder;
 //      * 

@@ -10,7 +10,7 @@
 // import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 // import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 // import org.springframework.security.web.SecurityFilterChain;
-// // TODO: uncomment when needed, commted out below imports, as they were throwing problems
+
 // import com.nimbusds.jose.jwk.source.ImmutableSecret;
 // //import com.wilddog.security.token.JwtEncoder;
 
@@ -21,7 +21,7 @@
 // import org.springframework.security.config.http.SessionCreationPolicy;
 // import org.springframework.security.core.userdetails.UserDetailsService;
 // //import org.springframework.security.oauth2.*;
-// // TODO: ?, did the import above, as the commted out below imports, as they were throwing problems
+// // ?, did the import above, as the commted out below imports, as they were throwing problems
 // import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 // import org.springframework.security.oauth2.jwt.JwtDecoder;
 // import org.springframework.security.oauth2.jwt.JwtEncoder;
@@ -64,7 +64,7 @@
 //             // Paths accessible to all (including not logged in users)
 //             // .requestMatchers("/", "/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
 //             // .requestMatchers("/api/auth/register").permitAll()
-//           // TODO: uncomment when done line 67 to 79 and delete following lines 65 and 66
+//           // uncomment when done line 67 to 79 and delete following lines 65 and 66
 //           .requestMatchers("/**").permitAll()    // to check APIs and paths    
 //         )
 //             /*
@@ -87,7 +87,6 @@
 // }
 
 
-//     // TODO: check if these Beans are needed
 	
 //     @Bean
 //     JwtEncoder jwtEncoder() {

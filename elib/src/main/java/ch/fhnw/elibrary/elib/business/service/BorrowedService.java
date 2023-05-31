@@ -106,7 +106,9 @@ public class BorrowedService {
         return borrowedRepository.findByBookAndStatus(book, status);
     }
 
+    /* never used locally
     private Borrowed getBorrowedById(Long borrowedID) {
         return borrowedRepository.findByBorrowedID(borrowedID);
     }
+    */
 }

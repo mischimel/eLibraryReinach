@@ -68,7 +68,9 @@ public class AuthorService {
         return authorRepository.findByCountry(country);
     }
 
+    /* never used locally
     private Author getAuthorById(Long authorID) {
         return authorRepository.findByAuthorID(authorID);
     }
+    */
 }

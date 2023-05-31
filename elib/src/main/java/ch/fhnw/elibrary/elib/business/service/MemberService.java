@@ -82,7 +82,9 @@ public class MemberService {
         return memberRepository.findByRole(role);
     }
 
+    /* never used locally
     private Member getMemberByID(Long memberID) {
         return memberRepository.findByMemberID(memberID);
     }
+    */
 }

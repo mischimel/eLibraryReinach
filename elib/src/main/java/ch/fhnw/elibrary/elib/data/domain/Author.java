@@ -2,7 +2,6 @@ package ch.fhnw.elibrary.elib.data.domain;
 
 import java.util.List;
 import jakarta.persistence.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // Author class author @michimel and @RahelHaeusler
 

@@ -54,7 +54,9 @@ public class GenreService {
         return genreRepository.findByName(name);
     }
 
+    /* never used locally
     private Genre getGenreById(Long genreId) {
         return genreRepository.findByGenreID(genreId);
     }
+    */
 }
