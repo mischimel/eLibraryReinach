@@ -3,7 +3,6 @@ package ch.fhnw.elibrary.elib.data.domain;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -14,17 +13,9 @@ import jakarta.validation.constraints.NotEmpty;
 @Table(name = "members")
 public class Member {
 
-    /*
-     * When you annotate a field or method with @Hidden, it indicates that it should
-     * not be included
-     * in the generated API documentation. This can be useful when you have internal
-     * implementation
-     * details or sensitive information that should not be exposed in the
-     * documentation.
-     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Hidden // comment out this line to see the memberID in the response
     private Long memberID;
 
     @NotEmpty(message = "Please provide a username.")
@@ -41,11 +32,11 @@ public class Member {
     private String email;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // only create object property from JSON
-    @Hidden
+    //@Hidden
     private String password;
 
     @JsonIgnore
-    private String role = "USER"; // default role is USER, but can be set to ADMIN
+    private String role; // = "USER"; // default role is USER, but can be set to ADMIN
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "memberID"), inverseJoinColumns = @JoinColumn(name = "bookID"))
@@ -55,8 +46,7 @@ public class Member {
     public Member() {
     }
 
-    public Member(Long memberID, String userName, String firstName, String lastName, String email, String password,
-            String role) {
+    public Member(Long memberID, String userName, String firstName, String lastName, String email, String password, String role) {
         this.memberID = memberID;
         this.userName = userName;
         this.firstName = firstName;

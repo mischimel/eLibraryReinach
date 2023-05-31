@@ -48,8 +48,10 @@ public class MemberService {
         member.setFirstName(memberDetails.getFirstName());
         member.setLastName(memberDetails.getLastName());
         member.setEmail(memberDetails.getEmail());
+        member.setPassword(memberDetails.getPassword());
         return memberRepository.save(member);
     }
+
 
     /*
      * the following methods are not used in the application,
