@@ -32,7 +32,7 @@ public class Member {
     private String email;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // only create object property from JSON
-    //@Hidden
+    @JsonIgnore
     private String password;
 
     @JsonIgnore
