@@ -10,11 +10,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "authors")
 public class Author {
 
-   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    //@JsonIgnore // comment out this line to see the authorID in the response
+    // @JsonIgnore // comment out this line to see the authorID in the response
     private Long authorID;
 
     @Column(nullable = false)
@@ -30,7 +29,7 @@ public class Author {
     private List<Book> books;
 
     // constructor
-    public Author() {  
+    public Author() {
     }
 
     public Author(Long authorID, String firstName, String lastName, String country) {
@@ -52,7 +51,7 @@ public class Author {
     public String getFirstName() {
         return firstName;
     }
-    
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -76,6 +75,7 @@ public class Author {
     // toString
     @Override
     public String toString() {
-        return "Author [id=" + authorID + ", firstName=" + firstName + ", lastName=" + lastName + ", country=" + country + "]";
+        return "Author [id=" + authorID + ", firstName=" + firstName + ", lastName=" + lastName + ", country=" + country
+                + "]";
     }
 }

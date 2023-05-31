@@ -43,7 +43,7 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- <dependency>
+		<!-- <dependency> // Security part not implemented, as requirements for assignment changed
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
 		</dependency> -->
@@ -52,7 +52,7 @@
       		<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       		<version>2.0.2</version>
    		</dependency>
-		<!-- <dependency> 
+		<!-- <dependency> // Security part not implemented, as requirements for assignment changed
 		  <groupId>com.nimbusds</groupId>
 		  <artifactId>nimbus-jose-jwt</artifactId>
 		  <version>9.13</version>

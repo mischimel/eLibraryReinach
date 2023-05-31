@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import ch.fhnw.elibrary.elib.business.service.GenreService;
 import ch.fhnw.elibrary.elib.data.domain.Genre;
 
-
 // GenreController class author @michimel
 
 @RestController
@@ -33,15 +32,15 @@ public class GenreController {
         try {
             genre = genreService.createGenre(genre);
 
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 
         }
         return ResponseEntity.ok(genre);
     }
 
-    // to update an existing genre, after finding the genre by ID, the genre is updated with the new values
+    // to update an existing genre, after finding the genre by ID, the genre is
+    // updated with the new values
     @PutMapping(path = "/updateGenre/{genreID}", consumes = "application/json", produces = "application/json")
     public ResponseEntity updateGenre(@PathVariable Long genreID, @RequestBody Genre genreDetails) {
         try {
@@ -51,15 +50,15 @@ public class GenreController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
-  
 
-    /* the following mappings are not used in the application, 
-    as budibase provides the functionality to search via the filter function,
-    but for completeness we provide the mappings below */
-    
+    /*
+     * the following mappings are not used in the application,
+     * as budibase provides the functionality to search via the filter function,
+     * but for completeness we provide the mappings below
+     */
+
     @GetMapping("/findByName/{name}")
     public Genre getGenresByName(@PathVariable String name) {
         return genreService.getGenresByName(name);
     }
 }
-

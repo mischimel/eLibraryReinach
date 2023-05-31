@@ -11,11 +11,17 @@ import ch.fhnw.elibrary.elib.data.domain.Book;
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     Book findByBookID(Long bookID);
+
     List<Book> findAll();
+
     Book findByTitle(String title);
+
     Book findByIsbn(String isbn);
+
     List<Book> findByPublishYear(int publishYear);
+
     List<Book> findByAuthor(String author);
+
     List<Book> findByGenre(String genre);
 
 }

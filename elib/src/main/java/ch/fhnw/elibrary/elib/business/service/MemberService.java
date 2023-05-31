@@ -52,7 +52,6 @@ public class MemberService {
         return memberRepository.save(member);
     }
 
-
     /*
      * the following methods are not used in the application,
      * as budibase provides the functionality to search via the filter function,

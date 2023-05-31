@@ -13,10 +13,11 @@
 		}
 	},
 
-	// TODO: what is this for?
+	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	 "forwardPorts": [8080],
 
+	// TODO: what is this for?
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "java -version",
 

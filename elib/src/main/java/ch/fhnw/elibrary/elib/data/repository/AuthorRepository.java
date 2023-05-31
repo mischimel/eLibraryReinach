@@ -11,8 +11,12 @@ import ch.fhnw.elibrary.elib.data.domain.Author;
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 
     Author findByAuthorID(Long authorID);
+
     List<Author> findByFirstName(String firstName);
+
     List<Author> findByLastName(String lastName);
+
     Author findByFirstNameAndLastName(String firstName, String lastName);
+
     List<Author> findByCountry(String country);
 }

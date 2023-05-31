@@ -13,7 +13,7 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    //@JsonIgnore // comment out this line to see the genreID in the response
+    // @JsonIgnore // comment out this line to see the genreID in the response
     private Long genreID;
 
     @Column(nullable = false)
@@ -25,7 +25,7 @@ public class Genre {
     // constructor
     public Genre() {
     }
-    
+
     public Genre(Long genreID, String name) {
         this.genreID = genreID;
         this.name = name;
@@ -40,7 +40,6 @@ public class Genre {
         this.genreID = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -54,5 +53,5 @@ public class Genre {
     public String toString() {
         return String.format("Genre[id=" + genreID + ", name=" + name + "]");
     }
-    
+
 }

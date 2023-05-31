@@ -12,13 +12,14 @@ public class Borrowed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    //@JsonIgnore // comment out this line to see the borrowedID in the response
+    // @JsonIgnore // comment out this line to see the borrowedID in the response
     private Long borrowedID;
 
     @Column(name = "status", nullable = false)
     private Boolean status = true; // default status is true (book is borrowed) when new object is created
 
-    // @Transient, which means they are not persisted in the database but used for computation purposes
+    // @Transient, which means they are not persisted in the database but used for
+    // computation purposes
 
     @Transient
     @Column(nullable = false)
@@ -28,7 +29,6 @@ public class Borrowed {
     @Column(nullable = false)
     private String memberUserName;
 
-
     @Transient
     @Column(nullable = false)
     private String memberEmail;
@@ -37,15 +37,14 @@ public class Borrowed {
     @ManyToOne
     @JoinColumn(name = "bookID", nullable = false)
     private Book book;
-    
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "memberID", nullable = false)
     private Member member;
 
-
     // constructor
-    public Borrowed() {  
+    public Borrowed() {
     }
 
     public Borrowed(Long borroweID, Boolean status, Book book, Member member) {
@@ -55,7 +54,6 @@ public class Borrowed {
         this.memberUserName = member.getUserName();
         this.memberEmail = member.getEmail();
     }
-
 
     // getters and setters
     public Long getBorrowedID() {
@@ -67,13 +65,13 @@ public class Borrowed {
     }
 
     public Boolean getStatus() {
-        return status; //= true; // default status is true (book is borrowed) when new object is created
+        return status; // = true; // default status is true (book is borrowed) when new object is
+                       // created
     }
 
     public void setStatus(Boolean status) {
         this.status = status;
     }
-
 
     // Getter and Setter for bookTitle
     public String getBookTitle() {
@@ -81,7 +79,7 @@ public class Borrowed {
             return book.getTitle();
         }
         return bookTitle;
-    } 
+    }
 
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
@@ -106,7 +104,7 @@ public class Borrowed {
         }
         return memberEmail;
     }
-    
+
     public void setMemberEmail(String memberEmail) {
         this.memberEmail = memberEmail;
     }
@@ -134,12 +132,9 @@ public class Borrowed {
     // toString
     @Override
     public String toString() {
-        return String.format("Borrowed[id=" + borrowedID + ", status" + status + ", bookTitle=" + bookTitle + 
-        ", memberUserName=" + memberUserName +  ", memberEmail=" + memberEmail + "]");
-        
+        return String.format("Borrowed[id=" + borrowedID + ", status" + status + ", bookTitle=" + bookTitle +
+                ", memberUserName=" + memberUserName + ", memberEmail=" + memberEmail + "]");
+
     }
 
-
-
-    
 }

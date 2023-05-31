@@ -1,3 +1,5 @@
+// Security part not implemented, as requirements for assignment changed
+
 // package ch.fhnw.elibrary.elib.security.controller;
 
 // // import ch.fhnw.elibrary.elib.security.service.TokenService;

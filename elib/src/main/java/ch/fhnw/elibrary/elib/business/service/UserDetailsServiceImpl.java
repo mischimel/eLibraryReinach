@@ -1,3 +1,5 @@
+// Security part not implemented, as requirements for assignment changed
+
 // package ch.fhnw.elibrary.elib.business.service;
 
 // import org.springframework.beans.factory.annotation.Autowired;

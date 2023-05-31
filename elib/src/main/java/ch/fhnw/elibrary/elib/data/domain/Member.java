@@ -13,7 +13,6 @@ import jakarta.validation.constraints.NotEmpty;
 @Table(name = "members")
 public class Member {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberID;
@@ -46,7 +45,8 @@ public class Member {
     public Member() {
     }
 
-    public Member(Long memberID, String userName, String firstName, String lastName, String email, String password, String role) {
+    public Member(Long memberID, String userName, String firstName, String lastName, String email, String password,
+            String role) {
         this.memberID = memberID;
         this.userName = userName;
         this.firstName = firstName;

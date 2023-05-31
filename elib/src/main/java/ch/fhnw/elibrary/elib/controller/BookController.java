@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import ch.fhnw.elibrary.elib.business.service.BookService;
 import ch.fhnw.elibrary.elib.data.domain.Book;
 
-
-
 // BookController class author @michimel
 
 @RestController
@@ -34,16 +32,15 @@ public class BookController {
         try {
             book = bookService.createBook(book);
 
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 
         }
         return ResponseEntity.ok(book);
     }
 
-
-    // to update an existing book, after finding the book by ID, the book is updated with the new values
+    // to update an existing book, after finding the book by ID, the book is updated
+    // with the new values
     @PutMapping(path = "/updateBook/{bookID}", consumes = "application/json", produces = "application/json")
     public ResponseEntity updateBook(@PathVariable Long bookID, @RequestBody Book bookDeatils) {
         try {
@@ -54,10 +51,12 @@ public class BookController {
         }
     }
 
-    /* the following mappings are not used in the application, 
-    as budibase provides the functionality to search via the filter function,
-    but for completeness we provide the mappings below */
-    
+    /*
+     * the following mappings are not used in the application,
+     * as budibase provides the functionality to search via the filter function,
+     * but for completeness we provide the mappings below
+     */
+
     @GetMapping("/findByTitle/{title}")
     public Book getBooksByTitle(@PathVariable String title) {
         return bookService.getBooksByTitle(title);

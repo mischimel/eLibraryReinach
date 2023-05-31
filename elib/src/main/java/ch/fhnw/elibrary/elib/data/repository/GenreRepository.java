@@ -10,7 +10,7 @@ import ch.fhnw.elibrary.elib.data.domain.Genre;
 public interface GenreRepository extends JpaRepository<Genre, Long> {
 
     Genre findByGenreID(Long genreID);
+
     Genre findByName(String name);
-  
-    
+
 }

@@ -20,19 +20,21 @@ public class AuthorService {
         return authorRepository.findAll();
     }
 
-    // checks if the author with the given firstname and lastname already exists, if not, the author is saved
+    // checks if the author with the given firstname and lastname already exists, if
+    // not, the author is saved
     public Author createAuthor(Author author) throws Exception {
         if (author.getFirstName() != null && author.getLastName() != null) {
             if (authorRepository.findByFirstNameAndLastName(author.getFirstName(), author.getLastName()) == null)
                 return authorRepository.save(author);
             else
-                throw new Exception("Author " + author.getFirstName() +  author.getLastName() + " already exists");
-            
+                throw new Exception("Author " + author.getFirstName() + author.getLastName() + " already exists");
+
         }
         throw new Exception("Invalid author name");
     }
-    
-    // to update an existing author, after finding the author by ID, the author is updated with the new values
+
+    // to update an existing author, after finding the author by ID, the author is
+    // updated with the new values
     public Author updateAuthor(Long authorID, Author authorDetails) {
         Author author = authorRepository.findByAuthorID(authorID);
         if (author == null) {
@@ -44,9 +46,11 @@ public class AuthorService {
         return authorRepository.save(author);
     }
 
-    /* the following methods are not used in the application, 
-    as budibase provides the functionality to search via the filter function,
-    but for completeness we provide the methods below */
+    /*
+     * the following methods are not used in the application,
+     * as budibase provides the functionality to search via the filter function,
+     * but for completeness we provide the methods below
+     */
 
     public List<Author> getAuthorsByFirstName(String firstName) {
         return authorRepository.findByFirstName(firstName);
@@ -68,4 +72,3 @@ public class AuthorService {
         return authorRepository.findByAuthorID(authorID);
     }
 }
-

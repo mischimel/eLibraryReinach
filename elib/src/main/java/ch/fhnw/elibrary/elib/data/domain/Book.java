@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 // Book class author @michimel and @RahelHaeusler
 
 // JsonPropertyOrder annotation used to have the properties in the order we want them to be displayed in the response
-@JsonPropertyOrder({ "bookID", "isbn", "title", "publishYear", "description", "authorFirstName", "authorLastName", "authorCountry", "genreName" })
+@JsonPropertyOrder({ "bookID", "isbn", "title", "publishYear", "description", "authorFirstName", "authorLastName",
+        "authorCountry", "genreName" })
 @Entity
 @Table(name = "books")
 public class Book {
@@ -16,7 +17,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    //@JsonIgnore // comment out this line to see the bookID in the response
+    // @JsonIgnore // comment out this line to see the bookID in the response
     private Long bookID;
 
     @Column(nullable = false)
@@ -31,7 +32,8 @@ public class Book {
     @Column
     private String description;
 
-    // @Transient, which means they are not persisted in the database but used for computation purposes
+    // @Transient, which means they are not persisted in the database but used for
+    // computation purposes
     @Transient
     @Column(nullable = false)
     private String authorFristName;
@@ -48,8 +50,11 @@ public class Book {
     @Column(nullable = false)
     private String genreName;
 
-    /*@JsonIgnore annotation is specific to the Jackson library and is used for 
-    excluding fields from JSON serialization/deserialization, as mentioned earlier. */
+    /*
+     * @JsonIgnore annotation is specific to the Jackson library and is used for
+     * excluding fields from JSON serialization/deserialization, as mentioned
+     * earlier.
+     */
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "authorID", referencedColumnName = "authorID")
@@ -64,12 +69,12 @@ public class Book {
     @JoinTable(name = "borrowed", joinColumns = @JoinColumn(name = "bookID"), inverseJoinColumns = @JoinColumn(name = "memberID"))
     private List<Borrowed> borrowedList;
 
-
     // constructors
     public Book() {
     }
-    
-    public Book(Long bookID, String isbn, String title, int publishYear, String description, Author author, Genre genre) {
+
+    public Book(Long bookID, String isbn, String title, int publishYear, String description, Author author,
+            Genre genre) {
         this.bookID = bookID;
         this.isbn = isbn;
         this.title = title;
@@ -121,7 +126,6 @@ public class Book {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     // Getter and Setter for authorFristName
     public String getAuthorFirstName() {
@@ -206,8 +210,9 @@ public class Book {
     @Override
     public String toString() {
         return "Book [bookID=" + bookID + ", isbn=" + isbn + ", title=" + title + ", publishYear=" + publishYear
-        + ", description=" + description + ", authorFristName=" + authorFristName + ", authorLastName=" + authorLastName +
-        ", genreName=" + genreName + "]";
-}       
-    
+                + ", description=" + description + ", authorFristName=" + authorFristName + ", authorLastName="
+                + authorLastName +
+                ", genreName=" + genreName + "]";
+    }
+
 }

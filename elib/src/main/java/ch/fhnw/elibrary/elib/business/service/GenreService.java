@@ -20,19 +20,21 @@ public class GenreService {
         return genreRepository.findAll();
     }
 
-    // checks if the genre with the given name already exists, if not, the genre is saved
+    // checks if the genre with the given name already exists, if not, the genre is
+    // saved
     public Genre createGenre(Genre genre) throws Exception {
         if (genre.getName() != null) {
             if (genreRepository.findByName(genre.getName()) == null)
                 return genreRepository.save(genre);
             else
                 throw new Exception("Genre " + genre.getName() + " already exists");
-            
+
         }
         throw new Exception("Invalid genre name");
     }
 
-    // to update an existing genre, after finding the genre by ID, the genre is updated with the new values
+    // to update an existing genre, after finding the genre by ID, the genre is
+    // updated with the new values
     public Genre updateGenre(Long genreID, Genre genreDetails) {
         Genre genre = genreRepository.findByGenreID(genreID);
         if (genre == null) {
@@ -42,11 +44,12 @@ public class GenreService {
         return genreRepository.save(genre);
     }
 
+    /*
+     * the following methods are not used in the application,
+     * as budibase provides the functionality to search via the filter function,
+     * but for completeness we provide the methods below
+     */
 
-    /* the following methods are not used in the application, 
-    as budibase provides the functionality to search via the filter function,
-    but for completeness we provide the methods below */
-    
     public Genre getGenresByName(String name) {
         return genreRepository.findByName(name);
     }
@@ -55,4 +58,3 @@ public class GenreService {
         return genreRepository.findByGenreID(genreId);
     }
 }
-
