@@ -21,7 +21,7 @@ The commune of Reinach initiated the eLibrary project, which aims to cater to th
 As an administrator, the primary objective is to efficiently manage the library's resources. This includes editing or adding members, books, genres, authors, and lending records. To ensure usability, the platform incorporates filtering options, enabling administrators to generate lists based on specific criteria for quickly finding relevant information.  <br>
 
 For future enhancements and improvements, the following features could be considered:  <br>
-Users would be required to register and subsequently log in to the eLibrary platform. They could also log out and conveniently manage their profiles. Regular users would have restricted functionality, allowing them to explore comprehensive lists of books, genres, and authors. Additionally, they would have the capability to refine their searches using filters, borrow and return books, and access a personalized list showcasing their currently borrowed books. While the existing list of borrowed objects does not include dates or predefined lending durations, these aspects could also be incorporated in the future. <br>
+Users would be required to register and subsequently log in to the eLibrary platform. They could also log out and conveniently manage their profiles. Regular users would have restricted functionality, allowing them to explore comprehensive lists of books, genres, and authors. Additionally, they would have the capability to refine their searches using filters, borrow and return books, and access a personalized list showcasing their currently borrowed books. While the existing list of borrowed objects does not include dates or predefined lending durations, these aspects could also be incorporated in the future. Additionally, in the future, it may be desirable to implement a limitation on the number of members who can borrow a certain book simultaneously. <br>
 
 Overall, the eLibrary project aims to create a user-friendly web application that empowers administrators to efficiently manage library resources. Furthermore, it holds the potential to provide regular users with convenient access to eBooks and lending services in the future.  <br>
 
@@ -31,24 +31,16 @@ Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-b
 
 ### Use Case 100
 <img src="https://github.com/michimel/eLibraryReinach/blob/b39ce4e417edfd9b027e7370c2284b400fbd7202/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20100.png" width="800"> <br>
-**Use case 101 (Sign up)**: A user can sing up to the website and create an account. To create an account, the user must enter a username, email address, password, firstname and last name. (The user must also agree to the terms and conditions.) <br>
-**Use Case 102 (Login)**: Once a user has created an account, they can log in using their username/email address and password. <br>
-**Use case 103 (Update profile)**: The user can update their user profile once they are logged in. <br>
-**Use case 104 (Log out)**: After logging in, the user can log out again. <br>
 
-### Use Case 200
-<img src="https://github.com/michimel/eLibraryReinach/blob/b39ce4e417edfd9b027e7370c2284b400fbd7202/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20200.png" width="800"> <br>
-**Use case 201 (Search Book)**: A user can search for books and get the results in a list view. <br>
-**Use case 202 (Borrow Book)**: A user can borrow a book for a certain period of time. <br>
-**Use case 203 (Return Book early)**: A user can return a book early if they do not need it anymore. <br>
-**Use case 204 (My borrowed books)**: A user can see a list of the books he/she is currently borrowing <br>
+**Use case 101 (View Lists)**: An administrator can view comprehensive lists of books, authors, genres, and members in the library system. <br>
+**Use case 102 (Apply Filters)**: An administrator can apply filters to the lists of books, authors, genres, and members to quickly search for specific information. <br>
+**Use case 103 (Add New Items)**: An administrator can add new books, authors, genres, and members to the library system. <br>
+**Use case 101 (Register Borrowing)**: An administrator can register when a book is borrowed by a member, including recording the relevant details such as the book title and member details. <br>
+**Use case 105 (Register Returns)**: An administrator can register when a book is returned by a member and update the borrowing record. <br>
+**Use case 106 (Edit Items)**: An administrator can edit the details of books, authors, genres, and members in the library system, ensuring the accuracy and currency of the information. <br>
+**Use case 107 (View Borrowed Books)**: An administrator can access a list of all books that are currently borrowed, including information about the members. <br>
+**Use case 108 (Search Borrowed Books)**: An administrator can search within the list of all borrowed books using filters to find specific information or specific borrowing records. <br>
 
-### Use Case 300
-These use cases are for administrators, which have the same basic functionalities as users but have additional functionalities. <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/b39ce4e417edfd9b027e7370c2284b400fbd7202/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20300.png" width="800"> <br>
-**Use case 301 (Add new book)**: An administrator is able to add a new book to the library system by providing the book details such as title, author, genre, and publication year. <br>
-**Use case 302 (Edit book)**: An administrator is able to edit a book from the library system. <br>
-**Use case 304 (All borrowed books)**: An administrator can see a list of all books which are currently borrowed. <br>
 
 
 ## User Story
