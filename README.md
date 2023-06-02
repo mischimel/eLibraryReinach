@@ -30,7 +30,7 @@ author @michimel <br>
 Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-bdc1-30d08725a5d9/edit?viewport_loc=1733%2C31%2C2219%2C1097%2C0_0&invitationId=inv_ef872c42-5b9f-4504-93fc-5389022cccf9 <br>
 
 ### Use Case 100
-<img src="https://github.com/michimel/eLibraryReinach/blob/34343ab640679f54432c40b761f5b7a9d37d6654/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20100.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/34343ab640679f54432c40b761f5b7a9d37d6654/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm%20UC%20100.png" width="800"> <br>
 
 **Use case 101 (View Lists)**: An administrator can view comprehensive lists of books, authors, genres, and members in the library system. <br>
 **Use case 102 (Apply Filters)**: An administrator can apply filters to the lists of books, authors, genres, and members to quickly search for specific information. <br>
