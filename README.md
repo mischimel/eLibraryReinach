@@ -121,9 +121,9 @@ If you want to see or edit the code, you can import the [yaml file](https://gith
 
 ### auto generantion from OpenAPI - Swagger
 When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
-Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
+Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
 
-@ michele: do the screenshots and add them here.
+--> to do
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
 
