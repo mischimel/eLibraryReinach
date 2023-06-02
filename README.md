@@ -54,7 +54,7 @@ author @michimel <br>
 
 # 2. Domain Design *Definition of domain model*
 ## Domain Model
-author @michimel <br>
+author @michimel and @RahelHaeusler <br>
 Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-18829cec80c9/edit?beaconFlowId=7134D7D032DE5064&invitationId=inv_0148f8f5-f3f9-433a-8296-e9667492d473&page=0_0# <br>
 
 <img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
