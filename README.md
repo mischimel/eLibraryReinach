@@ -35,7 +35,7 @@ Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-b
 **Use case 101 (View Lists)**: An administrator can view comprehensive lists of books, authors, genres, and members in the library system. <br>
 **Use case 102 (Apply Filters)**: An administrator can apply filters to the lists of books, authors, genres, and members to quickly search for specific information. <br>
 **Use case 103 (Add New Items)**: An administrator can add new books, authors, genres, and members to the library system. <br>
-**Use case 101 (Register Borrowing)**: An administrator can register when a book is borrowed by a member, including recording the relevant details such as the book title and member details. <br>
+**Use case 104 (Register Borrowing)**: An administrator can register when a book is borrowed by a member, including recording the relevant details such as the book title and member details. <br>
 **Use case 105 (Register Returns)**: An administrator can register when a book is returned by a member and update the borrowing record. <br>
 **Use case 106 (Edit Items)**: An administrator can edit the details of books, authors, genres, and members in the library system, ensuring the accuracy and currency of the information. <br>
 **Use case 107 (View Borrowed Books)**: An administrator can access a list of all books that are currently borrowed, including information about the members. <br>
