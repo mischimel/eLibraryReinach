@@ -123,9 +123,21 @@ If you want to see or edit the code, you can import the [yaml file](https://gith
 When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
 Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
 
---> to do
+<img scr="https://github.com/michimel/eLibraryReinach/blob/b54daba7c8e3b49211cd2e9994810af66c1ae734/Documentation%20Sources/API%20auto%20generated/member-controller.png"> <br>
+<img scr="https://github.com/michimel/eLibraryReinach/blob/b54daba7c8e3b49211cd2e9994810af66c1ae734/Documentation%20Sources/API%20auto%20generated/genre-controller.png"> <br>
+<img scr="https://github.com/michimel/eLibraryReinach/blob/b54daba7c8e3b49211cd2e9994810af66c1ae734/Documentation%20Sources/API%20auto%20generated/book-controller.png"> <br>
+<img scr="https://github.com/michimel/eLibraryReinach/blob/b54daba7c8e3b49211cd2e9994810af66c1ae734/Documentation%20Sources/API%20auto%20generated/borrowed-controller.png"> <br>
+<img scr="https://github.com/michimel/eLibraryReinach/blob/b54daba7c8e3b49211cd2e9994810af66c1ae734/Documentation%20Sources/API%20auto%20generated/author-controller.png"> <br>
+<img scr="https://github.com/michimel/eLibraryReinach/blob/b54daba7c8e3b49211cd2e9994810af66c1ae734/Documentation%20Sources/API%20auto%20generated/Schemas%20Member%2C%20Genre%2C%20Borrowed.png"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/b54daba7c8e3b49211cd2e9994810af66c1ae734/Documentation%20Sources/API%20auto%20generated/Schemas%20Book%2C%20Author.png"> <br>
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
+author @michimel <br>
+In the server classes we defined the methods for the controller classes, where we defined the APIs, then we could OpenAPI generate the documentation of the APIs. Based on the auto generated API documentation and the json code that got generated there, we could then create the connection to budibase and define for each API/path the corresponding mapping. In our case we had GET, POST, and PUT mappings. The pictures below show how we connected, set up, and implemented the APIs in Budibase. With this we then could start the design. <br>
+
+--> screenshots from budibase - data - source - eLibrary
+
+**Feedback needed on this part, what is expected? diagrams/graphs anything?**
 
 # 5. Security *Implementation of API-level security*
 --> not in assignment scope delete
