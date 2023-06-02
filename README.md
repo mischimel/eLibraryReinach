@@ -135,7 +135,7 @@ Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this 
 author @michimel <br>
 In the server classes we defined the methods for the controller classes, where we defined the APIs, then we could OpenAPI generate the documentation of the APIs. Based on the auto generated API documentation and the json code that got generated there, we could then create the connection to budibase and define for each API/path the corresponding mapping. In our case we had GET, POST, and PUT mappings. The pictures below show how we connected, set up, and implemented the APIs in Budibase. With this we then could start the design. <br>
 
---> screenshots from budibase - data - source - eLibrary
+--> screenshots from budibase - data - source - eLibrary !
 
 **Feedback needed on this part, what is expected? diagrams/graphs anything?**
 
