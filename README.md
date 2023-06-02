@@ -41,8 +41,6 @@ Link to the use case diagrams: https://lucid.app/lucidchart/ff216cd6-dd92-4284-b
 **Use case 107 (View Borrowed Books)**: An administrator can access a list of all books that are currently borrowed, including information about the members. <br>
 **Use case 108 (Search Borrowed Books)**: An administrator can search within the list of all borrowed books using filters to find specific information or specific borrowing records. <br>
 
-
-
 ## User Story
 author @michimel <br>
 1.	As an administartor, I want to be able to see all the books, authors, genres, and members in a list. <br>
@@ -53,30 +51,6 @@ author @michimel <br>
 6.	As an administartor, I want to be able to edit books, authors, genres, and members. <br>
 7.	As an administartor, I want to be able to see a list of all bookw, which are currently borrowed. <br>
 8.	As an administartor, I want to be able to search in the list of all borrowed books via a filter. <br>
-
-## Mock up - update (maybe leave this one as first draft, to have a better understanding for the project?)
-Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
-
-To visualise our ideas and views, we have created the following mock-up. <br>
-
-The following image shows the complete mock up: <br>
-<img src="https://github.com/michimel/electronic-library/blob/59837f2d720e9b72bedd059ef858230b666ab65b/images/Mock%20up/1%20complete%20mock%20up.png"> <br>
-
-In order to read and view the mock up better, we prepared images of the individual sections in the following images: <br>
-This images shows how the start page, including the login, the page to register for an user account, and the pages for the user. The pages for the user shown here are, the page "books", where users can search for a book, the page when a specific book got selected, here users can rent the book, and the page "my borrowed books", where the users see the history of all their books currently on loan, or the ones they have borrowed and already return in a list view. <br>
-<img src="https://github.com/michimel/electronic-library/blob/e198eb8d663424bf7e749d29b6398968dc84006d/images/Mock%20up/2%20start(login),%20register,%20user(books%20and%20book%20search,%20book%20view,%20my%20borrowed%20books%20list).png"> <br>
-
-This images shows pages for user, which are the page "prfoile", where users can edit or delete their profile, and again the start page, which appreas after the log out. <br>
-<img src="https://github.com/michimel/electronic-library/blob/0c5c5d4d8b06a59504b8dd5790466ba264d58317/images/Mock%20up/3%20user(profile,%20logout).png"> <br>
-
-The following images shows the pages only for administrators, as they have addtional functionalities compared to the user. The images shows the page "books", where admins can add books, the page when a specific book got selected, where admins can edit or delete the book, and the page "my borrowed books".
-<img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/4%20admin(books%20and%20book%20search,%20book%20view,%20my%20borrowed%20books%20list).png"> <br>
-
-This image shows more pages for administrators. The page "all borrowed ooks" gives back the history of all books currently beeing borrowed and the books that are already returned, including the username of the user who had borrowed the book. The page "profile", and again the start page, which comes up after the logout.
-<img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/5%20admin(all%20borrowed%20books,%20profile,%20logout).png"> <br>
-
-The following picture gives some information about the colours used in the mock up and also more ideas for possible (further) improvements can be seen.
-<img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
 
 # 2. Domain Design *Definition of domain model*
 ## Domain Model
@@ -145,11 +119,44 @@ If you want to see or edit the code, you can import the [yaml file](https://gith
 <img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/5%20Schemas%20(Author%2C%20Book%2C%20Borrowed).png"> <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/6%20Schemas%20(Gerne%2C%20Member).png"> <br>
 
+### auto generantion from OpenAPI - Swagger
+When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
+Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
+
+@ michele: do the screenshots and add them here.
+
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
 
 # 5. Security *Implementation of API-level security*
+--> not in assignment scope delete
 
 # 6. Frontend implementation *Design, prototyping and realization of frontend functionality*
+## Mock up - prototyping
+Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
+
+To get a better understanding of the assignment, and to visualise our ideas and views, we have created the following mock-up. <br>
+As the content of the assignment got adjusted, we did not implement the complete mock up, only parts of it as the MVC is about the administraor's perspective. Also we did adapt the design in the final application. <br>
+
+The following image shows the complete mock up: <br>
+<img src="https://github.com/michimel/electronic-library/blob/59837f2d720e9b72bedd059ef858230b666ab65b/images/Mock%20up/1%20complete%20mock%20up.png"> <br>
+
+In order to read and view the mock up better, we prepared images of the individual sections in the following images: <br>
+This images shows how the start page, including the login, the page to register for an user account, and the pages for the user. The pages for the user shown here are, the page "books", where users can search for a book, the page when a specific book got selected, here users can rent the book, and the page "my borrowed books", where the users see the history of all their books currently on loan, or the ones they have borrowed and already return in a list view. <br>
+<img src="https://github.com/michimel/electronic-library/blob/e198eb8d663424bf7e749d29b6398968dc84006d/images/Mock%20up/2%20start(login),%20register,%20user(books%20and%20book%20search,%20book%20view,%20my%20borrowed%20books%20list).png"> <br>
+
+This images shows pages for user, which are the page "prfoile", where users can edit or delete their profile, and again the start page, which appreas after the log out. <br>
+<img src="https://github.com/michimel/electronic-library/blob/0c5c5d4d8b06a59504b8dd5790466ba264d58317/images/Mock%20up/3%20user(profile,%20logout).png"> <br>
+
+The following images shows the pages only for administrators, as they have addtional functionalities compared to the user. The images shows the page "books", where admins can add books, the page when a specific book got selected, where admins can edit or delete the book, and the page "my borrowed books".
+<img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/4%20admin(books%20and%20book%20search,%20book%20view,%20my%20borrowed%20books%20list).png"> <br>
+
+This image shows more pages for administrators. The page "all borrowed ooks" gives back the history of all books currently beeing borrowed and the books that are already returned, including the username of the user who had borrowed the book. The page "profile", and again the start page, which comes up after the logout.
+<img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/5%20admin(all%20borrowed%20books,%20profile,%20logout).png"> <br>
+
+The following picture gives some information about the colours used in the mock up and also more ideas for possible (further) improvements can be seen.
+<img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
+
+## Realization of frontend functionality *here screenshots of the final design from budibase*
 
 # 7. Demonstrator *Integration of frontend and backend to realize an end-to-end application consuming REST APIs from the web service*
 
