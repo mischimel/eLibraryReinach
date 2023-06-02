@@ -123,6 +123,7 @@ If you want to see or edit the code, you can import the [yaml file](https://gith
 When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
 Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
 
+**TODO: check why following images do not get shown in the readme ??**
 <img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/member-controller.png" width="600"> <br>
 <img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/genre-controller.png" width="600"> <br>
 <img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/borrowed-controller.png" width="600"> <br>
@@ -137,7 +138,7 @@ In the server classes we defined the methods for the controller classes, where w
 
 --> screenshots from budibase - data - source - eLibrary !
 
-**Feedback needed on this part, what is expected? diagrams/graphs anything?**
+**TODO: Feedback needed on this part, what is expected? diagrams/graphs anything?**
 
 # 5. Security *Implementation of API-level security*
 --> not in assignment scope delete
