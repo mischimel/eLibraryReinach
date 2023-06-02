@@ -28,7 +28,7 @@ public class BorrowedController {
     }
 
     @PostMapping(path = "/rentBook", consumes = "application/json", produces = "application/json")
-    public ResponseEntity createBorrowed(@RequestBody Borrowed borrowed) {
+    public ResponseEntity<Borrowed> createBorrowed(@RequestBody Borrowed borrowed) {
         try {
             borrowed = borrowedService.createBorrowed(borrowed);
 
@@ -42,7 +42,7 @@ public class BorrowedController {
     // to update an existing borrowed, after finding the borrowed by ID, the
     // borrowed is updated with the new values
     @PutMapping(path = "/returnBook/{borrowedID}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity updateBorrowed(@PathVariable Long borrowedID, @RequestBody Borrowed borrowedDetails) {
+    public ResponseEntity<Borrowed> updateBorrowed(@PathVariable Long borrowedID, @RequestBody Borrowed borrowedDetails) {
         try {
             Borrowed borrowed = borrowedService.updateBorrowed(borrowedID, borrowedDetails);
             return ResponseEntity.ok(borrowed);

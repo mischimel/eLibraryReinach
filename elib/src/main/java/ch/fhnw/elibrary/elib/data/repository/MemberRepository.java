@@ -7,7 +7,7 @@ import ch.fhnw.elibrary.elib.data.domain.Member;
 
 // MemberRepository class author @michimel and @RahelHaeusler
 
-@Repository
+@Repository  //annotation is unnecessary for this interface, as Spring Boot can detect and create the repository bean without it
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
     Member findByMemberID(Long memberID);

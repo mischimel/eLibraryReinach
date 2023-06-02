@@ -28,7 +28,7 @@ public class BookController {
     }
 
     @PostMapping(path = "/newBook", consumes = "application/json", produces = "application/json")
-    public ResponseEntity createBook(@RequestBody Book book) {
+    public ResponseEntity<Book> createBook(@RequestBody Book book) {
         try {
             book = bookService.createBook(book);
 
@@ -42,7 +42,7 @@ public class BookController {
     // to update an existing book, after finding the book by ID, the book is updated
     // with the new values
     @PutMapping(path = "/updateBook/{bookID}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity updateBook(@PathVariable Long bookID, @RequestBody Book bookDeatils) {
+    public ResponseEntity<Book> updateBook(@PathVariable Long bookID, @RequestBody Book bookDeatils) {
         try {
             Book book = bookService.updateBook(bookID, bookDeatils);
             return ResponseEntity.ok(book);

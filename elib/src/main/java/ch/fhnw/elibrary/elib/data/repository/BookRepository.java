@@ -7,7 +7,7 @@ import ch.fhnw.elibrary.elib.data.domain.Book;
 
 // BookRepository class author @michimel and @RahelHaeusler
 
-@Repository
+@Repository  //annotation is unnecessary for this interface, as Spring Boot can detect and create the repository bean without it
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     Book findByBookID(Long bookID);

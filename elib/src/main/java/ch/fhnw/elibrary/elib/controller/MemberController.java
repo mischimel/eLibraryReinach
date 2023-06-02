@@ -31,7 +31,7 @@ public class MemberController {
     // assignment
     // therefore the mapping is just to add a new member
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
-    public ResponseEntity createMember(@RequestBody Member member) {
+    public ResponseEntity<Member> createMember(@RequestBody Member member) {
         try {
             member = memberService.createMember(member);
 
@@ -45,7 +45,7 @@ public class MemberController {
     // to update an existing member, after finding the member by ID, the member is
     // updated with the new values
     @PutMapping(path = "/editProfile/{memberID}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity updateMember(@PathVariable Long memberID, @RequestBody Member memberDetails) {
+    public ResponseEntity<Member> updateMember(@PathVariable Long memberID, @RequestBody Member memberDetails) {
         try {
             Member member = memberService.updateMember(memberID, memberDetails);
             return ResponseEntity.ok(member);

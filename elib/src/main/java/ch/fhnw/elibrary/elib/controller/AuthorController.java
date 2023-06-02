@@ -29,7 +29,7 @@ public class AuthorController {
     }
 
     @PostMapping(path = "/newAuthor", consumes = "application/json", produces = "application/json")
-    public ResponseEntity createAuthor(@RequestBody Author author) {
+    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
         try {
             author = authorService.createAuthor(author);
 
@@ -43,7 +43,7 @@ public class AuthorController {
     // to update an existing author, after finding the author by ID, the author is
     // updated with the new values
     @PutMapping(path = "/updateAuthor/{authorID}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity updateAuthor(@PathVariable Long authorID, @RequestBody Author authorDetails) {
+    public ResponseEntity<Author> updateAuthor(@PathVariable Long authorID, @RequestBody Author authorDetails) {
         try {
             Author author = authorService.updateAuthor(authorID, authorDetails);
             return ResponseEntity.ok(author);

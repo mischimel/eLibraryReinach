@@ -28,7 +28,7 @@ public class GenreController {
     }
 
     @PostMapping(path = "/newGenre", consumes = "application/json", produces = "application/json")
-    public ResponseEntity createGenre(@RequestBody Genre genre) {
+    public ResponseEntity<Genre> createGenre(@RequestBody Genre genre) {
         try {
             genre = genreService.createGenre(genre);
 
@@ -42,7 +42,7 @@ public class GenreController {
     // to update an existing genre, after finding the genre by ID, the genre is
     // updated with the new values
     @PutMapping(path = "/updateGenre/{genreID}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity updateGenre(@PathVariable Long genreID, @RequestBody Genre genreDetails) {
+    public ResponseEntity<Genre> updateGenre(@PathVariable Long genreID, @RequestBody Genre genreDetails) {
         try {
             Genre genre = genreService.updateGenre(genreID, genreDetails);
             return ResponseEntity.ok(genre);
