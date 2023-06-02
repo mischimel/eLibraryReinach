@@ -14,7 +14,7 @@ To create transparency, we have specified the author @github username in the res
 Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # 1. Analysis *Scenario ideation, use case analysis and user story writing*
-## Scenario - update, must be in line with use cases and user storries ! *italic* -> check if possible otherwise delete !
+## Scenario
 author @michimel <br>
 The commune of Reinach initiated the eLibrary project, which aims to cater to the digital world by offering a web application for accessing a wide range of eBooks. The initial concept included different user categories, such as regular users and administrators, as well as essential security features (login, logout, register). However, the current focus is on creating an MVP (Minimal Viable Product) that provides the administrator's perspective. <br>
 
@@ -52,20 +52,15 @@ These use cases are for administrators, which have the same basic functionalitie
 
 
 ## User Story
-author @michimel and @marallini <br>
-1.	As a user, I want to be able to register for an user account so that I can access the online library. <br>
-2.	As a user, I want to log-in so that I can authenticate myself. <br>
-3.	As a user, I want to be able to edit my profile. <br>
-4.	As a user, I want to be able to logout. <br>
-
-5.	As a user, I want to be able to search for book titles, authors, gernes. <br>
-6.	As a user, I want to be able to borrow a book for a certain period of time. <br>
-7.	As a user, I want to be able to return a book early if I do not need it anymore. <br>
-8.	As a user, I want to see which books I am currently borrowing and the history of books, I already borrowed and which are returned (my borrowed books). <br>
-
-9.	As an administrator, I want to be able to add new books into the system. <br>
-10.	As an administrator, I want to edit existing books. <br>
-11.	As an administrator, I want to see which books are currently borrowed and the history of books that have been borrowed and already returned (all borrowed books). <br>
+author @michimel <br>
+1.	As an administartor, I want to be able to see all the books, authors, genres, and members in a list. <br>
+2.	As an administartor, I want to be able to search for information fast and therefor set filters on these lists. <br>
+3.	As an administartor, I want to be able to add new books, authors, genres, and members. <br>
+4.	As an administartor, I want to be able to register when a book is borrowed by a member. <br>
+5.	As an administartor, I want to be able to register when a book is returned by a member. <br>
+6.	As an administartor, I want to be able to edit books, authors, genres, and members. <br>
+7.	As an administartor, I want to be able to see a list of all bookw, which are currently borrowed. <br>
+8.	As an administartor, I want to be able to search in the list of all borrowed books via a filter. <br>
 
 ## Mock up - update (maybe leave this one as first draft, to have a better understanding for the project?)
 Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
