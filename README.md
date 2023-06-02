@@ -2,25 +2,28 @@
 ## Assignment for Internet Technology 2023
 
 ## Groupmembers:
-Mara Garbellini <br>
-Rahel Häusler <br>
-Michèle Fille <br>
-Jervin Ureath <br>
+Mara Garbellini @marallini ??? <br>
+Rahel Häusler @RahelHaeusler <br>
+Michèle Fille @michimel <br>
+Jervin Ureath @jervinureath <br>
 
 **Class:** 3b - BIT PT
+
+To create transparency, we have specified the author @github username in the respective Java classes and also in the sections of the documentation.
 
 Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 # 1. Analysis *Scenario ideation, use case analysis and user story writing*
 ## Scenario - update, must be in line with use cases and user storries ! *italic* -> check if possible otherwise delete !
-author @michimel and @marallini <br>
-The commune of Reinach has decided to create an electronic library, as today's world is very digital. Therefore, it wants to set up a web application. The online library will offer eBooks. <br>
-To use the electronic library customers, have to create an user account. With the user account, the customers can log in to the electronic library and use the following services. <br>
-The web application allows users to edit their user profile, to browse through books, to search for books, to borrow books, to return books, to easily view and manage their borrowed books with a list view. <br>
-In section "my borrowed books", users can view all books that are currently on loan. This section also displays the due date for return *and an option to return the book early is available. As this is an online library, books do not need to be actively returned, access to the book is automatically taken away on the return date.* <br>
-The web application gets managed and kept updated by administrators. Therefore, the administrators have additional functions to the user functions.
-The web application additionally allows administrators to add books, to edit existing books, to easily view and manage all borrowed books with a list view. <br>
-In section "all borrowed books", administrators can view all books that are currently on loan. *This section also displays the username of the user, who is currently borrowing the book, the due date for return and an option to return the book early is available.* <br>
+author @michimel <br>
+The commune of Reinach initiated the eLibrary project, which aims to cater to the digital world by offering a web application for accessing a wide range of eBooks. The initial concept included different user categories, such as regular users and administrators, as well as essential security features (login, logout, register). However, the current focus is on creating an MVP (Minimal Viable Product) that provides the administrator's perspective. <br>
+
+As an administrator, the primary objective is to efficiently manage the library's resources. This includes editing or adding members, books, genres, authors, and lending records. To ensure usability, the platform incorporates filtering options, enabling administrators to generate lists based on specific criteria for quickly finding relevant information.  <br>
+
+For future enhancements and improvements, the following features could be considered:  <br>
+Users would be required to register and subsequently log in to the eLibrary platform. They could also log out and conveniently manage their profiles. Regular users would have restricted functionality, allowing them to explore comprehensive lists of books, genres, and authors. Additionally, they would have the capability to refine their searches using filters, borrow and return books, and access a personalized list showcasing their currently borrowed books. While the existing list of borrowed objects does not include dates or predefined lending durations, these aspects could also be incorporated in the future. <br>
+
+Overall, the eLibrary project aims to create a user-friendly web application that empowers administrators to efficiently manage library resources. Furthermore, it holds the potential to provide regular users with convenient access to eBooks and lending services in the future.  <br>
 
 ## Use case analysis
 author @michimel <br>
