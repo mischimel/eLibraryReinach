@@ -76,7 +76,7 @@ If the access is not only for admins, all have the access rights.
 | Author   | PUT     | /api/author/updateAuthor/{authorID}                            | Update Existing Author                                                    | x                      |
 | Author   | GET     | /api/author/findByFirstName/{firstName}                        | Retrieve Authors by Firstname                                             |                        |
 | Author   | GET     | /api/author/findByLastName/{lastName}                          | Retrieve Authors by Lastname                                              |                        |
-| Author   | GET     | /api/author/findByFristNameAndLastName/<br> {firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |                        |
+| Author   | GET     | /api/author/findByFristNameAndLastName/<br>{firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |                        |
 | Author   | GET     | /api/author/findByCountry/{country}                            | Retrieve Authors by Country                                               |                        |
 | Book     | GET     | /api/book                                                      | Get all Books                                                             |                        |
 | Book     | POST    | /api/book/newBook                                              | Create new Book                                                           | x                      |
@@ -92,7 +92,7 @@ If the access is not only for admins, all have the access rights.
 | Borrowed | GET     | /api/borrowed/findByStatus/{status}                            | Retrieve Borrowed by Status                                               |                        |
 | Borrowed | GET     | /api/borrowed/findByBook{book}                                 | Retrieve Borrowed by Book                                                 |                        |
 | Borrowed | GET     | /api/borrowed/findByMember/{member}                            | Retrieve Borrowed by Member                                               |                        |
-| Borrowed | GET     | /api/borrowed/findByMemberAndStatus/{member}/{status}          | Retrieve Borrowed by Member and Status                                    |                        |
+| Borrowed | GET     | /api/borrowed/findByMemberAndStatus/<br>{member}/{status}          | Retrieve Borrowed by Member and Status                                    |                        |
 | Borrowed | GET     | /api/borrowed/findByBookAndStatus/{book}/{status}              | Retrieve Borrowed by Book and Status                                      |                        |
 | Genre    | GET     | /api/genre                                                     | Get all Genres                                                            |                        |
 | Genre    | POST    | /api/genre/newGenre                                            | Create new Genre                                                          | x                      |
@@ -104,7 +104,7 @@ If the access is not only for admins, all have the access rights.
 | Member   | GET     | /api/member/findByUserName/{userName}                          | Retrieve the Member by Username                                           |                        |
 | Member   | GET     | /api/member/findByFirstName/{firstName}                        | Retrieve Members by Firstname                                             |                        |
 | Member   | GET     | /api/member/findByLastName/{lastName}                          | Retrieve Members by Lastname                                              |                        |
-| Member   | GET     | /api/member/findByFirstNameAndLastName/{firstName}/{lastName}  | Retrieve the Member by Firstname and Lastname                             |                        |
+| Member   | GET     | /api/member/findByFirstNameAndLastName/<br>{firstName}/{lastName}  | Retrieve the Member by Firstname and Lastname                             |                        |
 | Member   | GET     | /api/member/findByEmail/{email}                                | Retrieve the Member by Email                                              |                        |
 | Member   | GET     | /api/member/findByRole/{role}                                  | Retrieve Members by Role                                                  |                        |
 
