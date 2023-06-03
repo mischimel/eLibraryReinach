@@ -67,6 +67,8 @@ Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-1
 author @michimel <br>
 If the access is not only for admins, all have the access rights.
 
+** shorten path with br**
+
 | Entity   | Method  | Path                                                           | Description                                                               | Access only for Admins |
 |----------|---------|----------------------------------------------------------------|---------------------------------------------------------------------------|------------------------|
 | Author   | GET     | /api/author                                                    | Get all Authors                                                           |                        |
@@ -112,6 +114,8 @@ To test APIs use [this collection](https://galactic-star-276963.postman.co/works
 With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
 If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
 
+**take images out**
+
 <img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/1%20Info%2C%20Author.png" width="600"> <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/2%20Book.png" width="600"> <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/3%20Borrowe%2C%20Genre.png" width="600"> <br>
@@ -132,17 +136,11 @@ Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this 
 <img src="https://github.com/michimel/eLibraryReinach/blob/680af2ae61210a50b7485dd0ce4d7e4771fef5ab/Documentation%20Sources/API%20auto%20generated/Schemas%20Book%2C%20Author.png" width="600"> <br>
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
-author @michimel <br>
-In the server classes we defined the methods for the controller classes, where we defined the APIs, then we could OpenAPI generate the documentation of the APIs. Based on the auto generated API documentation and the json code that got generated there, we could then create the connection to budibase and define for each API/path the corresponding mapping. In our case we had GET, POST, and PUT mappings. The pictures below show how we connected, set up, and implemented the APIs in Budibase. With this we then could start the design. <br>
-
---> screenshots from budibase - data - source - eLibrary !
+** explain the service methods and what they check**
 
 **TODO: Feedback needed on this part, what is expected? diagrams/graphs anything?**
 
-# 5. Security *Implementation of API-level security*
---> not in assignment scope delete
-
-# 6. Frontend implementation *Design, prototyping and realization of frontend functionality*
+# 5.. Frontend implementation *Design, prototyping and realization of frontend functionality*
 ## Mock up - prototyping
 Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
 
@@ -171,4 +169,4 @@ The following picture gives some information about the colours used in the mock 
 ## Realization of frontend functionality *here screenshots of the final design from budibase*
 
 # 7. Demonstrator *Integration of frontend and backend to realize an end-to-end application consuming REST APIs from the web service*
-
+**link to video, shows the budibase preview and what you can do with it.**
