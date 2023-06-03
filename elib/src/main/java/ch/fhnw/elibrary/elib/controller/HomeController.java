@@ -11,14 +11,6 @@ import io.swagger.v3.oas.annotations.Hidden;
 @RestController
 public class HomeController {
 
-    // TODO: Check if this is needed, if yes update the Mapping
-    /*
-     * @GetMapping("/home")
-     * public String home(Principal principal) {
-     * return "Hello, " + principal.getName();
-     * }
-     */
-
     @GetMapping("/")
     public String getHello() {
 
