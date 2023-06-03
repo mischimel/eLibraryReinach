@@ -1,9 +1,9 @@
 # eLibraryReinach Documentation
 ## Assignment for Internet Technology 2023
 
-# TODOS
-chapter 5 
-chapter 7
+# TODOS after design in budibase if completed
+[Chapter 5](https://github.com/michimel/eLibraryReinach/blob/main/README.md#realization-of-frontend-functionality)
+[Chapter 6](https://github.com/michimel/eLibraryReinach/blob/main/README.md#6-demonstrator)
 
 ## Groupmembers:
 Mara Garbellini @marallini ??? <br>
