@@ -166,9 +166,30 @@ Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this 
 <img src="https://github.com/michimel/eLibraryReinach/blob/680af2ae61210a50b7485dd0ce4d7e4771fef5ab/Documentation%20Sources/API%20auto%20generated/Schemas%20Member%2C%20Genre%2C%20Borrowed.png" width="600"> <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/680af2ae61210a50b7485dd0ce4d7e4771fef5ab/Documentation%20Sources/API%20auto%20generated/Schemas%20Book%2C%20Author.png" width="600"> <br>
 
-# 4. Data and API implementation *implementation of data access and business logic layers and API*
-** explain the service methods and what they check **
+We did not implement all the APIs in Budibase, as there is the option to add a filter in the design part. With this filter used on the GET mapping "/api/entity" (getAllEntity), the other GET mappings are not needed. <br>
 
+# 4. Data and API implementation 
+## Business Logic 
+The methods of the different service classes are explained below: <br>
+
+### AuthorService
+- **getAllAuthors()**: Retrieves a list of all authors in the application by calling the findAll() method of the AuthorRepository.
+- **createAuthor(author)**: Creates a new author by saving the provided Author object after checking if an author with the same first name and last name already exists. If the author already exists, an exception is thrown.
+- **updateAuthor(authorID, authorDetails)**: Updates an existing author by finding the author with the given authorID. If the authorID does not exist, an exception is thrown, otherwise the autor is updated with the inputed values from the authorDetails object. The updated author is then saved.
+
+### BookService
+- **getAllBooks()**: Retrieves a list of all books in the application by calling the findAll() method of the BookRepository.
+- **createBook(book)**: Creates a new book by saving the provided Book object after performing several checks. It checks if the book with the given ISBN already exists. If not, it checks if the author and genre already exist. If they do not, new author and genre objects are created and saved. Finally, the book is assigned the corresponding author and genre objects, and it is saved. If a book with the same ISBN already exits and exception is thrown. If the author or genre already exits, these objects are assigned to the book, that is beeing created.
+- **updateBook(bookID, bookDetails)**: Updates an existing book by finding the book with the given bookID and updating its details with the values from the bookDetails object. The updated book is then saved using the save() method of the BookRepository. If the book with the specified bookID is not found the RuntimeException is thrown.
+
+### BorrowedService
+-
+
+### GenreService
+-
+
+### MemberService
+-
 
 # 5.. Frontend implementation *Design, prototyping and realization of frontend functionality*
 ## Mock up - prototyping
