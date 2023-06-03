@@ -76,7 +76,7 @@ If the access is not only for admins, all have the access rights.
 | Author   | PUT     | /api/author/updateAuthor/{authorID}                            | Update Existing Author                                                    | x                      |
 | Author   | GET     | /api/author/findByFirstName/{firstName}                        | Retrieve Authors by Firstname                                             |                        |
 | Author   | GET     | /api/author/findByLastName/{lastName}                          | Retrieve Authors by Lastname                                              |                        |
-| Author   | GET     | /api/author/findByFristNameAndLastName/{firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |                        |
+| Author   | GET     | /api/author/findByFristNameAndLastName/<br> {firstName, lastName}   | Retrieve the Author by Firstname and Lastname                             |                        |
 | Author   | GET     | /api/author/findByCountry/{country}                            | Retrieve Authors by Country                                               |                        |
 | Book     | GET     | /api/book                                                      | Get all Books                                                             |                        |
 | Book     | POST    | /api/book/newBook                                              | Create new Book                                                           | x                      |
@@ -111,17 +111,8 @@ If the access is not only for admins, all have the access rights.
 ## API design
 author @michimel <br>
 To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Potsman in Workspace Birtney. <br>
-With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
+With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), to see the screenshots of the manually generated documentation, please [click here](https://github.com/michimel/eLibraryReinach/tree/3b81b33020db18d8b5ea230234270ef811b617e7/Documentation%20Sources/API%20(Swagger%20Editor). <br>
 If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
-
-**take images out**
-
-<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/1%20Info%2C%20Author.png" width="600"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/2%20Book.png" width="600"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/3%20Borrowe%2C%20Genre.png" width="600"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/4%20Member.png" width="600"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/5%20Schemas%20(Author%2C%20Book%2C%20Borrowed).png" width="600"> <br>
-<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/6%20Schemas%20(Gerne%2C%20Member).png" width="600"> <br>
 
 ### auto generantion from OpenAPI - Swagger
 When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
@@ -136,9 +127,8 @@ Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this 
 <img src="https://github.com/michimel/eLibraryReinach/blob/680af2ae61210a50b7485dd0ce4d7e4771fef5ab/Documentation%20Sources/API%20auto%20generated/Schemas%20Book%2C%20Author.png" width="600"> <br>
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
-** explain the service methods and what they check**
+** explain the service methods and what they check **
 
-**TODO: Feedback needed on this part, what is expected? diagrams/graphs anything?**
 
 # 5.. Frontend implementation *Design, prototyping and realization of frontend functionality*
 ## Mock up - prototyping
