@@ -1,6 +1,10 @@
 # eLibraryReinach Documentation
 ## Assignment for Internet Technology 2023
 
+# TODOS
+chapter 5 
+chapter 7
+
 ## Groupmembers:
 Mara Garbellini @marallini ??? <br>
 Rahel Häusler @RahelHaeusler <br>
@@ -224,5 +228,5 @@ The following picture gives some information about the colours used in the mock 
 ## Realization of frontend functionality 
 TODO: *here screenshots of the final design from budibase preview*
 
-# 7. Demonstrator
+# 6. Demonstrator
 TODO: *link to video. the video shows the budibase preview and demonstates and explains the functonalities of the web application.*
