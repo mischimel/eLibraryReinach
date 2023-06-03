@@ -128,13 +128,8 @@ Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this 
 <img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/borrowed-controller.png" width="600"> <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/book-controller.png" width="600"> <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/author-controller.png" width="600"> <br>
-<img src="" width="600"> <br>
-<img src="" width="600"> <br>
-<img src="" width="600"> <br>
-<img src="" width="600"> <br>
-
-<img src="" width="600"> <br>
-
+<img src="https://github.com/michimel/eLibraryReinach/blob/680af2ae61210a50b7485dd0ce4d7e4771fef5ab/Documentation%20Sources/API%20auto%20generated/Schemas%20Member%2C%20Genre%2C%20Borrowed.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/680af2ae61210a50b7485dd0ce4d7e4771fef5ab/Documentation%20Sources/API%20auto%20generated/Schemas%20Book%2C%20Author.png" width="600"> <br>
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
 author @michimel <br>
