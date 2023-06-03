@@ -9,8 +9,6 @@ Jervin Ureath @jervinureath <br>
 
 **Class:** 3b - BIT PT
 
-Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-
 # 1. Analysis
 ## Scenario
 The commune of Reinach initiated the eLibrary project, which aims to cater to the digital world by offering a web application for accessing a wide range of eBooks. The initial concept included different user categories, such as regular users and administrators, as well as essential security features (login, logout, register). However, the current focus is on creating an MVP (Minimal Viable Product) that provides the administrator's perspective. <br>
@@ -188,12 +186,16 @@ The methods of the different service classes are explained below. Please note th
 - **updateBorrowed(borrowedID, borrowedDetails)**: Updates an existing borrowed item by finding it with the given borrowedID. If the borrowedID does not exist, an exception is thrown, otherwise the borrowed item is updated with the inputed values from the borrowedDetails object. The updated borrowed item is then saved. <br>
 
 ### GenreService
--
+- **getAllGenres()**: Retrieves a list of all genres in the application by calling the findAll() method of the GenreRepository. It returns all existing genres.
+- **createGenre(genre)**: Creates a new genre by saving the provided Genre object after performing the follwoing check. It checks if the genre with the given name already exists in the database. If it does not, the genre is saved, but if the genre already exists, an exception is thrown with an appropriate message.
+- **updateGenre(genreID, genreDetails)**: Updates an existing genre by finding the genre with the given genreID and updating its name with the value from the genreDetails object. The updated genre is then saved. If the genre with the specified genreID is not found the RuntimeException is thrown. <br>
 
 ### MemberService
--
+- **getAllMembers()**: Retrieves a list of all members in the application by calling the findAll() method of the MemberRepository. It returns all existing members and shows all the details, except the password.
+- **createMember(member)**: Creates a new member by saving the provided Member object after performing the following check. It checks if a member with the given username and email already exists in the database. If neither the username nor the email is found, the member is saved using the save() method of the MemberRepository. If the member already exists, an exception is thrown with an appropriate message.
+- **updateMember(memberID, memberDetails)**: Updates an existing member by finding the member with the given memberID and updating its attributes (username, first name, last name, email, and password) with the values from the memberDetails object. The updated member is then saved and the changes can be seen, except for the password, which will not be shown. If the member with the specified memberID is not found the RuntimeException is thrown. <br>
 
-# 5.. Frontend implementation *Design, prototyping and realization of frontend functionality*
+# 5. Frontend implementation
 ## Mock up - prototyping
 Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
 
@@ -219,7 +221,8 @@ This image shows more pages for administrators. The page "all borrowed ooks" giv
 The following picture gives some information about the colours used in the mock up and also more ideas for possible (further) improvements can be seen.
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
 
-## Realization of frontend functionality *here screenshots of the final design from budibase*
+## Realization of frontend functionality 
+TODO: *here screenshots of the final design from budibase preview*
 
-# 7. Demonstrator *Integration of frontend and backend to realize an end-to-end application consuming REST APIs from the web service*
-**link to video, shows the budibase preview and what you can do with it.**
+# 7. Demonstrator
+TODO: *link to video. the video shows the budibase preview and demonstates and explains the functonalities of the web application.*
