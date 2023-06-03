@@ -199,7 +199,7 @@ The methods of the different service classes are explained below. Please note th
 
 # 5. Frontend implementation
 ## Mock up - prototyping
-Link to the mock up (in OneNote): https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703 <br>
+[Mock up in OneNote](https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703) <br>
 
 To get a better understanding of the assignment, and to visualise our ideas and views, we have created the following mock-up. <br>
 As the content of the assignment got adjusted, we did not implement the complete mock up, only parts of it as the MVC is about the administraor's perspective. Also we did adapt the design in the final application. <br>
