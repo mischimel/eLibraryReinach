@@ -87,7 +87,7 @@ The domain contains the core logic and data models of the application, while the
 
 These components enable a structured architecture with clear responsibilities and code reusability. The controller calls the service that executes the business logic and accesses the data via the repository. The result is returned to the view, which represents the data and presents it to the user. <br>
 
-In addition, the domain classes and repository classes were explained in Chapter 2. Domain Design. Based on these, the service classes and the controller classes were created as follows: <br>
+In addition, the domain classes and repository classes were explained in Chapter [2. Domain Design](https://github.com/michimel/eLibraryReinach/blob/main/README.md#2-domain-design). Based on these, the service classes and the controller classes were created as follows: <br>
 
 ### Service classes
 - AuthorService: Responsible for managing authors in the application.
@@ -103,7 +103,7 @@ In addition, the domain classes and repository classes were explained in Chapter
 - GenreController: Responsible for managing the requests and functionalities related to different book genres.
 - MemberController: Manages the requests and operations pertaining to members in the application. <br>
 
-The methods of the service classes will be further explained in Chapter 4. Data and API Implementation. <br>
+The methods of the service classes will be further explained in Chapter [4. Data and API Implementation](https://github.com/michimel/eLibraryReinach/blob/main/README.md#4-data-and-api-implementation-implementation-of-data-access-and-business-logic-layers-and-api). <br>
 
 ## Methods overview
 If the access is not only for admins, all have the access rights.
