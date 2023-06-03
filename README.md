@@ -123,8 +123,18 @@ If you want to see or edit the code, you can import the [yaml file](https://gith
 When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
 Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
 
-**TODO: check why following images do not get shown in the readme ??**
 <img src="https://github.com/michimel/eLibraryReinach/blob/84210d7a742bea5c492751670a1e7f8f69b63197/Documentation%20Sources/API%20auto%20generated/member-controller.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/genre-controller.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/borrowed-controller.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/book-controller.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/author-controller.png" width="600"> <br>
+<img src="" width="600"> <br>
+<img src="" width="600"> <br>
+<img src="" width="600"> <br>
+<img src="" width="600"> <br>
+
+<img src="" width="600"> <br>
+
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
 author @michimel <br>
