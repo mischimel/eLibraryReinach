@@ -110,8 +110,6 @@ The methods of the service classes will be further explained in Chapter [4. Data
 ## Methods overview
 If the access is not only for admins, all have the access rights.
 
-** shorten path with br**
-
 | Entity   | Method  | Path                                                           | Description                                                               | Access only for Admins |
 |----------|---------|----------------------------------------------------------------|---------------------------------------------------------------------------|------------------------|
 | Author   | GET     | /api/author                                                    | Get all Authors                                                           |                        |
