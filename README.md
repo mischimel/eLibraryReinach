@@ -170,20 +170,22 @@ We did not implement all the APIs in Budibase, as there is the option to add a f
 
 # 4. Data and API implementation 
 ## Business Logic 
-The methods of the different service classes are explained below: <br>
+The methods of the different service classes are explained below. Please note that we only explain the methods, which are then actually implemented further. <br>
 
 ### AuthorService
 - **getAllAuthors()**: Retrieves a list of all authors in the application by calling the findAll() method of the AuthorRepository.
 - **createAuthor(author)**: Creates a new author by saving the provided Author object after checking if an author with the same first name and last name already exists. If the author already exists, an exception is thrown.
-- **updateAuthor(authorID, authorDetails)**: Updates an existing author by finding the author with the given authorID. If the authorID does not exist, an exception is thrown, otherwise the autor is updated with the inputed values from the authorDetails object. The updated author is then saved.
+- **updateAuthor(authorID, authorDetails)**: Updates an existing author by finding the author with the given authorID. If the authorID does not exist, an exception is thrown, otherwise the autor is updated with the inputed values from the authorDetails object. The updated author is then saved. <br>
 
 ### BookService
 - **getAllBooks()**: Retrieves a list of all books in the application by calling the findAll() method of the BookRepository.
 - **createBook(book)**: Creates a new book by saving the provided Book object after performing several checks. It checks if the book with the given ISBN already exists. If not, it checks if the author and genre already exist. If they do not, new author and genre objects are created and saved. Finally, the book is assigned the corresponding author and genre objects, and it is saved. If a book with the same ISBN already exits and exception is thrown. If the author or genre already exits, these objects are assigned to the book, that is beeing created.
-- **updateBook(bookID, bookDetails)**: Updates an existing book by finding the book with the given bookID and updating its details with the values from the bookDetails object. The updated book is then saved using the save() method of the BookRepository. If the book with the specified bookID is not found the RuntimeException is thrown.
+- **updateBook(bookID, bookDetails)**: Updates an existing book by finding the book with the given bookID and updating its details with the values from the bookDetails object. The updated book is then saved using the save() method of the BookRepository. If the book with the specified bookID is not found the RuntimeException is thrown. <br>
 
 ### BorrowedService
--
+- **getAllBorrowed()**: Retrieves a list of all borrowed items in the application by calling the findByStatus(true) method of the BorrowedRepository. It returns only the borrowed items where the status is set to true.
+- **createBorrowed(borrowed)**: Creates a new borrowed item by saving the provided Borrowed object after performing several checks. It checks if the status of the borrowed item is set to true, if not an exception is thrown. It then checks if the book with the specified title and the member with the specified username exist in the database. If they do not, exceptions are thrown. Additionally, it checks if a borrowed item with the same book title and same member username already exists in the database. If it does, an exception is thrown. Finally, the book and member objects are assigned to the borrowed item, the status is set to true, and it is saved.
+- **updateBorrowed(borrowedID, borrowedDetails)**: Updates an existing borrowed item by finding it with the given borrowedID. If the borrowedID does not exist, an exception is thrown, otherwise the borrowed item is updated with the inputed values from the borrowedDetails object. The updated borrowed item is then saved. <br>
 
 ### GenreService
 -
