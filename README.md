@@ -112,18 +112,19 @@ To test APIs use [this collection](https://galactic-star-276963.postman.co/works
 With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), below you can see a screen shot of the generated documentation.
 If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
 
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/1%20Info%2C%20Author.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/2%20Book.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/3%20Borrowe%2C%20Genre.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/4%20Member.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/5%20Schemas%20(Author%2C%20Book%2C%20Borrowed).png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/6%20Schemas%20(Gerne%2C%20Member).png" width="600"> <br>
+
 ### auto generantion from OpenAPI - Swagger
 When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
 Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
 
 **TODO: check why following images do not get shown in the readme ??**
-<img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/member-controller.png" width="600"> <br>
-<img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/genre-controller.png" width="600"> <br>
-<img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/borrowed-controller.png" width="600"> <br>
-<img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/book-controller.png" width="600"> <br>
-<img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/author-controller.png" width="600"> <br>
-<img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/Schemas%20Member%2C%20Genre%2C%20Borrowed.png" width="600"> <br>
-<img scr="https://github.com/michimel/eLibraryReinach/blob/5f1e27c2aef268fe5d080c33efbc7200bc110653/Documentation%20Sources/API%20auto%20generated/Schemas%20Book%2C%20Author.png" width="600"> <br>
+<img src="https://github.com/michimel/eLibraryReinach/blob/84210d7a742bea5c492751670a1e7f8f69b63197/Documentation%20Sources/API%20auto%20generated/member-controller.png" width="600"> <br>
 
 # 4. Data and API implementation *implementation of data access and business logic layers and API*
 author @michimel <br>
