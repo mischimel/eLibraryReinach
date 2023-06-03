@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.Hidden;
 @RestController
 public class HomeController {
 
+    // only for testing the apis, not implemented in budibase
     @GetMapping("/")
     public String getHello() {
 
