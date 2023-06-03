@@ -13,7 +13,7 @@ To create transparency, we have specified the author @github username in the res
 
 Format: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
-# 1. Analysis *Scenario ideation, use case analysis and user story writing*
+# 1. Analysis
 ## Scenario
 author @michimel <br>
 The commune of Reinach initiated the eLibrary project, which aims to cater to the digital world by offering a web application for accessing a wide range of eBooks. The initial concept included different user categories, such as regular users and administrators, as well as essential security features (login, logout, register). However, the current focus is on creating an MVP (Minimal Viable Product) that provides the administrator's perspective. <br>
@@ -52,16 +52,43 @@ author @michimel <br>
 7.	As an administartor, I want to be able to see a list of all bookw, which are currently borrowed. <br>
 8.	As an administartor, I want to be able to search in the list of all borrowed books via a filter. <br>
 
-# 2. Domain Design *Definition of domain model*
+# 2. Domain Design 
 ## Domain Model
 author @michimel and @RahelHaeusler <br>
 Link to the domain model: https://lucid.app/lucidchart/bfa39a78-e2ec-4b1a-b63b-18829cec80c9/edit?beaconFlowId=7134D7D032DE5064&invitationId=inv_0148f8f5-f3f9-433a-8296-e9667492d473&page=0_0# <br>
-
+We created the following domain model: <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/Domain%20Model/DomainModel%20UML%20CLass%20Diagram.png"> <br> 
 
+### Domain classes
+Based on this domain model, we have created the following classes for each entity: <br>
 
-# 3. Business Logic and API design *Definition of business logic and API*
+- Author: Represents an author of a book.
+- Book: Represents a book in the eLibrary.
+- Borrowed: Represents a record of a book being borrowed by a user.
+- Genre: Represents a genre or category of books.
+- Member: Represents a member of the application. <br>
+-
+These domain classes encapsulate the data and behavior associated with each entity, allowing for effective management and manipulation of the application's data. <br>
+By organizing the domain logic into separate classes, we promote code modularity and maintainability, making it easier to add or modify features in the future. <br>
+
+### Repository classes
+We have also created the corresponding repository classes for each entity: <br>
+
+- AuthorRepository: Manages data operations related to authors.
+- BookRepository: Handles data access and storage operations for book entities. 
+- BorrowedRepository: Provides data access and storage operations for borrowed entities. 
+- GenreRepository: Handles data operations for genre entities.
+- MemberRepository: Manages data operations for member entities. <br>
+
+These repository classes extend the JpaRepository interface, which is a part of Spring Data JPA. It provides predefined methods for common data operations, such as finding records by ID or attributes, retrieving all records, and saving or deleting records. These repositories offer methods and functionalities for performing CRUD (Create, Read, Update, Delete) operations on the respective entities. <br>
+
+By separating the data access logic into dedicated repository classes, we achieve better code organization and maintainability. It also allows for easier switching or integration with different data storage technologies in the future. <br>
+
+
+# 3. Business Logic and API design
 ## Business Logic
+
+**** here I am workin ****
 
 ## Methods overview
 author @michimel <br>
