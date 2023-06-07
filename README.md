@@ -214,7 +214,7 @@ In order to read and view the mock up better, we prepared images of the individu
 This images shows how the start page, including the login, the page to register for an user account, and the pages for the user. The pages for the user shown here are, the page "books", where users can search for a book, the page when a specific book got selected, here users can rent the book, and the page "my borrowed books", where the users see the history of all their books currently on loan, or the ones they have borrowed and already return in a list view. <br>
 <img src="https://github.com/michimel/electronic-library/blob/e198eb8d663424bf7e749d29b6398968dc84006d/images/Mock%20up/2%20start(login),%20register,%20user(books%20and%20book%20search,%20book%20view,%20my%20borrowed%20books%20list).png"> <br>
 
-This images shows pages for user, which are the page "prfoile", where users can edit or delete their profile, and again the start page, which appreas after the log out. <br>
+This images shows pages for user, which are the page "profile", where users can edit or delete their profile, and again the start page, which appreas after the log out. <br>
 <img src="https://github.com/michimel/electronic-library/blob/0c5c5d4d8b06a59504b8dd5790466ba264d58317/images/Mock%20up/3%20user(profile,%20logout).png"> <br>
 
 The following images shows the pages only for administrators, as they have addtional functionalities compared to the user. The images shows the page "books", where admins can add books, the page when a specific book got selected, where admins can edit or delete the book, and the page "my borrowed books".
