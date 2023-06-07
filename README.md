@@ -5,11 +5,14 @@
 [Chapter 5](https://github.com/michimel/eLibraryReinach/blob/main/README.md#realization-of-frontend-functionality) <br>
 [Chapter 6](https://github.com/michimel/eLibraryReinach/blob/main/README.md#6-demonstrator)
 
-## Groupmembers:
-Mara Garbellini @marallini ??? <br>
+## Groupmembers
 Rahel Häusler @RahelHaeusler <br>
 Michèle Fille @michimel <br>
 Jervin Ureath @jervinureath <br>
+
+### Changes to the group
+Mara Garbellini @marallini left the team by herself, as she did not contribute to the project. <br>
+
 
 **Class:** 3b - BIT PT
 
