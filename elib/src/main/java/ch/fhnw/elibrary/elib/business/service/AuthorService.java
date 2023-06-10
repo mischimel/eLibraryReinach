@@ -40,9 +40,23 @@ public class AuthorService {
         if (author == null) {
             throw new RuntimeException("Author not found for this ID :: " + authorID);
         }
-        author.setFirstName(authorDetails.getFirstName());
-        author.setLastName(authorDetails.getLastName());
-        author.setCountry(authorDetails.getCountry());
+ 
+        // check what new values are provided and update the author accordingly (other values are not changed)
+        if (authorDetails.getFirstName() != null && !authorDetails.getFirstName().isEmpty()) {
+             author.setFirstName(authorDetails.getFirstName());
+        }
+
+        if (authorDetails.getLastName() != null && !authorDetails.getLastName().isEmpty()) {
+            author.setLastName(authorDetails.getLastName());
+        }
+    
+        if (authorDetails.getLastName() != null && !authorDetails.getLastName().isEmpty()) {
+            author.setLastName(authorDetails.getLastName());
+        }
+    
+        if (authorDetails.getCountry() != null && !authorDetails.getCountry().isEmpty()) {
+            author.setCountry(authorDetails.getCountry());
+        }
         return authorRepository.save(author);
     }
 
