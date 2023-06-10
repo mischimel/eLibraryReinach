@@ -15,6 +15,7 @@ public class Borrowed {
     // @JsonIgnore // comment out this line to see the borrowedID in the response
     private Long borrowedID;
 
+    @JsonIgnore
     @Column(name = "status", nullable = false)
     private Boolean status = true; // default status is true (book is borrowed) when new object is created
 

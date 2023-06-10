@@ -75,6 +75,8 @@ public class BorrowedService {
             throw new RuntimeException("Borrowed not found for this ID :: " + borrowedID);
         }
         borrowed.setStatus(false);
+        // not needed, as status get set to false and then will not 
+        //appear anymore in the boorowed list
         /*borrowed.setBookTitle(borrowedDetails.getBookTitle());
         borrowed.setMemberUserName(borrowedDetails.getMemberUserName());
         borrowed.setMemberEmail(borrowedDetails.getMemberEmail());*/

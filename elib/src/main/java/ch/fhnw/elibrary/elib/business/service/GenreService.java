@@ -40,7 +40,12 @@ public class GenreService {
         if (genre == null) {
             throw new RuntimeException("Genre not found for this ID :: " + genreID);
         }
-        genre.setName(genreDetails.getName());
+        // check what new values are provided and update the genre accordingly 
+        // (other values are not changed)
+        if (genreDetails.getName() != null && !genreDetails.getName().isEmpty()){
+            genre.setName(genreDetails.getName());
+        }
+       
         return genreRepository.save(genre);
     }
 
