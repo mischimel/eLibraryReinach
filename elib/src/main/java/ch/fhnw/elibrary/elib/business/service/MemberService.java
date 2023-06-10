@@ -44,11 +44,29 @@ public class MemberService {
         if (member == null) {
             throw new RuntimeException("Member not found for this ID :: " + memberID);
         }
-        member.setUserName(memberDetails.getUserName());
-        member.setFirstName(memberDetails.getFirstName());
-        member.setLastName(memberDetails.getLastName());
-        member.setEmail(memberDetails.getEmail());
-        member.setPassword(memberDetails.getPassword());
+
+        // check what new values are provided and update the member accordingly 
+        // (other values are not changed)
+        if (memberDetails.getUserName() != null && !memberDetails.getUserName().isEmpty()) {
+            member.setUserName(memberDetails.getUserName());
+        }
+
+        if (memberDetails.getFirstName() != null && !memberDetails.getFirstName().isEmpty()) {
+            member.setFirstName(memberDetails.getFirstName());
+        }
+
+        if (memberDetails.getLastName() != null && !memberDetails.getLastName().isEmpty()) {
+            member.setLastName(memberDetails.getLastName());
+        }
+
+        if (memberDetails.getEmail() != null && !memberDetails.getEmail().isEmpty()) {
+            member.setEmail(memberDetails.getEmail());
+        }
+
+        if (memberDetails.getPassword() != null && !memberDetails.getPassword().isEmpty()) {
+            member.setPassword(memberDetails.getPassword());
+        }
+
         return memberRepository.save(member);
     }
 
