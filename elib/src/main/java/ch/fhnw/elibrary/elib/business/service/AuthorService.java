@@ -41,7 +41,8 @@ public class AuthorService {
             throw new RuntimeException("Author not found for this ID :: " + authorID);
         }
  
-        // check what new values are provided and update the author accordingly (other values are not changed)
+        // check what new values are provided and update the author accordingly 
+        // (other values are not changed)
         if (authorDetails.getFirstName() != null && !authorDetails.getFirstName().isEmpty()) {
              author.setFirstName(authorDetails.getFirstName());
         }

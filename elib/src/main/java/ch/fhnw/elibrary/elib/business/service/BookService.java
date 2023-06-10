@@ -85,7 +85,8 @@ public class BookService {
             throw new RuntimeException("Book not found for this ID :: " + bookID);
         }
   
-        // check what new values are provided and update the book accordingly (other values are not changed)
+        // check what new values are provided and update the book accordingly 
+        // (other values are not changed)
         if (bookDetails.getTitle() != null && !bookDetails.getTitle().isEmpty()) {
              book.setTitle(bookDetails.getTitle());
         }

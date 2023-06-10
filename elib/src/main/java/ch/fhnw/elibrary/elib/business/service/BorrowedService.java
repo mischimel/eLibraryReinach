@@ -31,9 +31,10 @@ public class BorrowedService {
     }
 
     public Borrowed createBorrowed(Borrowed borrowed) throws Exception {
-        if (borrowed.getStatus() == null || borrowed.getStatus() != true) {
+        // not needed, as status get set to true by default
+        /*if (borrowed.getStatus() == null || borrowed.getStatus() != true) {
             throw new Exception("Invalid status. The status must be true.");
-        }
+        }*/
 
         String bookTitle = borrowed.getBookTitle();
         String memberUserName = borrowed.getMemberUserName();
@@ -73,10 +74,10 @@ public class BorrowedService {
         if (borrowed == null) {
             throw new RuntimeException("Borrowed not found for this ID :: " + borrowedID);
         }
-        borrowed.setStatus(borrowedDetails.getStatus());
-        borrowed.setBookTitle(borrowedDetails.getBookTitle());
+        borrowed.setStatus(false);
+        /*borrowed.setBookTitle(borrowedDetails.getBookTitle());
         borrowed.setMemberUserName(borrowedDetails.getMemberUserName());
-        borrowed.setMemberEmail(borrowedDetails.getMemberEmail());
+        borrowed.setMemberEmail(borrowedDetails.getMemberEmail());*/
         return borrowedRepository.save(borrowed);
     }
 
