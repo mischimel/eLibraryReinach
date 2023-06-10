@@ -84,14 +84,39 @@ public class BookService {
         if (book == null) {
             throw new RuntimeException("Book not found for this ID :: " + bookID);
         }
-        book.setTitle(bookDetails.getTitle());
-        book.setIsbn(bookDetails.getIsbn());
-        book.setPublishYear(bookDetails.getPublishYear());
-        book.setDescription(bookDetails.getDescription());
-        book.setAuthorFirstName(bookDetails.getAuthorFirstName());
-        book.setAuthorLastName(bookDetails.getAuthorLastName());
-        book.setAuthorCountry(bookDetails.getAuthorCountry());
-        book.setGenreName(bookDetails.getGenreName());
+  
+        // check what new values are provided and update the book accordingly (other values are not changed)
+        if (bookDetails.getTitle() != null && !bookDetails.getTitle().isEmpty()) {
+             book.setTitle(bookDetails.getTitle());
+        }
+
+        if (bookDetails.getIsbn() != null && !bookDetails.getIsbn().isEmpty()) {
+            book.setIsbn(bookDetails.getIsbn());
+        }
+
+        if (bookDetails.getPublishYear() != 0) {
+            book.setPublishYear(bookDetails.getPublishYear());
+        }
+
+        if (bookDetails.getDescription() != null && !bookDetails.getDescription().isEmpty()) {
+            book.setDescription(bookDetails.getDescription());
+        }
+
+        if (bookDetails.getAuthorFirstName() != null && !bookDetails.getAuthorFirstName().isEmpty()) {
+            book.setAuthorFirstName(bookDetails.getAuthorFirstName());
+        }
+
+        if (bookDetails.getAuthorLastName() != null && !bookDetails.getAuthorLastName().isEmpty()) {
+            book.setAuthorLastName(bookDetails.getAuthorLastName());
+        }
+
+        if (bookDetails.getAuthorCountry() != null && !bookDetails.getAuthorCountry().isEmpty()) {
+            book.setAuthorCountry(bookDetails.getAuthorCountry());
+        }
+
+        if (bookDetails.getGenreName() != null && !bookDetails.getGenreName().isEmpty()) {
+            book.setGenreName(bookDetails.getGenreName());
+        }
         return bookRepository.save(book);
     }
 
