@@ -103,21 +103,11 @@ public class BookService {
             book.setDescription(bookDetails.getDescription());
         }
 
-        if (bookDetails.getAuthorFirstName() != null && !bookDetails.getAuthorFirstName().isEmpty()) {
-            book.setAuthorFirstName(bookDetails.getAuthorFirstName());
-        }
-
-        if (bookDetails.getAuthorLastName() != null && !bookDetails.getAuthorLastName().isEmpty()) {
-            book.setAuthorLastName(bookDetails.getAuthorLastName());
-        }
-
-        if (bookDetails.getAuthorCountry() != null && !bookDetails.getAuthorCountry().isEmpty()) {
-            book.setAuthorCountry(bookDetails.getAuthorCountry());
-        }
-
-        if (bookDetails.getGenreName() != null && !bookDetails.getGenreName().isEmpty()) {
-            book.setGenreName(bookDetails.getGenreName());
-        }
+        // can not be changed with this method
+        book.setAuthorFirstName(bookDetails.getAuthorFirstName());
+        book.setAuthorLastName(bookDetails.getAuthorLastName());
+        book.setAuthorCountry(bookDetails.getAuthorCountry());
+        book.setGenreName(bookDetails.getGenreName());
         return bookRepository.save(book);
     }
 
