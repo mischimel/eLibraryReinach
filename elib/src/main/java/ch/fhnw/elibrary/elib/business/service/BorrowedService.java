@@ -51,11 +51,10 @@ public class BorrowedService {
             throw new Exception("Member does not exist.");
         }
 
-        // Check whether a borrowed object with the same data already exists in the
-        // database
+        // Check whether a borrowed object with the same data already exists in the database
         List<Borrowed> borrowedList = borrowedRepository.findAll();
         for (Borrowed b : borrowedList) {
-            if (b.getBookTitle().equals(bookTitle) && b.getMemberUserName().equals(memberUserName)) {
+            if (b.getBookTitle().equals(bookTitle) && b.getMemberUserName().equals(memberUserName) && b.getStatus() == true) { 
                 throw new Exception("Book is already borrowed.");
             }
         }
@@ -76,7 +75,7 @@ public class BorrowedService {
         }
         borrowed.setStatus(false);
         // not needed, as status get set to false and then will not 
-        //appear anymore in the boorowed list
+        // appear anymore in the boorowed list
         /*borrowed.setBookTitle(borrowedDetails.getBookTitle());
         borrowed.setMemberUserName(borrowedDetails.getMemberUserName());
         borrowed.setMemberEmail(borrowedDetails.getMemberEmail());*/
