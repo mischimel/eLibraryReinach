@@ -231,4 +231,7 @@ The following picture gives some information about the colours used in the mock 
 - Link to the published Web-App of the eLibrary of Reinach: https://inttech.budibase.app/app/elibrary
 
 # 6. Demonstrator
-TODO: *link to video. the video shows the budibase preview and demonstates and explains the functonalities of the web application.* (youtube with restricted access)
+This [YouTube video](https://youtu.be/sZEf-nDYQRQ) shows the budibase preview and demonstates and explains the functonalities of the web application. <br>
+The video is a bit too long, as we explain the functionalities in detail. Unfortunately we were recording the video several times over 4 hours, as Budibase was having issues with the Bindings. <br>
+Overall this issues took over 12 hours, and we cannot explain what or how it happend, as everything worked fine and then (without changing anything either in Codespace nor in Badibase) it did not work. <br>
+Therefore and as we were just exhausted, we decided to go with this video, as everything finally fully worked. We hope that is okay with you and does not give us a reduction in poits =).
