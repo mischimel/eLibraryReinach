@@ -228,7 +228,7 @@ The following picture gives some information about the colours used in the mock 
 
 ## Realization of frontend functionality 
 TODO: *Budibase's app Export* (add to Documentation Folder and link the text)
-TODO: *Link to the published Web-App of the eLibrary of Reinach* (provide link, not link the text)
+- Link to the published Web-App of the eLibrary of Reinach: https://inttech.budibase.app/app/elibrary
 
 # 6. Demonstrator
 TODO: *link to video. the video shows the budibase preview and demonstates and explains the functonalities of the web application.* (youtube with restricted access)
