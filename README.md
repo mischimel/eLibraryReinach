@@ -227,7 +227,8 @@ The following picture gives some information about the colours used in the mock 
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
 
 ## Realization of frontend functionality 
-TODO: *here screenshots of the final design from budibase preview*
+TODO: *Budibase's app Export* (add to Documentation Folder and link the text)
+TODO: *Link to the published Web-App of the eLibrary of Reinach* (provide link, not link the text)
 
 # 6. Demonstrator
-TODO: *link to video. the video shows the budibase preview and demonstates and explains the functonalities of the web application.*
+TODO: *link to video. the video shows the budibase preview and demonstates and explains the functonalities of the web application.* (youtube with restricted access)
