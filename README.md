@@ -227,7 +227,7 @@ The following picture gives some information about the colours used in the mock 
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
 
 ## Realization of frontend functionality 
-TODO: *Budibase's app Export* (add to Documentation Folder and link the text)
+- Budibase's app Export file can be found [here](https://github.com/michimel/eLibraryReinach/tree/1151f83d53d0892439fe659b91c8e0a1019dc5b2/Documentation%20Sources/Budibase%20App%20Export) <br>
 - Link to the published Web-App of the eLibrary of Reinach: https://inttech.budibase.app/app/elibrary
 
 # 6. Demonstrator
