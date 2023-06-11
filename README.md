@@ -43,14 +43,14 @@ Overall, the eLibrary project aims to create a user-friendly web application tha
 **Use case 108 (Search Borrowed Books)**: An administrator can search within the list of all borrowed books using filters to find specific information or specific borrowing records. <br>
 
 ## User Story
-1.	As an administartor, I want to be able to see all the books, authors, genres, and members in a list. <br>
-2.	As an administartor, I want to be able to search for information fast and therefor set filters on these lists. <br>
-3.	As an administartor, I want to be able to add new books, authors, genres, and members. <br>
-4.	As an administartor, I want to be able to register when a book is borrowed by a member. <br>
-5.	As an administartor, I want to be able to register when a book is returned by a member. <br>
-6.	As an administartor, I want to be able to edit books, authors, genres, and members. <br>
-7.	As an administartor, I want to be able to see a list of all bookw, which are currently borrowed. <br>
-8.	As an administartor, I want to be able to search in the list of all borrowed books via a filter. <br>
+1.	As an administrator, I want to be able to see all the books, authors, genres, and members in a list. <br>
+2.	As an administrator, I want to be able to search for information fast and therefor set filters on these lists. <br>
+3.	As an administrator, I want to be able to add new books, authors, genres, and members. <br>
+4.	As an administrator, I want to be able to register when a book is borrowed by a member. <br>
+5.	As an administrator, I want to be able to register when a book is returned by a member. <br>
+6.	As an administrator, I want to be able to edit books, authors, genres, and members. <br>
+7.	As an administrator, I want to be able to see a list of all bookw, which are currently borrowed. <br>
+8.	As an administrator, I want to be able to search in the list of all borrowed books via a filter. <br>
 
 # 2. Domain Design 
 ## Domain Model
