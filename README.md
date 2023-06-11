@@ -2,8 +2,8 @@
 ## Assignment for Internet Technology 2023
 
 # TODOS *after design in budibase if completed*
-[Chapter 5](https://github.com/michimel/eLibraryReinach/blob/main/README.md#realization-of-frontend-functionality) <br>
-[Chapter 6](https://github.com/michimel/eLibraryReinach/blob/main/README.md#6-demonstrator)
+[Chapter 5](https://github.com/michimel/eLibraryReinach/blob/main/README.md#realization-of-frontend-functionality) should be done <br>
+[Chapter 6](https://github.com/michimel/eLibraryReinach/blob/main/README.md#6-demonstrator) - video done, fasten up (?) - add to youtube
 
 ## Groupmembers
 Rahel Häusler @RahelHaeusler <br>
@@ -227,7 +227,7 @@ The following picture gives some information about the colours used in the mock 
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/6%20info,%20improvements.png"> <br>
 
 ## Realization of frontend functionality 
-- Budibase's app Export file can be found [here]() <br>
+- Budibase's app Export file can be found [here](https://github.com/michimel/eLibraryReinach/tree/c4134b5a0e426a230a684f99f595273c611679be/Documentation%20Sources/Budibase%20App%20Export) <br>
 - Link to the published Web-App of the eLibrary of Reinach: https://inttech.budibase.app/app/elibrary
 
 # 6. Demonstrator
