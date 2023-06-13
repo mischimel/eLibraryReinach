@@ -45,7 +45,7 @@ Overall, the eLibrary project aims to create a user-friendly web application tha
 4.	As an administrator, I want to be able to register when a book is borrowed by a member. <br>
 5.	As an administrator, I want to be able to register when a book is returned by a member. <br>
 6.	As an administrator, I want to be able to edit books, authors, genres, and members. <br>
-7.	As an administrator, I want to be able to see a list of all bookw, which are currently borrowed. <br>
+7.	As an administrator, I want to be able to see a list of all books, which are currently borrowed. <br>
 8.	As an administrator, I want to be able to search in the list of all borrowed books via a filter. <br>
 
 # 2. Domain Design 
@@ -59,7 +59,7 @@ Based on this domain model, we have created the following classes for each entit
 
 - Author: Represents an author of a book.
 - Book: Represents a book in the eLibrary.
-- Borrowed: Represents a record of a book being borrowed by a user.
+- Borrowed: Represents a record of a book being borrowed by a member.
 - Genre: Represents a genre or category of books.
 - Member: Represents a member of the application. <br>
 
@@ -154,7 +154,7 @@ With the help of the overview of the methods above we created the API design wit
 If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
 
 ### auto generantion from OpenAPI - Swagger
-When runing our code in codespace and then open it the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
+By running our code in codespace and opening  it through the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
 Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
 
 <img src="https://github.com/michimel/eLibraryReinach/blob/84210d7a742bea5c492751670a1e7f8f69b63197/Documentation%20Sources/API%20auto%20generated/member-controller.png" width="600"> <br>
@@ -174,11 +174,11 @@ The methods of the different service classes are explained below. Please note th
 ### AuthorService
 - **getAllAuthors()**: Retrieves a list of all authors in the application by calling the findAll() method of the AuthorRepository.
 - **createAuthor(author)**: Creates a new author by saving the provided Author object after checking if an author with the same first name and last name already exists. If the author already exists, an exception is thrown.
-- **updateAuthor(authorID, authorDetails)**: Updates an existing author by finding the author with the given authorID. If the authorID does not exist, an exception is thrown, otherwise the autor is updated with the inputed values from the authorDetails object, if there is no input for a value, the old value is kept. The updated author is then saved. <br>
+- **updateAuthor(authorID, authorDetails)**: Updates an existing author by finding the author with the given authorID. If the authorID does not exist, an exception is thrown, otherwise the author is updated with the inputed values from the authorDetails object, if there is no input for a value, the old value is kept. The updated author is then saved. <br>
 
 ### BookService
 - **getAllBooks()**: Retrieves a list of all books in the application by calling the findAll() method of the BookRepository.
-- **createBook(book)**: Creates a new book by saving the provided Book object after performing several checks. It checks if the book with the given ISBN already exists. If not, it checks if the author and genre already exist. If they do not, new author and genre objects are created and saved. Finally, the book is assigned the corresponding author and genre objects, and it is saved. If a book with the same ISBN already exits and exception is thrown. If the author or genre already exits, these objects are assigned to the book, that is beeing created.
+- **createBook(book)**: Creates a new book by saving the provided Book object after performing several checks. It checks if the book with the given ISBN already exists. If not, it checks if the author and genre already exist. If they do not, new author and genre objects are created and saved. Finally, the book is assigned the corresponding author and genre objects, and it is saved. If a book with the same ISBN already exits and exception is thrown. If the author or genre already exits, these objects are assigned to the book, that is being created.
 - **updateBook(bookID, bookDetails)**: Updates an existing book by finding the book with the given bookID and updating its details with the values from the bookDetails object, if there is no input for a value, the old value is kept. The updated book is then saved using the save() method of the BookRepository. If the book with the specified bookID is not found the RuntimeException is thrown. <br>
 
 ### BorrowedService
@@ -188,7 +188,7 @@ The methods of the different service classes are explained below. Please note th
 
 ### GenreService
 - **getAllGenres()**: Retrieves a list of all genres in the application by calling the findAll() method of the GenreRepository. It returns all existing genres.
-- **createGenre(genre)**: Creates a new genre by saving the provided Genre object after performing the follwoing check. It checks if the genre with the given name already exists in the database. If it does not, the genre is saved, but if the genre already exists, an exception is thrown with an appropriate message.
+- **createGenre(genre)**: Creates a new genre by saving the provided Genre object after performing the following check. It checks if the genre with the given name already exists in the database. If it does not, the genre is saved, but if the genre already exists, an exception is thrown with an appropriate message.
 - **updateGenre(genreID, genreDetails)**: Updates an existing genre by finding the genre with the given genreID and updating its name with the value from the genreDetails object, in case no value is inputted the old one is kept. The updated genre is then saved. If the genre with the specified genreID is not found the RuntimeException is thrown. <br>
 
 ### MemberService
@@ -213,10 +213,10 @@ This images shows how the start page, including the login, the page to register 
 This images shows pages for user, which are the page "profile", where users can edit or delete their profile, and again the start page, which appreas after the log out. <br>
 <img src="https://github.com/michimel/electronic-library/blob/0c5c5d4d8b06a59504b8dd5790466ba264d58317/images/Mock%20up/3%20user(profile,%20logout).png"> <br>
 
-The following images shows the pages only for administrators, as they have addtional functionalities compared to the user. The images shows the page "books", where admins can add books, the page when a specific book got selected, where admins can edit or delete the book, and the page "my borrowed books".
+The following images shows the pages only for administrators, as they have additional functionalities compared to the user. The images shows the page "books", where admins can add books, the page when a specific book got selected, where admins can edit or delete the book, and the page "my borrowed books".
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/4%20admin(books%20and%20book%20search,%20book%20view,%20my%20borrowed%20books%20list).png"> <br>
 
-This image shows more pages for administrators. The page "all borrowed ooks" gives back the history of all books currently beeing borrowed and the books that are already returned, including the username of the user who had borrowed the book. The page "profile", and again the start page, which comes up after the logout.
+This image shows more pages for administrators. The page "all borrowed books" returns the history of all books currently beeing borrowed and the books that are already returned, including the username of the user who had borrowed the book. The page "profile", and again the start page, which comes up after the logout.
 <img src="https://github.com/michimel/electronic-library/blob/ee7028520188dfe829191a6deb34d2bc659b15c7/images/Mock%20up/5%20admin(all%20borrowed%20books,%20profile,%20logout).png"> <br>
 
 The following picture gives some information about the colours used in the mock up and also more ideas for possible (further) improvements can be seen.
