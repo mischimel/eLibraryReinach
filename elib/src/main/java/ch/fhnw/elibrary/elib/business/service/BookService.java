@@ -51,8 +51,8 @@ public class BookService {
                         authorRepository.save(author);
                         book.setAuthor(author);
                     } else {
-                        Author author = authorRepository.findByFirstNameAndLastName(book.getAuthorFirstName(),
-                                book.getAuthorLastName());
+                        Author author = authorRepository.findByFirstNameAndLastNameAndCountry(book.getAuthorFirstName(),
+                                book.getAuthorLastName(), book.getAuthorCountry());
                         book.setAuthor(author);
                     }
 
