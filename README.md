@@ -29,7 +29,7 @@ Overall, the eLibrary project aims to create a user-friendly web application tha
 ### Use Case 100
 <img src="https://github.com/michimel/eLibraryReinach/blob/ed246a52d5886551c1cdc1b1fa74d4fe7db40ea6/Documentation%20Sources/Use%20case/Use%20Case%20Diagramm_UC%20100.png"> <br>
 
-**Use case 101 (View Lists)**: An administrator can view comprehensive lists of books, authors, genres, and members in the library system. <br>
+**Use case 101 (View Lists)**: An administrator can view a comprehensive lists of books, authors, genres, and members in the library system. <br>
 **Use case 102 (Apply Filters)**: An administrator can apply filters to the lists of books, authors, genres, and members to quickly search for specific information. <br>
 **Use case 103 (Add New Items)**: An administrator can add new books, authors, genres, and members to the library system. <br>
 **Use case 104 (Register Borrowing)**: An administrator can register when a book is borrowed by a member, including recording the relevant details such as the book title and member details. <br>
@@ -149,13 +149,13 @@ If the access is not only for admins, all have the access rights.
 | Member   | GET     | /api/member/findByRole/{role}                                  | Retrieve Members by Role                                                  |                        |
 
 ## API design
-To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Potsman in Workspace Birtney. <br>
+To test APIs use [this collection](https://galactic-star-276963.postman.co/workspace/Birtney~ebb933fd-cc47-488d-bce0-7eada0cf63ff/collection/26197022-9ec1ab6f-d964-4437-a948-2a0695195da6?action=share&creator=26197022) in Postman in Workspace Birtney. <br>
 With the help of the overview of the methods above we created the API design with [Swagger Editor](https://editor.swagger.io/), to see the screenshots of the manually generated documentation, please [click here](https://github.com/michimel/eLibraryReinach/tree/3b81b33020db18d8b5ea230234270ef811b617e7/Documentation%20Sources/API%20(Swagger%20Editor)). <br>
 If you want to see or edit the code, you can import the [yaml file](https://github.com/michimel/eLibraryReinach/blob/9a218474b83af7255c2875cfc3e558c98f64a0c9/Documentation%20Sources/API%20(Swagger%20Editor)/eLibraryAPI.yaml) into Swagger Editor. <br>
 
 ### auto generantion from OpenAPI - Swagger
 By running our code in codespace and opening  it through the browser via the port 8080, we could let Swagger generate our API documentation. <br> 
-Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documenation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
+Therefor we added "/swagger-ui/index.html#/" to the path in the link, and [this documentation (only working, when code is running)](https://michimel-zany-dollop-976wqw46jqvf9xjx-8080.preview.app.github.dev/swagger-ui/index.html#/) got generated: <br>
 
 <img src="https://github.com/michimel/eLibraryReinach/blob/84210d7a742bea5c492751670a1e7f8f69b63197/Documentation%20Sources/API%20auto%20generated/member-controller.png" width="600"> <br>
 <img src="https://github.com/michimel/eLibraryReinach/blob/3a84de9d21254aaab63a9f5524b5ce83a9c2d74c/Documentation%20Sources/API%20auto%20generated/genre-controller.png" width="600"> <br>
