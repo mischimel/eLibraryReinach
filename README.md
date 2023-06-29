@@ -183,7 +183,7 @@ The methods of the different service classes are explained below. Please note th
 
 ### BorrowedService
 - **getAllBorrowed()**: Retrieves a list of all borrowed items in the application by calling the findByStatus(true) method of the BorrowedRepository. It returns only the borrowed items where the status is set to true.
-- **createBorrowed(borrowed)**: Creates a new borrowed item by saving the provided Borrowed object after performing several checks. It checks if the book with the specified title and the member with the specified username exist in the database. If they do not, exceptions are thrown. Additionally, it checks if a borrowed item with the same book title and same member username already exists in the database. If it does, an exception is thrown. Finally, the stauts gets set to true and book and member objects are assigned to the borrowed item, the status is set to true, and it is saved.
+- **createBorrowed(borrowed)**: Creates a new borrowed item by saving the provided Borrowed object after performing several checks. It checks if the book with the specified title and the member with the specified username exist in the database. If they do not, exceptions are thrown. Additionally, it checks if a borrowed item with the same book title and member username already exists in the database and has a status of true, indicating it is currently borrowed. If such an item is found, an exception is thrown to prevent duplicate borrowings. Finally, the status of the borrowed item is set to true, indicating it is currently borrowed. The book and member objects are assigned to the borrowed item, and it is saved in the database.
 - **updateBorrowed(borrowedID, borrowedDetails)**: Updates an existing borrowed item by finding it with the given borrowedID. If the borrowedID does not exist, an exception is thrown, otherwise the status of the borrowed item is set to false. The updated borrowed item is then saved and will no longer appear in the borrowed list, as there only items with status set to true get indicated. <br>
 
 ### GenreService
@@ -200,7 +200,7 @@ The methods of the different service classes are explained below. Please note th
 ## Mock up - prototyping
 [Mock up in OneNote](https://fhnw365.sharepoint.com/teams/ItsBirtneyBi_M365/_layouts/15/Doc.aspx?sourcedoc={9d183143-397c-48b8-b9a4-4d5389579d70}&action=edit&wd=target%28Untitled%20Section.one%7C2f1487b2-dcc6-45fd-bab3-b7bd08c83f6c%2FMock%20up%7C39605bfe-29cb-41e5-a10c-099c5f7e5d0a%2F%29&wdorigin=703) <br>
 
-To get a better understanding of the assignment, and to visualise our ideas and views, we have created the following mock-up. As the content of the assignment got adjusted, we did not implement the complete mock up, only parts of it as the MVC is about the administraor's perspective. Also we did adapt the design in the final application. <br>
+To get a better understanding of the assignment, and to visualise our ideas and views, we have created the following mock-up. As the content of the assignment got adjusted, we did not implement the complete mock up, only parts of it as the MVP is about the administraor's perspective. Also we did adapt the design in the final application. <br>
 
 The following image shows the complete mock up: <br>
 <img src="https://github.com/michimel/electronic-library/blob/59837f2d720e9b72bedd059ef858230b666ab65b/images/Mock%20up/1%20complete%20mock%20up.png"> <br>
