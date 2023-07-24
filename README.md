@@ -6,10 +6,6 @@ Rahel Häusler @RahelHaeusler <br>
 Michèle Fille @michimel <br>
 Jervin Ureath @jervinureath <br>
 
-### Changes to the group
-Mara Garbellini @marallini left the team by herself, as she did not contribute to the project. <br>
-
-
 **Class:** 3b - BIT PT
 
 # 1. Analysis
