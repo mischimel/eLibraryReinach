@@ -3,7 +3,7 @@
 
 ## Groupmembers
 Rahel Häusler @RahelHaeusler <br>
-Michèle Fille @michimel <br>
+Michèle Fille @mischimel <br>
 Jervin Ureath @jervinureath <br>
 
 **Class:** 3b - BIT PT
@@ -206,7 +206,7 @@ This images shows how the start page, including the login, the page to register 
 <img src="https://github.com/mischimel/eLibraryReinach/blob/c1f635c5a3c69917edeccdeb0c863092d05c2c82/Documentation%20Sources/Mock%20up/2%20start(login)%2C%20register%2C%20user(books%20and%20book%20search%2C%20book%20view%2C%20my%20borrowed%20books%20list).png"> <br>
 
 This images shows pages for user, which are the page "profile", where users can edit or delete their profile, and again the start page, which appreas after the log out. <br>
-<img src="https://github.com/michimel/electronic-library/blob/0c5c5d4d8b06a59504b8dd5790466ba264d58317/images/Mock%20up/3%20user(profile,%20logout).png"> <br>
+<img src="https://github.com/mischimel/electronic-library/blob/0c5c5d4d8b06a59504b8dd5790466ba264d58317/images/Mock%20up/3%20user(profile,%20logout).png"> <br>
 
 The following images shows the pages only for administrators, as they have additional functionalities compared to the user. The images shows the page "books", where admins can add books, the page when a specific book got selected, where admins can edit or delete the book, and the page "my borrowed books".
 <img src="https://github.com/mischimel/eLibraryReinach/blob/c1f635c5a3c69917edeccdeb0c863092d05c2c82/Documentation%20Sources/Mock%20up/4%20admin(books%20and%20book%20search%2C%20book%20view%2C%20my%20borrowed%20books%20list).png"> <br>
