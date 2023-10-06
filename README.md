@@ -199,7 +199,7 @@ The methods of the different service classes are explained below. Please note th
 To get a better understanding of the assignment, and to visualise our ideas and views, we have created the following mock-up. As the content of the assignment got adjusted, we did not implement the complete mock up, only parts of it as the MVP is about the administraor's perspective. Also we did adapt the design in the final application. <br>
 
 The following image shows the complete mock up: <br>
-<img src="https://github.com/michimel/electronic-library/blob/59837f2d720e9b72bedd059ef858230b666ab65b/images/Mock%20up/1%20complete%20mock%20up.png"> <br>
+<img src="https://github.com/mischimel/eLibraryReinach/blob/875960415cb00c82f5433d245d8c44956383cba5/Documentation%20Sources/Mock%20up/1%20complete%20mock%20up.png"> <br>
 
 In order to read and view the mock up better, we prepared images of the individual sections in the following images: <br>
 This images shows how the start page, including the login, the page to register for an user account, and the pages for the user. The pages for the user shown here are, the page "books", where users can search for a book, the page when a specific book got selected, here users can rent the book, and the page "my borrowed books", where the users see the history of all their books currently on loan, or the ones they have borrowed and already return in a list view. <br>
