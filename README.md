@@ -3,7 +3,7 @@
 
 ## Groupmembers
 Rahel Häusler @RahelHaeusler <br>
-Michèle Fille @mischimel <br>
+Michèle Fille @mischimel (used to be @michimel) <br>
 Jervin Ureath @jervinureath <br>
 
 **Class:** 3b - BIT PT
